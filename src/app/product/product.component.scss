@@ -1,0 +1,101 @@
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h3 {
+  text-align: center;
+  border-left: 2px solid red;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: rgba(255, 0, 0, 0.041);
+  border-left-style: dashed;
+}
+
+table {
+  margin-top: 50px;
+  border-collapse: separate;
+  border-spacing: 50px 0;
+  width: 80%;
+  border: 1px solid whitesmoke;
+  border-radius: 20px;
+  padding: 20px;
+}
+th {
+  padding-bottom: 15px;
+}
+
+.setfrom {
+  margin-top: 25px;
+}
+
+.add {
+  border: 0;
+  background-color: #474747;
+  color: white;
+  width: 150px;
+  height: 29px;
+  cursor: pointer;
+}
+
+.green {
+  background-color: rgb(0, 190, 102);
+  border: 0;
+  color: white;
+  width: 150px;
+  height: 29px;
+  cursor: pointer;
+}
+
+.update {
+  color: rgb(156, 156, 156);
+  border: 0;
+  width: 150px;
+  height: 29px;
+  cursor: pointer;
+}
+.del {
+  color: rgb(255, 72, 72);
+  border: 0;
+  width: 150px;
+  height: 29px;
+  cursor: pointer;
+}
+
+.card1 {
+  margin-top: 10vh;
+  background-color: #1d1d1d;
+  color: rgb(255, 255, 255);
+  width: 400px;
+  text-align: center;
+  height: 120px;
+  padding: 40px 0px;
+  border-radius: 20px;
+}
+
+.card3 {
+  margin-top: 10vh;
+  background-color: #ff6565;
+  color: black;
+  width: 400px;
+  text-align: center;
+  height: 120px;
+  padding: 40px 0px;
+  border-radius: 20px;
+}
+
+.card2 {
+  margin-top: 10vh;
+  background-color: #3fff79;
+  color: black;
+  width: 400px;
+  text-align: center;
+  height: 120px;
+  padding: 40px 0px;
+  border-radius: 20px;
+}
+
+.lbl {
+  font-size: 16px;
+}

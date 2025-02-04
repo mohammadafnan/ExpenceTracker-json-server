@@ -1,0 +1,529 @@
+<!-- <body> -->
+<div class="main">
+
+    <!-- <iframe
+      src="https://player.vimeo.com/video/1034494869?title=0&amp;byline=0&amp;portrait=0&amp;muted=1&amp;autoplay=1&amp;autopause=0&amp;controls=0&amp;loop=1&amp;app_id=122963"
+      width="426"
+      height="240"
+      frameborder="0"
+      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+      title="Groves Video"
+      data-ready="true"
+      style="width: 100%; height: 100%"
+    ></iframe> -->
+
+
+  <div
+    id="carouselExampleIndicators"
+    class="carousel slide carousel-fade"
+    data-ride="carousel"
+  >
+    <div class="carousel-inner">
+      <div class="carousel-item">
+        <img
+          class="d-block w-100 sliderimage"
+          src="/assets/images/TGI1.jpg"
+          alt="Second slide"
+        />
+      </div>
+      <div class="carousel-item active onmobile">
+        <img
+          class="d-block w-100 sliderimage"
+          src="/assets/images/TGI2.jpg"
+          alt="First slide"
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          class="d-block w-100 sliderimage"
+          src="/assets/images/TGI3.jpg"
+          alt="Third slide"
+        />
+      </div>
+    </div>
+    <a
+      class="carousel-control-prev"
+      href="#carouselExampleIndicators"
+      role="button"
+      data-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a
+      class="carousel-control-next"
+      href="#carouselExampleIndicators"
+      role="button"
+      data-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <div class="fix-dispay-nav1">
+    <div class="fix-dispay-nav2">
+      <nav>
+        <span>
+          <img width="100" src="assets/images/logogroves.svg" alt="" />
+        </span>
+
+        <span> </span>
+        <span> </span> <span> </span>
+        <span class="hide-socialicon">
+          <img
+            class="socialsvgtik ml-3"
+            src="assets/images/tiktok.svg"
+            alt=""
+            srcset=""
+          />
+          <img
+            class="socialsvg ml-3"
+            src="assets/images/instagrovs.svg"
+            alt=""
+            srcset=""
+          />
+          <img
+            class="socialsvg ml-3"
+            src="assets/images/twit.svg"
+            alt=""
+            srcset=""
+          />
+          <img
+            class="socialsvg ml-3"
+            src="assets/images/bell.svg"
+            alt=""
+            srcset=""
+          />
+          <button class="signup ml-3">Login</button>
+          <button class="lang ml-3">
+            <span
+              ><img class="socials-down" src="assets/images/down.svg" alt=""
+            /></span>
+            <img
+              style="width: 30px; margin: 0px 8px"
+              src="assets/images/uk.png"
+              alt=""
+            />
+            English
+          </button>
+        </span>
+        <span class="desktophide">
+          <img
+            class="socialsvg-menu ml-3"
+            src="assets/images/menu.svg"
+            (click)="menuclick()"
+          />
+        </span>
+      </nav>
+    </div>
+  </div>
+
+  <div *ngIf="this.menubar" class="sidebar">
+    <nav>
+      <span>
+        <img width="100" src="assets/images/logogroves.svg" alt="" />
+      </span>
+
+      <span class="desktophide">
+        <img
+          class="socialsvg-menu ml-3"
+          src="assets/images/cross.svg"
+          (click)="menuclick()"
+        />
+      </span>
+      <div class="sidmenu">
+        <div class="menutxt">DINE WITH US</div>
+        <div class="menutxt">PLAN YOUR VISIT</div>
+        <div class="menutxt">EVENTS</div>
+        <div class="menutxt">VIEW GROVES MAP</div>
+        <div class="menutxt">OUR STORY</div>
+        <div class="menutxt">CONTACT US</div>
+
+        <button class="lang ml-3 mt-3">
+          <span
+            ><img class="socials-down" src="assets/images/down.svg" alt=""
+          /></span>
+          <img
+            style="width: 30px; margin: 0px 8px"
+            src="assets/images/uk.png"
+            alt=""
+          />
+          English</button
+        ><br />
+        <button class="signup ml-3 mt-3">Login</button><br />
+
+        <div class="mt-5">
+          <img
+            class="socialsvgtik ml-3"
+            src="assets/images/tiktok.svg"
+            alt=""
+            srcset=""
+          />
+          <img
+            class="socialsvg ml-3"
+            src="assets/images/instagrovs.svg"
+            alt=""
+            srcset=""
+          />
+          <img
+            class="socialsvg ml-3"
+            src="assets/images/twit.svg"
+            alt=""
+            srcset=""
+          />
+          <img
+            class="socialsvg ml-3"
+            src="assets/images/bell.svg"
+            alt=""
+            srcset=""
+          />
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="fix-dispay-nav1">
+    <div class="fix-dispay-subnav">
+      <div class="submenuline hide-socialicon">
+        <nav class="submenu">
+          <span class="menutxt"> DINE WITH US </span>
+          <span class="menutxt">PLAN YOUR VISIT </span>
+          <span class="menutxt">EVENTS </span>
+          <span class="menutxt">VIEW GROVES MAP </span>
+          <span class="menutxt"> OUR STORY </span>
+          <span class="menutxt"> CONTACT US </span>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="textbox">
+      <!-- <h1 class="khawa">KHAWAJA YANNI </h1> -->
+      <h1>
+        The new <br />
+        era of luxury
+      </h1>
+      <br />
+      <h2>
+        Lorem ipsum dolor sit amet consectetur sit consectetur <br />
+        adipisicing elit.
+      </h2>
+
+      <div class="btn-home">
+        <button class="getbtn">
+          Book reservation now
+          <span><img width="20" src="assets/images/down.svg" alt="" /></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section1">
+  <div>
+    <h1>Mall of: Endless Possibilities</h1>
+    <h2>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, quaerat
+      aperiam! Autem nam, <br />
+      commodi ullam doloribus porro pariatur magni molestias nemo quia sed modi
+      dolores <br />
+      iste optio quos assumenda quidem!
+    </h2>
+  </div>
+
+  <div class="mt-5">
+    <iframe
+      width="860"
+      height="515"
+      src="https://www.youtube.com/embed/GKaed3hlsK0?si=BK6nr_5jnXGURqEf"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+  <div class="card">
+    <label>25 SR/GUEST</label>
+    <h1>Get your General Access ticket</h1>
+    <label>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, quaerat
+      aperiam! Autem nam, <br />
+      commodi ullam
+    </label>
+  </div>
+</section>
+
+<section class="section2">
+  <div>
+    <h1>
+      Book your General Access ticket <br />
+      enjoy the attractions for free
+    </h1>
+    <div class="btn">
+      <button class="getbtn">
+        Book General Access ticket
+        <span><img width="20" src="assets/images/down.svg" alt="" /></span>
+      </button>
+    </div>
+
+    <div>
+      <div class="slidermain">
+        <div>
+          <img class="sliderimg" src="assets/images/TGI1.jpg" alt="" />
+          <div class="cap">little Krazy</div>
+        </div>
+        <div>
+          <img class="sliderimg1" src="assets/images/TGI2.jpg" alt="" />
+          <div class="cap">Hawanim Groves City</div>
+        </div>
+        <div>
+          <img class="sliderimg" src="assets/images/TGI3.jpg" alt="" />
+          <div class="cap">Picnic Market</div>
+        </div>
+        <div>
+          <img class="sliderimg1" src="assets/images/TGI1.jpg" alt="" />
+          <div class="cap">Lucawim</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section3">
+  <div>
+    <h1>Experience the Finest Cuisine</h1>
+    <h2>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, quaerat
+      aperiam! Autem nam, <br />
+      commodi ullam doloribus porro pariatur magni molestias nemo quia sed modi
+      dolores <br />
+      iste optio quos assumenda quidem!
+    </h2>
+  </div>
+  <div class="card-flex">
+    <div>
+      <div class="card-img">
+        <img class="innercard-img" src="assets/images/TGI1.jpg" alt="" />
+        <label class="card-lbl"> Vida vera </label>
+        <div>
+          <button class="card-btn">100 SR PER GUEST</button>
+        </div>
+      </div>
+      <div class="card-img">
+        <img class="innercard-img" src="assets/images/TGI2.jpg" alt="" />
+        <label class="card-lbl"> Zama zulu </label>
+        <div>
+          <button class="card-btn">100 SR PER GUEST</button>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="card-img">
+        <img class="innercard-img" src="assets/images/TGI3.jpg" alt="" />
+        <label class="card-lbl"> Khawaja Yanni </label>
+        <div>
+          <button class="card-btn">100 SR PER GUEST</button>
+        </div>
+      </div>
+      <div class="card-img">
+        <img class="innercard-img" src="assets/images/TGI1.jpg" alt="" />
+        <label class="card-lbl"> Yagamata </label>
+        <div>
+          <button class="card-btn">100 SR PER GUEST</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section2">
+  <div>
+    <!-- <h1>
+      Book your General Access ticket <br />
+      enjoy the attractions for free
+    </h1> -->
+    <!-- <div class="btn">
+      <button class="getbtn">
+        Book General Access ticket
+        <span><img width="20" src="assets/images/down.svg" alt="" /></span>
+      </button>
+    </div> -->
+
+    <div>
+      <div class="slidermain2">
+        <div>
+          <h1>
+            Curate your <br />
+            exprience <br />
+            as you like
+          </h1>
+
+          <button class="getbtn2">
+            Book Tickets
+            <span><img width="20" src="assets/images/down.svg" alt="" /></span>
+          </button>
+        </div>
+
+        <div>
+          <img class="sliderimg1" src="assets/images/TGI3.jpg" alt="" />
+          <div class="cap">little Krazy</div>
+        </div>
+        <div>
+          <img class="sliderimg" src="assets/images/TGI2.jpg" alt="" />
+          <div class="cap">Hawanim Groves City</div>
+        </div>
+        <div>
+          <img class="sliderimg1" src="assets/images/TGI1.jpg" alt="" />
+          <div class="cap">Picnic Market</div>
+        </div>
+        <div>
+          <img class="sliderimg" src="assets/images/TGI3.jpg" alt="" />
+          <div class="cap">Lucawim</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section5">
+  <div>
+    <label> Experience the Groves </label>
+    <h1>Find Your Place</h1>
+    <h2>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br />
+      Quisquam esse, eveniet labore quasi asperiores autem nemo
+      necessitatibus,<br />
+    </h2>
+    <div class="btn">
+      <button class="getbtn">
+        Open the Map
+        <span><img width="20" src="assets/images/down.svg" alt="" /></span>
+      </button>
+    </div>
+  </div>
+  <div class="img2 pr-5">
+    <img src="assets/images/map-removebg-preview.png" alt="" />
+  </div>
+</section>
+
+<div class="desktophide">
+  <img
+    width="100"
+    class="bootom-logo"
+    src="assets/images/logogroves.svg"
+    alt=""
+  />
+</div>
+<section class="section4 footer-top">
+  <div>
+    <h1 class="section5-h1">
+      Join us for <br />
+      an unforgetable exprience
+    </h1>
+  </div>
+  <div class="img2 googleplay-set">
+    <div><label class="downlbl">DOWNLOAD THE GROVES APP</label></div>
+
+    <img class="googleplay mr-2" src="/assets/images/appstore.png" alt="" />
+    <img class="googleplay" src="/assets/images/gooplay-whiteicon.png" alt="" />
+  </div>
+</section>
+<footer>
+  <div class="footer-list">
+    <label class="pb-3">LOCATION</label><br />
+    <label>AI-Hazim Park</label><br />
+    <label>AI-Semairi ,Yanbu AI Bahr 46455</label><br />
+    <label>Riyadh Saudi Arabia</label><br />
+  </div>
+  <div class="footer-list">
+    <label class="pb-3"> WORKING HOURS</label><br />
+    <label> Sun until Thurs : 4.00PM</label><br />
+    <label class="pb-3"> Fri until Sat : 2:30PM</label><br />
+    <label class="pb-3"> WORKING HOURS</label><br />
+    <label> Sun until Thurs : 4.00PM</label><br />
+    <label> Fri until Sat : 2:30PM</label><br />
+  </div>
+  <div class="footer-list">
+    <label class="pb-3">GUEST SERVICE CALL</label><br />
+    <label> CCthegroves-sa.com</label><br />
+    <label class="pb-3">920001825</label><br />
+    <label> +966654878887</label><br />
+  </div>
+  <div class="footer-list"></div>
+  <div class="footer-list"></div>
+</footer>
+<section class="section4 bottom1">
+  <div>
+    <img
+      width="100"
+      class="bootom-logo footer-logo"
+      src="assets/images/logogroves.svg"
+      alt=""
+    />
+  </div>
+  <span class="icon-mobile">
+    <img
+      class="socialsvg-b ml-3"
+      src="assets/images/tiktok.svg"
+      alt=""
+      srcset=""
+    />
+    <img
+      class="socialsvg-b ml-3"
+      src="assets/images/instagrovs.svg"
+      alt=""
+      srcset=""
+    />
+    <img
+      class="socialsvg-b ml-3"
+      src="assets/images/twit.svg"
+      alt=""
+      srcset=""
+    />
+    <img
+      class="socialsvg-b ml-3"
+      src="assets/images/bell.svg"
+      alt=""
+      srcset=""
+    />
+  </span>
+</section>
+<section class="section4 bottom2 mt-5">
+  <div class="last-bootom">
+    <label class="pr-5">Term and Condition</label>
+
+    <label class="pr-5">Privacy and Policy</label>
+
+    <label>Privacy and Policy</label>
+  </div>
+  <span class="icon-mobile">
+    <img
+      class="socialsvg-b ml-3"
+      src="assets/images/master.svg"
+      alt=""
+      srcset=""
+    />
+    <img
+      class="socialsvg-b ml-3"
+      src="assets/images/master.svg"
+      alt=""
+      srcset=""
+    />
+    <img
+      class="socialsvg-b ml-3"
+      src="assets/images/master.svg"
+      alt=""
+      srcset=""
+    />
+    <img
+      class="socialsvg-b ml-3"
+      src="assets/images/master.svg"
+      alt=""
+      srcset=""
+    />
+  </span>
+</section>
+<!-- </body> -->

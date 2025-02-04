@@ -1,0 +1,1526 @@
+<header>
+  <div
+    class="mainnav"
+    [ngClass]="{ 'theme-dark-bg': this.dark, 'theme-light-bg': !this.dark }"
+  >
+    <nav
+      [ngClass]="{ 'theme-dark-bg': this.dark, 'theme-light-bg': !this.dark }"
+    >
+      <span class="logo">
+        <img width="100" src="/assets/images/favicon1.png" alt="" />
+        <h2
+          [ngClass]="{
+              ' light-color': this.dark,
+              'dark-color': !this.dark
+            }"
+        >
+          Pegasus POS
+        </h2>
+      </span>
+      <h6
+        (click)="gotohome('movetohome')"
+        class="show"
+        [ngClass]="{
+            ' light-color': this.dark,
+            'dark-color': !this.dark,
+            active: activeSection === 'movetohome'
+          }"
+      >
+        Home
+      </h6>
+      <h6
+        (click)="gotofeature('movetofeature')"
+        class="show"
+        [ngClass]="{
+            ' light-color': this.dark,
+            'dark-color': !this.dark,
+            active: activeSection === 'movetofeature'
+          }"
+      >
+        Features
+      </h6>
+      <h6
+        (click)="gotoclient('movetoclient')"
+        class="show"
+        [ngClass]="{
+            ' light-color': this.dark,
+            'dark-color': !this.dark,
+            active: activeSection === 'movetoclient'
+          }"
+      >
+        Clients
+      </h6>
+
+      <h6
+        (click)="gootoreview('gotoreview')"
+        class="show"
+        [ngClass]="{
+            ' light-color': this.dark,
+            'dark-color': !this.dark,
+            active: activeSection === 'gotoreview'
+          }"
+      >
+        Testimonials
+      </h6>
+
+      <h6
+        (click)="gotointegration('gotointe')"
+        class="show"
+        [ngClass]="{
+            ' light-color': this.dark,
+            'dark-color': !this.dark,
+            active: activeSection === 'gotointe'
+          }"
+      >
+        Integrations
+      </h6>
+      <span></span>
+      <span></span>
+      <span></span>
+
+      <div>
+        <a
+          class="downloadlink"
+          href="https://play.google.com/store/apps/details?id=org.msl.Pegasus&hl=en"
+          target="_blank"
+          >Download</a
+        >
+      </div>
+
+      <button title="Select theme" class="theme show" (click)="darkapp()">
+        <i
+          style="font-size: 32px; vertical-align: top"
+          class="lni"
+          [ngClass]="{
+              'lni-sun-1 ': this.dark,
+              'lni-moon-half-right-5': !this.dark,
+              'theme-light-bg1': this.dark,
+              'theme-dark-bg1': !this.dark
+            }"
+        ></i>
+      </button>
+    </nav>
+  </div>
+</header>
+
+
+
+<main>
+  <div
+    [ngClass]="{ 'theme-dark-bg': this.dark, 'theme-light-bg': !this.dark }"
+    id="movetoTop"
+  >
+    <div class="main">
+      <div>
+        <section class="mainsection main-banner" id="movetohome">
+          <div class="mainsection-inn">
+            <h1
+              [ngClass]="{
+                  ' light-color': this.dark,
+                  'dark-color': !this.dark
+                }"
+            >
+              PEGASUS POS
+            </h1>
+
+            <h2
+              [ngClass]="{
+                  ' light-color': this.dark,
+                  'dark-color': !this.dark
+                }"
+            >
+              The <mark> <i>All-in-one Order</i> </mark> Management System
+              <br />
+              Take Your Restaurant Online,<br />
+              Sell smart, Sell online,
+              <br />
+              Supports <b>Emulators,</b> <b> Tablets,</b> <b> Phones</b>
+            </h2>
+
+            <div class="googleplay-cen">
+              <a
+                href="https://play.google.com/store/apps/details?id=org.msl.Pegasus&hl=en"
+                target="_blank"
+              >
+                <img
+                  [ngClass]="{
+                      ' googleplay-light': this.dark,
+                      googleplay: !this.dark
+                    }"
+                  src="/assets/images/googleplay-removebg-preview.png"
+                  alt=""
+                />
+              </a>
+            </div>
+          </div>
+
+          <div class="mainimg-container">
+            <div
+              id="carouselExampleIndicators"
+              class="carousel slide carousel-fade"
+              data-ride="carousel"
+            >
+              <div class="carousel-inner" style="height: 100vh">
+                <div class="carousel-item">
+                  <img
+                    class="d-block w-100"
+                    src="/assets/images/Copy_of_PEGASUS_hd__11_-removebg (1).png"
+                    alt="Second slide"
+                  />
+                </div>
+                <div class="carousel-item active onmobile">
+                  <img
+                    class="d-block w-100"
+                    src="/assets/images/handpos1-removebg-preview (1).png"
+                    alt="First slide"
+                  />
+                </div>
+                <!-- <div class="carousel-item">
+                  <img
+                    class="d-block w-75"
+                    src="/assets/images/onlineweb-removebg-preview.png"
+                    alt="Third slide"
+                  />
+                </div> -->
+              </div>
+              <!-- <a
+                class="carousel-control-prev"
+                href="#carouselExampleIndicators"
+                role="button"
+                data-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a
+                class="carousel-control-next"
+                href="#carouselExampleIndicators"
+                role="button"
+                data-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="sr-only">Next</span>
+              </a> -->
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <section class="logo-slider" id="movetoclient">
+      <div class="container cards">
+        <div class="row align-items-center">
+          <div class="container rounded">
+            <h1
+              [ngClass]="{
+                  ' light-color': this.dark,
+                  'dark-color': !this.dark
+                }"
+            >
+              Trusted By
+            </h1>
+            <div class="slider">
+              <div class="logos">
+                <i class="fa-4x"
+                  ><img src="/assets/images/Soft-Swirl-Logo.jpg" alt=""
+                /></i>
+                <i class="fa-4x"
+                  ><img src="/assets/images/image (1).png" alt=""
+                /></i>
+                <i class="fa-4x"
+                  ><img src="/assets/images/image (2).png" alt=""
+                /></i>
+                <i class="fa-4x"
+                  ><img src="/assets/images/image (3).png" alt=""
+                /></i>
+                <i class="fa-4x"
+                  ><img src="/assets/images/image6.jpg" alt=""
+                /></i>
+                <i class="fa-4x"
+                  ><img src="/assets/images/image (4).png" alt=""
+                /></i>
+                <i class="fa-4x"
+                  ><img src="/assets/images/image (5).png" alt=""
+                /></i>
+                <i class="fa-4x"
+                  ><img src="/assets/images/Borcelle ice cream.png" alt=""
+                /></i>
+
+                <i class="fa-4x"
+                  ><img src="/assets/images/Soft-Swirl-Logo.jpg" alt=""
+                /></i>
+                <i class="fa-4x"
+                  ><img src="/assets/images/image (1).png" alt=""
+                /></i>
+                <i class="fa-4x"
+                  ><img src="/assets/images/image (2).png" alt=""
+                /></i>
+                <i class="fa-4x"
+                  ><img src="/assets/images/image (3).png" alt=""
+                /></i>
+                <i class="fa-4x"
+                  ><img src="/assets/images/image6.jpg" alt=""
+                /></i>
+                <i class="fa-4x"
+                  ><img src="/assets/images/image (4).png" alt=""
+                /></i>
+                <i class="fa-4x"
+                  ><img src="/assets/images/image (5).png" alt=""
+                /></i>
+                <i class="fa-4x"
+                  ><img src="/assets/images/Borcelle ice cream.png" alt=""
+                /></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      [ngClass]="{
+          ' light-color': this.dark,
+          'dark-color': !this.dark
+        }"
+    >
+      <h1
+        [ngClass]="{
+            ' light-color': this.dark,
+            'dark-color': !this.dark
+          }"
+      >
+        A fresh approach to customer <br />
+        with pegasus POS
+      </h1>
+
+      <div class="approach">
+        <div class="approachborder">
+          <div>
+            <i class="fa-brands fa-android pb-3"></i>
+          </div>
+          <div>
+            <h4 class="pb-2">
+              Seamless Multi-Device <br />
+              Compatibility
+            </h4>
+            <p class="pt-2">
+              Pegasus POS works effortlessly across a <br />
+              variety of devices, including tablets, smartphones, <br />
+              and traditional POS hardware, allowing businesses to <br />
+              operate on the go or at any location with ease.
+            </p>
+          </div>
+        </div>
+        <div class="approachborder">
+          <div>
+            <i class="fa-solid fa-arrows-rotate pb-3"></i>
+          </div>
+          <div>
+            <h4 class="pb-2">
+              Real-Time Data Syncing <br />
+              & Cloud Integration
+            </h4>
+            <p class="pt-2">
+              The system offers real-time data synchronization <br />
+              and cloud-based functionality, ensuring that sales, <br />
+              inventory, and customer data are always <br />
+              up to date, accessible from anywhere, <br />
+            </p>
+          </div>
+        </div>
+        <div class="approachborder">
+          <div>
+            <i class="fa-solid fa-business-time pb-3"></i>
+          </div>
+          <div>
+            <h4 class="pb-2">
+              Customizable & Scalable <br />
+              for Business Growth
+            </h4>
+            <p class="pt-2">
+              Pegasus POS is highly customizable to meet <br />
+              the specific needs of businesses across various industries. Its
+              scalable architecture allows for easy expansion as your business
+              grows.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section1 main-banner" id="movetofeature">
+      <div>
+        <h1
+          class="pb-4"
+          [ngClass]="{
+              ' light-color': this.dark,
+              'dark-color': !this.dark
+            }"
+        >
+          Pegasus POS Supports
+        </h1>
+        <div
+          [ngClass]="{
+              ' light-color': this.dark,
+              'dark-color': !this.dark
+            }"
+        >
+          <div class="innercard pb-5">
+            <div>
+              <i class="fa-brands fa-android pr-3"></i>
+            </div>
+            <div>
+              <h4>Android / iOS Apps</h4>
+              <p class="pt-2">
+                Available on both Android and iOS, <br />
+                allowing for seamless integration across devices and platforms.
+              </p>
+            </div>
+          </div>
+
+          <div class="innercard pb-5">
+            <div>
+              <i class="fa-solid fa-clock pr-3"></i>
+            </div>
+            <div>
+              <h4>Real time & Offline Capabilities</h4>
+              <p class="pt-2">
+                Operates smoothly both online and offline, <br />
+                with real-time syncing once the internet connection is restored
+              </p>
+            </div>
+          </div>
+          <div class="innercard pb-5">
+            <div>
+              <i class="fa-solid fa-thumbs-up pr-3"></i>
+            </div>
+            <div>
+              <h4>Powerful, Portable, and Efficient</h4>
+              <p class="pt-2">
+                A robust, portable solution that combines high performance
+                <br />
+                with ease of use, designed for efficiency in any environment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img
+          src="/assets/images/Copy_of_PEGASUS__5_-removebg-preview (1).png"
+          alt=""
+        />
+      </div>
+    </section>
+    <section class="section2">
+      <div>
+        <h1
+          class="pb-4"
+          [ngClass]="{
+              ' light-color': this.dark,
+              'dark-color': !this.dark
+            }"
+        >
+          Pegasus POS Dashboard
+        </h1>
+
+        <div
+          [ngClass]="{
+              ' light-color': this.dark,
+              'dark-color': !this.dark
+            }"
+        >
+          <div class="innercard pb-5">
+            <div>
+              <i class="fa-solid fa-desktop pr-3"></i>
+            </div>
+            <div>
+              <h4>Intuitive Product Management Dashboard</h4>
+              <p class="pt-2">
+                Simplified, user-friendly dashboard for effortless <br />
+                product tracking and management.
+              </p>
+            </div>
+          </div>
+
+          <div class="innercard pb-5">
+            <div>
+              <i class="fa-solid fa-clock pr-3"></i>
+            </div>
+            <div>
+              <h4>Real-Time Product Tracking</h4>
+              <p class="pt-2">
+                Track product inventory and sales in real time, <br />
+                ensuring up-to-date stock levels.
+              </p>
+            </div>
+          </div>
+          <div class="innercard pb-5">
+            <div>
+              <i class="fa-solid fa-file-export pr-2"></i>
+            </div>
+            <div>
+              <h4>Seamless Integration with Sales and Reports</h4>
+              <p class="pt-2">
+                Effortlessly sync product data with sales and reporting <br />
+                features for accurate, real-time insights.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="divimg2">
+          <img
+            class="img3"
+            src="/assets/images/dash-removebg-preview.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </section>
+    <section class="section3 main-banner">
+      <div>
+        <h1
+          class="pb-4"
+          [ngClass]="{
+              ' light-color': this.dark,
+              'dark-color': !this.dark
+            }"
+        >
+          Pegasus POS Analytics
+        </h1>
+
+        <div
+          [ngClass]="{
+              ' light-color': this.dark,
+              'dark-color': !this.dark
+            }"
+        >
+          <div class="innercard pb-5">
+            <div>
+              <i class="fa-solid fa-chart-line pr-3"></i>
+            </div>
+            <div>
+              <h4>In-depth Product Performance Insights</h4>
+              <p class="pt-2">
+                Gain in-depth insights into the performance of each product,
+                <br />
+                helping you identify top sellers and underperformers.
+              </p>
+            </div>
+          </div>
+
+          <div class="innercard pb-5">
+            <div>
+              <i class="fa-solid fa-chart-pie pr-3"></i>
+            </div>
+            <div>
+              <h4>Visual Data Representation</h4>
+              <p class="pt-2">
+                Visualize key metrics with graphs, charts, and reports,<br />
+                making complex data easy to understand and act upon.
+              </p>
+            </div>
+          </div>
+          <div class="innercard pb-5">
+            <div>
+              <i class="fa-solid fa-bullseye pr-3"></i>
+            </div>
+            <div>
+              <h4>Actionable Insights to Drive Strategy</h4>
+              <p class="pt-2">
+                Leverage data-driven insights to refine your marketing, <br />
+                inventory, and sales strategies for maximum growth and
+                efficiency.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img
+          src="/assets/images/Copy_of_PEGASUS__15_-removebg-preview_upscaled.png"
+          alt=""
+        />
+      </div>
+    </section>
+    <section class="section4">
+      <div>
+        <h1
+          class="pb-4"
+          [ngClass]="{
+              ' light-color': this.dark,
+              'dark-color': !this.dark
+            }"
+        >
+          Pegasus POS <br />
+          Online Ordering Website
+        </h1>
+
+        <div
+          [ngClass]="{
+              ' light-color': this.dark,
+              'dark-color': !this.dark
+            }"
+        >
+          <div class="innercard pb-5">
+            <div>
+              <i class="fa-solid fa-store pr-3"></i>
+            </div>
+            <div>
+              <h4>Seamless Integration with Online Store</h4>
+              <p class="pt-2">
+                Effortlessly integrate with your online store, syncing products,
+                orders, <br />
+                and inventory in real time for a unified sales experience.
+              </p>
+            </div>
+          </div>
+
+          <div class="innercard pb-5">
+            <div>
+              <i class="fa-solid fa-headset pr-3"></i>
+            </div>
+            <div>
+              <h4>Call Center Integration</h4>
+              <p class="pt-2">
+                Manage both in-store and online orders from a single,
+                centralized platform, <br />
+                with seamless call center integration for better customer
+                service.
+              </p>
+            </div>
+          </div>
+          <div class="innercard pb-5">
+            <div>
+              <i class="fa-solid fa-clock-rotate-left pr-3"></i>
+            </div>
+            <div>
+              <h4>Customer Order History and Data</h4>
+              <p class="pt-2">
+                Track and store customer order history and data, <br />
+                enabling personalized service and targeted marketing efforts.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="img2">
+        <img src="/assets/images/onlineweb-removebg-preview.png" alt="" />
+      </div>
+    </section>
+
+    <section class="section3 main-banner">
+      <div>
+        <h1
+          class="pb-4"
+          [ngClass]="{
+              ' light-color': this.dark,
+              'dark-color': !this.dark
+            }"
+        >
+          Pegasus POS KDS <br />
+          (Kitchen Display System)
+        </h1>
+
+        <div
+          [ngClass]="{
+              ' light-color': this.dark,
+              'dark-color': !this.dark
+            }"
+        >
+          <div class="innercard pb-5">
+            <div>
+              <i class="fa-solid fa-clock pr-3"></i>
+            </div>
+            <div>
+              <h4>Real-Time Order Display</h4>
+              <p class="pt-2">
+                Orders from the POS are instantly displayed in the kitchen,
+                <br />
+                enabling quicker meal preparation.
+              </p>
+            </div>
+          </div>
+
+          <div class="innercard pb-5">
+            <div>
+              <i class="fa-solid fa-table pr-3"></i>
+            </div>
+            <div>
+              <h4>Order Categorization</h4>
+              <p class="pt-2">
+                Orders are categorized (e.g., appetizers, drinks), <br />
+                optimizing kitchen workflow.
+              </p>
+            </div>
+          </div>
+          <div class="innercard pb-5">
+            <div>
+              <i class="fa-solid fa-arrow-down-1-9 pr-3"></i>
+            </div>
+            <div>
+              <h4>Order Priority & Timing</h4>
+              <p class="pt-2">
+                High-priority orders are highlighted for <br />
+                fast and accurate processing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img src="/assets/images/kds2.png" alt="" />
+      </div>
+    </section>
+
+    <section class="section4 riderimg">
+      <div>
+        <h1
+          class="pb-4"
+          [ngClass]="{
+              ' light-color': this.dark,
+              'dark-color': !this.dark
+            }"
+        >
+          Pegasus POS <br />
+          Rider Tracking System
+        </h1>
+
+        <div
+          [ngClass]="{
+              ' light-color': this.dark,
+              'dark-color': !this.dark
+            }"
+        >
+          <div class="innercard pb-5">
+            <div>
+              <i class="fa-solid fa-map-location-dot pr-3"></i>
+            </div>
+            <div>
+              <h4>Real-Time Rider Tracking</h4>
+              <p class="pt-2">
+                Track the exact location of delivery riders in real-time,
+                ensuring that <br />
+                both customers and restaurant staff have up-to-date information.
+              </p>
+            </div>
+          </div>
+
+          <div class="innercard pb-5">
+            <div>
+              <i class="fa-solid fa-chalkboard-user pr-3"></i>
+            </div>
+            <div>
+              <h4>Rider Management Dashboard</h4>
+              <p class="pt-2">
+                A centralized dashboard to manage rider assignments, track their
+                progress, <br />
+                and monitor real-time performance
+              </p>
+            </div>
+          </div>
+          <div class="innercard pb-5">
+            <div>
+              <i class="fa-solid fa-chart-area pr-3"></i>
+            </div>
+            <div>
+              <h4>Rider Performance Monitoring</h4>
+              <p class="pt-2">
+                Track delivery times, rider efficiency, and performance metrics
+                <br />
+                to evaluate and improve rider productivity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="img2">
+        <img src="/assets/images/rider.png" alt="" />
+      </div>
+    </section>
+    <!-- <section class="integrate">
+        <h1
+          [ngClass]="{
+            ' light-color': this.dark,
+            'dark-color': !this.dark
+          }"
+        >
+          One Solution, Endless Possibilities <br />
+          Pegasus POS Integration
+        </h1>
+      </section> -->
+
+    <section
+      id="gotointe"
+      [ngClass]="{
+          ' light-color': this.dark,
+          'dark-color': !this.dark
+        }"
+    >
+      <h1
+        [ngClass]="{
+            ' light-color': this.dark,
+            'dark-color': !this.dark
+          }"
+      >
+        One Solution, Endless Possibilities <br />
+        Pegasus POS Integration
+      </h1>
+
+      <div class="approach">
+        <div class="approachborder food">
+          <div>
+            <img
+              style="
+                position: relative;
+                right: 20px;
+                width: 150px;
+                margin-bottom: 10px;
+              "
+              src="/assets/images/download-removebg-preview.png"
+              alt=""
+            />
+            <!-- <i class="fa-brands fa-android pb-3"></i> -->
+          </div>
+          <div>
+            <h4 class="pb-2">
+              Seamless Integration with <br />
+              Foodpanda
+            </h4>
+            <p class="pt-2">
+              Effortlessly connect with Foodpanda to sync orders, <br />
+              menus, and promotions in real time. Orders placed <br />
+              through Foodpanda are automatically synced <br />
+              with your POS system.
+              <br />
+            </p>
+          </div>
+        </div>
+        <div class="approachborder">
+          <div>
+            <img
+              style="
+                position: relative;
+                margin-bottom: 30px;
+                border-radius: 20px;
+                width: 200px;
+                margin-top: 10px;
+              "
+              src="/assets/images/sp.png"
+              alt=""
+            />
+            <!-- <i class="fa-solid fa-arrows-rotate pb-3"></i> -->
+          </div>
+          <div>
+            <h4 class="pb-2">
+              Seamless Integration with <br />
+              Safepay
+            </h4>
+            <p class="pt-2">
+              SafePay is a payment solution in Pakistan <br />
+              that allows users to make secure online payments. <br />
+              It enables users to pay for services such as utilities, <br />
+              mobile top-ups, and online shopping in Pakistan. <br />
+              <br />
+            </p>
+          </div>
+        </div>
+        <div class="approachborder">
+          <div>
+            <img
+              style="
+                position: relative;
+                right: 5px;
+                margin-bottom: 10px;
+                border-radius: 20px;
+              "
+              src="/assets/images/googlemap.png"
+              alt=""
+            />
+            <!-- <i class="fa-solid fa-business-time pb-3"></i> -->
+          </div>
+          <div>
+            <h4 class="pb-2">
+              Seamless Integration with <br />
+              Google Map
+            </h4>
+            <p class="pt-2">
+              Integrating Google Maps with Pegasus POS <br />
+              (Point of Sale) can enhance your system by providing <br />
+              location-based services like mapping customer <br />
+              addresses, tracking deliveries, and visualizing routes.
+            </p>
+          </div>
+        </div>
+        <div class="approachborder">
+          <div>
+            <img
+              style="
+                position: relative;
+                right: 5px;
+                margin-bottom: 20px;
+                margin-top: 10px;
+                border-radius: 20px;
+              "
+              src="/assets/images/sg.png"
+              alt=""
+            />
+            <!-- <i class="fa-brands fa-android pb-3"></i> -->
+          </div>
+          <div>
+            <h4 class="pb-2">
+              Seamless Integration with <br />
+              SendGrid
+            </h4>
+            <p class="pt-2">
+              Integrating SendGrid with Pegasus POS <br />
+              (Point of Sale) can enhance your system by enabling <br />
+              automated email communications for various <br />
+              activities like order confirmations, receipts, <br />
+              promotions, customer support, and more.
+            </p>
+          </div>
+        </div>
+        <div class="approachborder">
+          <div>
+            <img
+              style="
+                position: relative;
+                right: 5px;
+                margin-bottom: 20px;
+                margin-top: 10px;
+                border-radius: 20px;
+              "
+              src="/assets/images/send.png"
+              alt=""
+            />
+            <!-- <i class="fa-solid fa-arrows-rotate pb-3"></i> -->
+          </div>
+          <div>
+            <h4 class="pb-2">
+              Seamless Integration with <br />
+              SendPK
+            </h4>
+            <p class="pt-2">
+              Integrating SendPK (or any similar service) with <br />
+              your Pegasus POS system can streamline <br />
+              communication with customers and enhance the <br />
+              user experience through automated <br />
+              notifications and messaging.
+            </p>
+          </div>
+        </div>
+        <div class="approachborder">
+          <div>
+            <img
+              style="
+                position: relative;
+                right: 5px;
+                margin-bottom: 20px;
+                margin-top: 10px;
+                border-radius: 20px;
+              "
+              src="/assets/images/fbr.jpg"
+              alt=""
+            />
+            <!-- <i class="fa-solid fa-business-time pb-3"></i> -->
+          </div>
+          <div>
+            <h4 class="pb-2">
+              Seamless Integration with <br />
+              FBR (and others SRB, PRA, KPRA)
+            </h4>
+            <p class="pt-2">
+              Integrating with the FBR (Federal Board of Revenue) <br />
+              ensures that your Pegasus POS system stays compliant with tax
+              regulations, automates the generation of e-invoices, and
+              simplifies tax reporting. your integration with FBR will be
+              efficient.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="section3 main-banner">
+        <div>
+          <h1
+            class="pb-4"
+            [ngClass]="{
+              ' light-color': this.dark,
+              'dark-color': !this.dark
+            }"
+          >
+            Pegasus POS <br />
+            Foodpanda Integration
+          </h1>
+  
+          <div
+            [ngClass]="{
+              ' light-color': this.dark,
+              'dark-color': !this.dark
+            }"
+          >
+            <div class="innercard pb-5">
+              <div>
+                <i class="fa-solid fa-gears pr-2"></i>
+              </div>
+              <div>
+                <h4>Seamless Integration with Foodpanda</h4>
+                <p class="pt-2">
+                  Effortlessly connect with Foodpanda to sync orders, <br />
+                  menus, and promotions in real time.
+                </p>
+              </div>
+            </div>
+  
+            <div class="innercard pb-5">
+              <div>
+                <i class="fa-solid fa-headset pr-3"></i>
+              </div>
+              <div>
+                <h4>Automatic Order Syncing</h4>
+                <p class="pt-2">
+                  
+                  Orders placed through Foodpanda are automatically <br />
+                  synced with your POS system.
+                </p>
+              </div>
+            </div>
+            <div class="innercard pb-5">
+              <div>
+                <i class="fa-solid fa-clock-rotate-left pr-3"></i>
+              </div>
+              <div>
+                <h4>Real-Time Menu Updates</h4>
+                <p class="pt-2">
+                  
+                  Instantly update your menu on Foodpanda directly from the POS,
+                  <br />
+                  ensuring that pricing, availability, and items are always
+                  accurate.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img
+            class="img5"
+            src="/assets/images/foodpan1-removebg-preview (1).png"
+            alt=""
+          />
+        </div>
+      </section> -->
+
+    <section>
+      <!-- <h5 class="h5">Frequently Asked Questions</h5>
+  
+        <div class="faq">
+          <div class="faq1" onclick="show()">
+            What is Netflix?
+            <span class="show-div"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                role="img"
+                data-icon="PlusLarge"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M17 17V3H19V17H33V19H19V33H17V19H3V17H17Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+              <span class="hide-div"
+                ><svg
+                  style="transform: rotate(314deg)"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  width="36"
+                  height="36"
+                  viewBox="0 0 36 36"
+                  role="img"
+                  data-icon="PlusLarge"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M17 17V3H19V17H33V19H19V33H17V19H3V17H17Z"
+                    fill="red"
+                  ></path>
+                </svg>
+              </span>
+            </span>
+          </div>
+          <div id="myDIV" class="faq1anw" style="display: none">
+            Netflix is a streaming service that offers a wide variety of
+            award-winning TV shows, movies, anime, documentaries, and more on
+            thousands of internet-connected devices. <br />
+  
+            You can watch as much as you want, whenever you want without a single
+            commercial – all for one low monthly price. There's always something
+            new to discover and new TV shows and movies are added every week!
+          </div>
+  
+          <div class="faq1">
+            How much does Netflix Cost?
+            <span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                role="img"
+                data-icon="PlusLarge"
+                aria-hidden="true"
+                class="elj7tfr3 default-ltr-cache-1dpnjn e164gv2o4"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M17 17V3H19V17H33V19H19V33H17V19H3V17H17Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </span>
+          </div>
+          <div class="faq1">
+            Where can i watch?
+            <span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                role="img"
+                data-icon="PlusLarge"
+                aria-hidden="true"
+                class="elj7tfr3 default-ltr-cache-1dpnjn e164gv2o4"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M17 17V3H19V17H33V19H19V33H17V19H3V17H17Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </span>
+          </div>
+          <div class="faq1">
+            How do i cancle?
+  
+            <span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                role="img"
+                data-icon="PlusLarge"
+                aria-hidden="true"
+                class="elj7tfr3 default-ltr-cache-1dpnjn e164gv2o4"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M17 17V3H19V17H33V19H19V33H17V19H3V17H17Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </span>
+          </div>
+          <div class="faq1">
+            What can i watch on Netflix?
+            <span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                role="img"
+                data-icon="PlusLarge"
+                aria-hidden="true"
+                class="elj7tfr3 default-ltr-cache-1dpnjn e164gv2o4"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M17 17V3H19V17H33V19H19V33H17V19H3V17H17Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </span>
+          </div>
+          <div class="faq1">
+            Is Netflix good for Kids?
+            <span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                role="img"
+                data-icon="PlusLarge"
+                aria-hidden="true"
+                class="elj7tfr3 default-ltr-cache-1dpnjn e164gv2o4"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M17 17V3H19V17H33V19H19V33H17V19H3V17H17Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </span>
+          </div>
+  
+          <div class="box">
+            <h2>
+              Ready to watch? Enter your email to create or restart your
+              membership.
+              <h2></h2>
+            </h2>
+            <div class="btn">
+              <input placeholder="Enter Email" class="input" type="text" />
+              <button class="getbtn">
+                Get Started
+                <span
+                  ><img
+                    width="20"
+                    src="/assets/images/down.svg"
+                    alt=""
+                /></span>
+              </button>
+            </div>
+          </div>
+        </div> -->
+    </section>
+
+    <section class="testimonial-mainsection" id="gotoreview">
+      <div class="googleplay-cen">
+        <img
+          class="review-light"
+          src="/assets/images/istockphot-removebg_upscaled.png"
+          alt=""
+        />
+      </div>
+
+      <div>
+        <h1
+          [ngClass]="{
+              ' light-color': this.dark,
+              'dark-color': !this.dark
+            }"
+        >
+          What Clients Say
+        </h1>
+        <div style="width: 500px; height: 300px">
+          <div
+            id="carouselExampleIndicators1"
+            class="carousel slide carousel-fade"
+            data-ride="carousel"
+          >
+            <ol class="carousel-indicators">
+              <li
+                data-target="#carouselExampleIndicators1"
+                data-slide-to="0"
+                class="active"
+              ></li>
+              <li
+                data-target="#carouselExampleIndicators1"
+                data-slide-to="1"
+              ></li>
+              <li
+                data-target="#carouselExampleIndicators1"
+                data-slide-to="2"
+              ></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div>
+                  <h2
+                    [ngClass]="{
+                        ' light-color': this.dark,
+                        'dark-color': !this.dark
+                      }"
+                  >
+                    "Probably the smoothest restaurant <br />
+                    technology platform in Pakistan today."
+                    <br />
+                    <br />
+                    <br />
+                  </h2>
+
+                  <h5
+                    [ngClass]="{
+                        ' light-color': this.dark,
+                        'dark-color': !this.dark
+                      }"
+                  >
+                    <b> Mohammad Jawad </b> <br />
+                    <label style="font-weight: lighter">Restaurant Onwer</label>
+                  </h5>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div>
+                  <h2
+                    [ngClass]="{
+                        ' light-color': this.dark,
+                        'dark-color': !this.dark
+                      }"
+                  >
+                    "One of the greatest app and <br />
+                    fully satisfied."
+                    <br />
+                    <br />
+                    <br />
+                  </h2>
+
+                  <h5
+                    [ngClass]="{
+                        ' light-color': this.dark,
+                        'dark-color': !this.dark
+                      }"
+                  >
+                    <b> Saqlain Ch </b> <br />
+                    <label style="font-weight: lighter">Restaurant Onwer</label>
+                  </h5>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div>
+                  <h2
+                    [ngClass]="{
+                        ' light-color': this.dark,
+                        'dark-color': !this.dark
+                      }"
+                  >
+                    "Good user experience and <br />
+                    support all devices"
+                    <br />
+                    <br />
+                    <br />
+                  </h2>
+
+                  <h5
+                    [ngClass]="{
+                        ' light-color': this.dark,
+                        'dark-color': !this.dark
+                      }"
+                  >
+                    <b> Soft Swirl </b> <br />
+                    <label style="font-weight: lighter">Restaurant Onwer</label>
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <!-- <a
+              class="carousel-control-prev"
+              href="#carouselExampleIndicators1"
+              role="button"
+              data-slide="prev"
+            >
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#carouselExampleIndicators1"
+              role="button"
+              data-slide="next"
+            >
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="maindownloadsection">
+      <div class="downloadsection">
+        <h1>PEGASUS POS</h1>
+        <h2>
+          The All-in-one Order Management System
+          <br />
+          Take Your Restaurant Online,<br />
+          Sell smart, Sell online
+          <br />
+          Supports <b>Emulators,</b> <b> Tablets,</b> <b> Phones</b>
+        </h2>
+
+        <div class="maindownloadsection">
+          <a
+            href="https://play.google.com/store/apps/details?id=org.msl.Pegasus&hl=en"
+            target="_blank"
+          >
+            <img
+              class="googleplay"
+              src="/assets/images/googleplay3.png"
+              alt=""
+            />
+          </a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-list">
+        <span class="logo">
+          <img width="100" src="/assets/images/favicon1.png" alt="" />
+          <h2>
+            Pegasus <br />
+            POS
+          </h2>
+        </span>
+        <!-- <br> <label >The All-in-one <br> Order Management System
+        </label> -->
+      </div>
+      <div class="footer-list">
+        <label class="pb-3"><b>Company</b></label> <br />
+        <label
+          class="pb-3"
+          style="cursor: pointer"
+          (click)="gotohome('movetohome')"
+          >Home</label
+        >
+        <br />
+        <label
+          class="pb-3"
+          style="cursor: pointer"
+          (click)="gotofeature('movetofeature')"
+          >Features</label
+        >
+        <br />
+        <label
+          class="pb-3"
+          style="cursor: pointer"
+          (click)="gotoclient('movetoclient')"
+          >Clients</label
+        >
+        <br />
+        <label
+          class="pb-3"
+          style="cursor: pointer"
+          (click)="gootoreview('gotoreview')"
+          >Testimonials</label
+        >
+        <br />
+        <label
+          class="pb-3"
+          style="cursor: pointer"
+          (click)="gotointegration('gotointe')"
+          >Integrations</label
+        >
+        <br />
+      </div>
+      <div class="footer-list">
+        <label class="pb-3"><b>Solutions</b></label> <br />
+        <label class="pb-3">Emulator, Tablets, Phones</label>
+        <br />
+        <label class="pb-3"> Dashboard</label> <br />
+        <label class="pb-3"> Analytics </label> <br />
+        <label class="pb-3"> Order Taking Website </label><br />
+        <label class="pb-3"> Kitchen Display System </label> <br />
+        <label> Rider Tracking System </label> <br />
+      </div>
+      <div class="footer-list">
+        <label class="pb-3"><b>Integrations</b></label> <br />
+        <label class="pb-3"> Foodpanda </label> <br />
+        <label class="pb-3"> Safepay </label> <br />
+        <label class="pb-3"> Google Map </label> <br />
+        <label class="pb-3"> Sendgrid</label> <br />
+        <label class="pb-3"> Sendpk</label> <br />
+
+        <label class="pb-3"> Tax Integration (FBR, SRB, PRA, KPRA) </label>
+        <br />
+      </div>
+      <div class="footer-list">
+        <label class="pb-3"><b>Contact Us</b></label> <br />
+        <label class="pb-3"> Email : m.irfanjamil102&#64;gmail.com</label>
+        <br />
+        <label> +92 312 2710834 </label><br />
+        <br />
+        <label class="pb-3"><b>Follow Us</b></label> <br />
+        <i
+          style="
+            background: -webkit-gradient(
+              linear,
+              left top,
+              left bottom,
+              from(#1b1f2c),
+              to(#1b1f2c)
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            vertical-align: middle;
+            font-size: 24px;
+          "
+          class="fa-brands fa-linkedin"
+        ></i>
+        <i
+          style="
+            background: -webkit-gradient(
+              linear,
+              left top,
+              left bottom,
+              from(#1b1f2c),
+              to(#1b1f2c)
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            vertical-align: middle;
+            font-size: 24px;
+          "
+          class="pl-3 fa-solid fa-envelope"
+        ></i>
+      </div>
+    </footer>
+
+    <div class="desigdby">
+      <label><b>Developed By Pegasus POS </b></label>
+    </div>
+
+    <button
+      *ngIf="isVisible"
+      title="Gototop"
+      class="gototop"
+      (click)="gotoTop()"
+    >
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <button title="Select theme" class="themefab fabshow" (click)="darkapp()">
+      <i
+        style="font-size: 32px; vertical-align: top"
+        class="lni"
+        [ngClass]="{
+            'lni-sun-1 ': this.dark,
+            'lni-moon-half-right-5': !this.dark,
+            'theme-light-bg1': this.dark,
+            'theme-dark-bg2': !this.dark
+          }"
+      ></i>
+    </button>
+  </div>
+</main>

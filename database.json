@@ -1,0 +1,54 @@
+{
+  "expense": [
+    {
+      "expencename": "Internet Bill",
+      "expenceamount": 1500,
+      "id": "2d7b"
+    },
+    {
+      "expencename": "Maintainance Bill",
+      "expenceamount": 2000,
+      "id": "529c"
+    },
+    {
+      "expencename": "Gas Bill",
+      "expenceamount": 1000,
+      "id": "95e0"
+    },
+    {
+      "expencename": "others wwala",
+      "expenceamount": 1000,
+      "id": "36cd"
+    },
+    {
+      "expencename": "others",
+      "expenceamount": 3000,
+      "id": "36cd"
+    },
+    {
+      "id": "d3c3",
+      "expencename": "bike repair",
+      "expenceamount": 3000
+    },
+    {
+      "expencename": "Plumber Cost ",
+      "expenceamount": 1000,
+      "id": "2695"
+    },
+    {
+      "id": "5612",
+      "expencename": "Clothes buying cost",
+      "expenceamount": 3000
+    },
+    {
+      "expencename": "stitching costt",
+      "expenceamount": 1500,
+      "id": "c164"
+    },
+    {
+      "expencename": "Home Rent",
+      "expenceamount": 40000,
+      "id": "9212"
+    }
+  ]
+}
