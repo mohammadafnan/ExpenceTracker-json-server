@@ -54,9 +54,9 @@
       </tbody>
     </table>
   </div>
-
+  <!-- [ngClass]="totalexp() > totalbud() ? 'card3' : 'card1'" -->
   <div class="center">
-    <h2 [ngClass]="totalexp() > totalbud() ? 'card3' : 'card1'">
+    <h2 [ngClass]="{'card3': totalexp() > totalbud(),'card1': totalexp() < totalbud(),'card2': totalexp() == totalbud()}">
       Total Expence - {{ totalexp() }}
       <label class="lbl" *ngIf="totalexp() > totalbud()">Expence exceed</label>
     </h2>
