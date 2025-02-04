@@ -25,7 +25,7 @@
           class="add"
           [disabled]="!form.valid"
         >
-          {{ this.isedit == true ? "Edit" : "Add" }}
+          Add
         </button>
       </form>
     </div>
@@ -60,6 +60,11 @@
       Total Expence - {{ totalexp() }}
       <label class="lbl" *ngIf="totalexp() > totalbud()">Expence exceed</label>
     </h2>
+    <!-- <span class="ope">{{ totalexp() > totalbud() ? ">" : "<" }}</span> -->
+    <span class="ope" *ngIf="totalexp() == totalbud()">=</span>
+    <span class="ope" *ngIf="totalexp() > totalbud()">></span>
+    <span class="ope" *ngIf="totalexp() < totalbud()"><</span>
+
     <h2 class="card2 ml-5">Total budget - {{ totalbud() }}</h2>
   </div>
 </div>
