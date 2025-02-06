@@ -25,10 +25,10 @@
           class="add"
           [disabled]="!form.valid"
         >
-          Add
+          <i class="lni lni-plus"></i> Add
         </button>
-        <button class="export" (click)="exportToExcel()" >
-          Export
+        <button class="export" (click)="exportToExcel()">
+          <i class="lni lni-cloud-download"></i>Export
         </button>
       </form>
     </div>
@@ -51,9 +51,21 @@
           <td>{{ i + 1 }}</td>
           <td>{{ item.expencename }}</td>
           <td>{{ item.expenceamount }}</td>
-          <td class="del" (click)="deleteExpense(item)">Delete</td>
-          <td class="update" (click)="editExpense(item)">Edit</td>
+          <td class="del" (click)="deleteExpense(item)">
+            <i class="lni lni-trash-3"></i>
+          </td>
+          <td class="update" (click)="editExpense(item)">
+            <i class="lni lni-pencil-1"></i>
+          </td>
         </tr>
+        <tr>
+          <td class="totalrow" colspan="2"><strong>Total</strong></td>
+          <td class="totalrow">
+            <strong>{{ totalexp() }}</strong>
+          </td>
+          <td colspan="2"></td>
+        </tr>
+        <tr></tr>
       </tbody>
     </table>
   </div>
@@ -66,13 +78,15 @@
         card2: totalexp() == totalbud()
       }"
     >
+      <i *ngIf="totalexp() < totalbud()" class="lni lni-trend-down-1"></i>
+      <i *ngIf="totalexp() > totalbud()" class="lni lni-trend-up-1"></i>
       Total Expence - {{ totalexp() }}
       <label class="lbl" *ngIf="totalexp() < totalbud()">Under Budget</label>
       <label class="lbl" *ngIf="totalexp() == totalbud()"
-        >Expence equal from Budget</label
+        >Expense is equal to the budget.</label
       >
       <label class="lbl" *ngIf="totalexp() > totalbud()"
-        >Expence exceed from Budget</label
+        >Expence is exceed to the Budget</label
       >
     </h2>
     <!-- <span class="ope">{{ totalexp() > totalbud() ? ">" : "<" }}</span> -->
@@ -80,7 +94,11 @@
     <span class="ope" *ngIf="totalexp() > totalbud()">></span>
     <span class="ope" *ngIf="totalexp() < totalbud()"><</span>
 
-    <h2 class="card2 ml-5">Total budget - {{ totalbud() }}</h2>
-    <h2 class="card4 ml-5">Balance : {{ balacnce() }}</h2>
+    <h2 class="card2 ml-5">
+      <i class="lni lni-dollar-circle"></i>Total budget - {{ totalbud() }}
+    </h2>
+    <h2 class="card4 ml-5">
+      <i class="lni lni-weight-machine-1"></i>Balance : {{ balacnce() }}
+    </h2>
   </div>
 </div>
