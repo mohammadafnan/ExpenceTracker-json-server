@@ -25,10 +25,19 @@ table {
 }
 
 .totalrow {
-  border: 1px solid rgb(65, 65, 65);
+  border: 1px solid rgb(0, 255, 128);
   padding: 5px;
   border-radius: 10px;
+  border-style: dashed;
 }
+
+input {
+  border: 1px solid rgb(255, 255, 255);
+  background-color: transparent;
+  padding-left: 10px;
+  color: white;
+}
+
 th {
   padding-bottom: 15px;
 }
@@ -133,11 +142,11 @@ th {
   padding-left: 30px;
 }
 
-.icon{
+.icon {
   position: relative;
   top: 2px;
 }
-.icon2{
+.icon2 {
   position: relative;
   top: 4px;
   right: 5px;

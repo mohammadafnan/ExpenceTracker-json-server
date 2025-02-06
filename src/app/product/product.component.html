@@ -17,6 +17,7 @@
           formControlName="expenceamount"
         />
         <button
+          title="Add Expence"
           [ngClass]="{
             dis: form.valid == false,
             green: form.valid == true
@@ -27,7 +28,11 @@
         >
           <i class="lni lni-plus icon"></i> Add
         </button>
-        <button class="export" (click)="exportToExcel()">
+        <button
+          title="Download excel sheet"
+          class="export"
+          (click)="exportToExcel()"
+        >
           <i class="lni lni-cloud-download icon2"></i>Export
         </button>
       </form>
@@ -51,10 +56,18 @@
           <td>{{ i + 1 }}</td>
           <td>{{ item.expencename }}</td>
           <td>{{ item.expenceamount }}</td>
-          <td class="del" (click)="deleteExpense(item)">
+          <td
+            title="Delete row record"
+            class="del"
+            (click)="deleteExpense(item)"
+          >
             <i class="lni lni-trash-3"></i>
           </td>
-          <td class="update" (click)="editExpense(item)">
+          <td
+            title="Edit row record"
+            class="update"
+            (click)="editExpense(item)"
+          >
             <i class="lni lni-pencil-1"></i>
           </td>
         </tr>
