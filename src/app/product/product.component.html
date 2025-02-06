@@ -25,10 +25,10 @@
           class="add"
           [disabled]="!form.valid"
         >
-          <i class="lni lni-plus"></i> Add
+          <i class="lni lni-plus icon"></i> Add
         </button>
         <button class="export" (click)="exportToExcel()">
-          <i class="lni lni-cloud-download"></i>Export
+          <i class="lni lni-cloud-download icon2"></i>Export
         </button>
       </form>
     </div>
@@ -80,7 +80,7 @@
     >
       <i *ngIf="totalexp() < totalbud()" class="lni lni-trend-down-1"></i>
       <i *ngIf="totalexp() > totalbud()" class="lni lni-trend-up-1"></i>
-      Total Expence - {{ totalexp() }}
+      Total Expence : {{ totalexp() }}
       <label class="lbl" *ngIf="totalexp() < totalbud()">Under Budget</label>
       <label class="lbl" *ngIf="totalexp() == totalbud()"
         >Expense is equal to the budget.</label
@@ -95,10 +95,10 @@
     <span class="ope" *ngIf="totalexp() < totalbud()"><</span>
 
     <h2 class="card2 ml-5">
-      <i class="lni lni-dollar-circle"></i>Total budget - {{ totalbud() }}
+      <i class="lni lni-dollar-circle icon2"></i>Total budget : {{ totalbud() }}
     </h2>
     <h2 class="card4 ml-5">
-      <i class="lni lni-weight-machine-1"></i>Balance : {{ balacnce() }}
+      <i class="lni lni-weight-machine-1 icon2"></i>Balance : {{ balacnce() }}
     </h2>
   </div>
 </div>

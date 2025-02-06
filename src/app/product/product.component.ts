@@ -87,10 +87,28 @@ export class ProductComponent {
   }
 
   exportToExcel(): void {
-    const element = document.getElementById('excel-table');
+    const element: any = document.getElementById('excel-table');
+    // Remove action columns (Delete and Edit) from cloned table
+    const headerRow = element.tHead.rows[0];
+    headerRow.deleteCell(3); // Remove "Delete" header (4th column)
+    headerRow.deleteCell(3); // Remove "Edit" header (now 4th column after previous deletion)
     const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
     const wb: XLSX.WorkBook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Expenses');
     XLSX.writeFile(wb, 'expenses.xlsx');
   }
+
+  // exportToExcel(): void {
+  //   // Clone the original table to avoid modifying the DOM element directly
+  //   const originalTable: any = document.getElementById('excel-table');
+  //   // const clonedTable: any = originalTable.cloneNode(true) as HTMLTableElement;
+
+  //   // Create worksheet and workbook from modified table
+  //   const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(originalTable);
+  //   const wb: XLSX.WorkBook = XLSX.utils.book_new();
+  //   XLSX.utils.book_append_sheet(wb, ws, 'Expenses');
+
+  //   // Trigger download
+  //   XLSX.writeFile(wb, 'expenses.xlsx');
+  // }
 }
