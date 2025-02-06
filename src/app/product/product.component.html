@@ -27,12 +27,15 @@
         >
           Add
         </button>
+        <button class="export" (click)="exportToExcel()" >
+          Export
+        </button>
       </form>
     </div>
   </div>
 
   <div class="center">
-    <table>
+    <table id="excel-table">
       <thead>
         <tr>
           <th>S.no</th>
@@ -55,12 +58,22 @@
     </table>
   </div>
   <!-- [ngClass]="totalexp() > totalbud() ? 'card3' : 'card1'" -->
-  <div class="center">
-    <h2 [ngClass]="{'card3': totalexp() > totalbud(),'card1': totalexp() < totalbud(),'card2': totalexp() == totalbud()}">
+  <div class="center" id="excel-table">
+    <h2
+      [ngClass]="{
+        card3: totalexp() > totalbud(),
+        card1: totalexp() < totalbud(),
+        card2: totalexp() == totalbud()
+      }"
+    >
       Total Expence - {{ totalexp() }}
       <label class="lbl" *ngIf="totalexp() < totalbud()">Under Budget</label>
-      <label class="lbl" *ngIf="totalexp() == totalbud()">Expence equal from Budget</label>
-      <label class="lbl" *ngIf="totalexp() > totalbud()">Expence exceed from Budget</label>
+      <label class="lbl" *ngIf="totalexp() == totalbud()"
+        >Expence equal from Budget</label
+      >
+      <label class="lbl" *ngIf="totalexp() > totalbud()"
+        >Expence exceed from Budget</label
+      >
     </h2>
     <!-- <span class="ope">{{ totalexp() > totalbud() ? ">" : "<" }}</span> -->
     <span class="ope" *ngIf="totalexp() == totalbud()">=</span>
@@ -68,5 +81,6 @@
     <span class="ope" *ngIf="totalexp() < totalbud()"><</span>
 
     <h2 class="card2 ml-5">Total budget - {{ totalbud() }}</h2>
+    <h2 class="card4 ml-5">Balance : {{ balacnce() }}</h2>
   </div>
 </div>

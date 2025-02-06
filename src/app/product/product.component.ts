@@ -9,10 +9,10 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-
+import * as XLSX from 'xlsx'; // Import SheetJS
 @Component({
   selector: 'app-product',
-  imports: [NgFor, ReactiveFormsModule, NgClass,NgIf],
+  imports: [NgFor, ReactiveFormsModule, NgClass, NgIf],
   standalone: true,
   templateUrl: './product.component.html',
   styleUrl: './product.component.scss',
@@ -23,13 +23,11 @@ export class ProductComponent {
   form: FormGroup;
   isedit = false;
   iseditid: number | null = null;
+  budget = 50000;
+  num = 0;
 
   ngOnInit(): void {
     this._ExtrackerService.getExpenceData();
-
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    // this.load();
   }
 
   constructor(
@@ -56,7 +54,7 @@ export class ProductComponent {
   }
 
   editExpense(item: any) {
-    this.isedit == true
+    this.isedit == true;
     this.form.patchValue({
       expencename: item.expencename,
       expenceamount: item.expenceamount,
@@ -71,15 +69,28 @@ export class ProductComponent {
 
   totalexp() {
     let total = this._ExtrackerService.getdata;
-    let num = 0;
+    this.num = 0;
     for (let i = 0; i < total.length; i++) {
       const element = total[i];
-      num = num + element.expenceamount;
+      this.num = this.num + element.expenceamount;
     }
-    return num;
+    return this.num;
   }
-  totalbud(){
-    let budget = 50000
-    return budget
+  totalbud() {
+    this.budget = 50000;
+    return this.budget;
+  }
+
+  balacnce() {
+    let bal = this.budget - this.num;
+    return bal;
+  }
+
+  exportToExcel(): void {
+    const element = document.getElementById('excel-table');
+    const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Expenses');
+    XLSX.writeFile(wb, 'expenses.xlsx');
   }
 }
