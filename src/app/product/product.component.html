@@ -60,7 +60,9 @@
         <tr *ngFor="let item of _ExtrackerService.getdata; let i = index">
           <td>{{ i + 1 }}</td>
           <td>{{ item.expencename }}</td>
-          <td>{{ item.expenceamount }}</td>
+          <td>
+            {{ item.expenceamount | currency : "USD" : "symbol" : "2.0" }}
+          </td>
           <td
             title="Delete row record"
             class="del"
@@ -84,7 +86,9 @@
         <tr>
           <td class="totalrow" colspan="2"><strong>Total</strong></td>
           <td class="totalrow">
-            <strong>{{ totalexp() }}</strong>
+            <strong>{{
+              totalexp() | currency : "USD" : "symbol" : "2.0"
+            }}</strong>
           </td>
           <td colspan="2"></td>
         </tr>
@@ -103,7 +107,7 @@
     >
       <i *ngIf="totalexp() < totalbud()" class="lni lni-trend-down-1"></i>
       <i *ngIf="totalexp() > totalbud()" class="lni lni-trend-up-1"></i>
-      Total Expence : {{ totalexp() }}
+      Total Expence : {{ totalexp() | currency : "USD" : "symbol" : "2.0" }}
       <label class="lbl" *ngIf="totalexp() < totalbud()">Under Budget</label>
       <label class="lbl" *ngIf="totalexp() == totalbud()"
         >Expense is equal to the budget.</label
@@ -120,11 +124,12 @@
     <h2 class="card2 ml-5">
       <!-- Total budget : {{ totalbud() }} -->
       <i class="lni lni-dollar-circle icon2"></i>
-      Total budget : {{ totalbud() }}
+      Total budget : {{ totalbud() | currency : "USD" : "symbol" : "2.0" }}
       <!-- <input type="number" name="" id="" [(ngModel)]="this.budget" /> -->
     </h2>
     <h2 class="card4 ml-5">
-      <i class="lni lni-weight-machine-1 icon2"></i>Balance : {{ balacnce() }}
+      <i class="lni lni-weight-machine-1 icon2"></i>Balance :
+      {{ balacnce() | currency : "USD" : "symbol" : "2.0" }}
     </h2>
   </div>
 </div>

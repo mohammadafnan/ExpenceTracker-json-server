@@ -1,7 +1,7 @@
 import { Component, Optional } from '@angular/core';
 import { ExtrackerService } from '../extracker.service';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgFor, NgClass, NgIf } from '@angular/common';
+import { NgFor, NgClass, NgIf, CurrencyPipe } from '@angular/common';
 import {
   FormBuilder,
   FormGroup,
@@ -11,10 +11,10 @@ import {
   Validators,
 } from '@angular/forms';
 import * as XLSX from 'xlsx'; // Import SheetJS
-import { pipe } from 'rxjs';
+
 @Component({
   selector: 'app-product',
-  imports: [NgFor, ReactiveFormsModule, NgClass, NgIf, FormsModule],
+  imports: [NgFor, ReactiveFormsModule, NgClass, NgIf, FormsModule,CurrencyPipe],
   standalone: true,
   templateUrl: './product.component.html',
   styleUrl: './product.component.scss',
@@ -23,6 +23,7 @@ import { pipe } from 'rxjs';
 export class ProductComponent {
   heading = 'Expense Tracker';
   form: FormGroup;
+  form2: FormGroup;
   isedit = false;
   iseditid: number | null = null;
   budget = 50000;
@@ -39,6 +40,9 @@ export class ProductComponent {
     this.form = this.formbulider.group({
       expencename: ['', Validators.required],
       expenceamount: ['', Validators.required],
+    });
+    this.form2 = this.formbulider.group({
+      addbudget: ['', Validators.required],
     });
   }
 
