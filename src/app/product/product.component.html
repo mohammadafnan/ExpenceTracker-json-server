@@ -5,6 +5,26 @@
 
   <div class="center">
     <div class="setfrom">
+      <form [formGroup]="form2">
+        <input
+          type="number"
+          placeholder="Enter budget"
+          formControlName="addbudget"
+        />
+        <button
+          title="Add budget"
+          [ngClass]="{
+            dis: form2.valid == false,
+            green: form2.valid == true
+          }"
+          (click)="addBudget()"
+          class="add"
+          [disabled]="!form2.valid"
+        >
+          <i class="lni lni-plus icon"></i> Add
+        </button>
+      </form>
+
       <form [formGroup]="form">
         <input
           type="text"
@@ -13,12 +33,12 @@
         />
         <input
           type="text"
-          placeholder="Add Expence"
+          placeholder="Enter Expence"
           formControlName="expencename"
         />
         <input
           type="number"
-          placeholder="Add Expence Cost"
+          placeholder="Enter Expence Cost"
           formControlName="expenceamount"
         />
         <button
@@ -96,35 +116,35 @@
       </tbody>
     </table>
   </div>
-  <!-- [ngClass]="totalexp() > totalbud() ? 'card3' : 'card1'" -->
+  <!-- [ngClass]="totalexp() > this.budget ? 'card3' : 'card1'" -->
   <div class="center" id="excel-table">
     <h2
       [ngClass]="{
-        card3: totalexp() > totalbud(),
-        card1: totalexp() < totalbud(),
-        card2: totalexp() == totalbud()
+        card3: totalexp() > this.budget,
+        card1: totalexp() < this.budget,
+        card2: totalexp() == this.budget
       }"
     >
-      <i *ngIf="totalexp() < totalbud()" class="lni lni-trend-down-1"></i>
-      <i *ngIf="totalexp() > totalbud()" class="lni lni-trend-up-1"></i>
+      <i *ngIf="totalexp() < this.budget" class="lni lni-trend-down-1"></i>
+      <i *ngIf="totalexp() > this.budget" class="lni lni-trend-up-1"></i>
       Total Expence : {{ totalexp() | currency : "USD" : "symbol" : "2.0" }}
-      <label class="lbl" *ngIf="totalexp() < totalbud()">Under Budget</label>
-      <label class="lbl" *ngIf="totalexp() == totalbud()"
+      <label class="lbl" *ngIf="totalexp() < this.budget">Under Budget</label>
+      <label class="lbl" *ngIf="totalexp() == this.budget"
         >Expense is equal to the budget.</label
       >
-      <label class="lbl" *ngIf="totalexp() > totalbud()"
+      <label class="lbl" *ngIf="totalexp() > this.budget"
         >Expence is exceed to the Budget</label
       >
     </h2>
-    <!-- <span class="ope">{{ totalexp() > totalbud() ? ">" : "<" }}</span> -->
-    <span class="ope" *ngIf="totalexp() == totalbud()">=</span>
-    <span class="ope" *ngIf="totalexp() > totalbud()">></span>
-    <span class="ope" *ngIf="totalexp() < totalbud()"><</span>
+    <!-- <span class="ope">{{ totalexp() > this.budget ? ">" : "<" }}</span> -->
+    <span class="ope" *ngIf="totalexp() == this.budget">=</span>
+    <span class="ope" *ngIf="totalexp() > this.budget">></span>
+    <span class="ope" *ngIf="totalexp() < this.budget"><</span>
 
     <h2 class="card2 ml-5">
-      <!-- Total budget : {{ totalbud() }} -->
+      <!-- Total budget : {{ this.budget }} -->
       <i class="lni lni-dollar-circle icon2"></i>
-      Total budget : {{ totalbud() | currency : "USD" : "symbol" : "2.0" }}
+      Total budget : {{ this.budget }}
       <!-- <input type="number" name="" id="" [(ngModel)]="this.budget" /> -->
     </h2>
     <h2 class="card4 ml-5">

@@ -14,7 +14,14 @@ import * as XLSX from 'xlsx'; // Import SheetJS
 
 @Component({
   selector: 'app-product',
-  imports: [NgFor, ReactiveFormsModule, NgClass, NgIf, FormsModule,CurrencyPipe],
+  imports: [
+    NgFor,
+    ReactiveFormsModule,
+    NgClass,
+    NgIf,
+    FormsModule,
+    CurrencyPipe,
+  ],
   standalone: true,
   templateUrl: './product.component.html',
   styleUrl: './product.component.scss',
@@ -26,8 +33,8 @@ export class ProductComponent {
   form2: FormGroup;
   isedit = false;
   iseditid: number | null = null;
-  budget = 50000;
-  num = 0;
+  budget: any;
+  num: any;
 
   ngOnInit(): void {
     this._ExtrackerService.getExpenceData();
@@ -44,6 +51,14 @@ export class ProductComponent {
     this.form2 = this.formbulider.group({
       addbudget: ['', Validators.required],
     });
+  }
+
+  addBudget() {
+    this.budget = this._ExtrackerService.budget.push(this.form2.value);
+    // alert(this.budget);
+    this.form2.reset();
+    return this.budget;
+
   }
 
   addexpence() {
@@ -82,10 +97,10 @@ export class ProductComponent {
     }
     return this.num;
   }
-  totalbud() {
-    this.budget = 50000;
-    return this.budget;
-  }
+  // totalbud() {
+  //   this.budget = 50000;
+  //   return this.budget;
+  // }
 
   balacnce() {
     let bal = this.budget - this.num;
