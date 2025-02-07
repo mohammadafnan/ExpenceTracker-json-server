@@ -8,6 +8,11 @@
       <form [formGroup]="form">
         <input
           type="text"
+          placeholder="Search Expence"
+          (keyup)="search($any($event.target).value.toLowerCase())"
+        />
+        <input
+          type="text"
           placeholder="Add Expence"
           formControlName="expencename"
         />
@@ -71,6 +76,11 @@
             <i class="lni lni-pencil-1"></i>
           </td>
         </tr>
+        <tr *ngIf="_ExtrackerService.getdata.length == 0">
+          <td colspan="2"></td>
+          <td class="nodata">Data not found</td>
+          <td colspan="2"></td>
+        </tr>
         <tr>
           <td class="totalrow" colspan="2"><strong>Total</strong></td>
           <td class="totalrow">
@@ -108,7 +118,10 @@
     <span class="ope" *ngIf="totalexp() < totalbud()"><</span>
 
     <h2 class="card2 ml-5">
-      <i class="lni lni-dollar-circle icon2"></i>Total budget : {{ totalbud() }}
+      <!-- Total budget : {{ totalbud() }} -->
+      <i class="lni lni-dollar-circle icon2"></i>
+      Total budget : {{ totalbud() }}
+      <!-- <input type="number" name="" id="" [(ngModel)]="this.budget" /> -->
     </h2>
     <h2 class="card4 ml-5">
       <i class="lni lni-weight-machine-1 icon2"></i>Balance : {{ balacnce() }}

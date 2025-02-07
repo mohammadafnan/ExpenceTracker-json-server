@@ -29,6 +29,7 @@ export class ExtrackerService {
   // ];
 
   getdata: any = [];
+  copygetdata: any = [];
   postdata: any;
 
   expencedataUrl = 'http://localhost:3000/expense';
@@ -37,6 +38,7 @@ export class ExtrackerService {
   getExpenceData() {
     this.http.get(this.expencedataUrl).subscribe((expdata) => {
       this.getdata = expdata;
+      this.copygetdata = this.getdata;
     });
   }
   addExpenceData(data: any) {

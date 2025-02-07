@@ -1,18 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, Optional } from '@angular/core';
 import { ExtrackerService } from '../extracker.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgFor, NgClass, NgIf } from '@angular/common';
 import {
   FormBuilder,
   FormGroup,
+  FormsModule,
   NgModel,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
 import * as XLSX from 'xlsx'; // Import SheetJS
+import { pipe } from 'rxjs';
 @Component({
   selector: 'app-product',
-  imports: [NgFor, ReactiveFormsModule, NgClass, NgIf],
+  imports: [NgFor, ReactiveFormsModule, NgClass, NgIf, FormsModule],
   standalone: true,
   templateUrl: './product.component.html',
   styleUrl: './product.component.scss',
@@ -111,4 +113,12 @@ export class ProductComponent {
   //   // Trigger download
   //   XLSX.writeFile(wb, 'expenses.xlsx');
   // }
+
+  search(text: any) {
+    this._ExtrackerService.getdata = this._ExtrackerService.copygetdata.filter(
+      (x: any) =>
+        x.expencename.toLowerCase().indexOf(text) >= 0 ||
+        x.expenceamount.toString().toLowerCase().indexOf(text) >= 0
+    );
+  }
 }
