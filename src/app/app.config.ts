@@ -7,9 +7,12 @@ import {
   withEventReplay,
 } from '@angular/platform-browser';
 import { provideHttpClient } from '@angular/common/http';
+import { FormsModule, NgModel } from '@angular/forms';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+  
+
     provideHttpClient(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),

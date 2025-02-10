@@ -33,11 +33,25 @@ export class ProductComponent {
   form2: FormGroup;
   isedit = false;
   iseditid: number | null = null;
-  budget: any;
+  budget: any = 50000;
   num: any;
+  isbtn = true;
+
+  ngAfterViewInit(): void {
+    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+    //Add 'implements AfterViewInit' to the class.
+  }
+
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+  }
 
   ngOnInit(): void {
     this._ExtrackerService.getExpenceData();
+
+    this.check();
+    this.checkobj();
   }
 
   constructor(
@@ -47,6 +61,7 @@ export class ProductComponent {
     this.form = this.formbulider.group({
       expencename: ['', Validators.required],
       expenceamount: ['', Validators.required],
+      expencedate: ['', Validators.required],
     });
     this.form2 = this.formbulider.group({
       addbudget: ['', Validators.required],
@@ -54,11 +69,11 @@ export class ProductComponent {
   }
 
   addBudget() {
-    this.budget = this._ExtrackerService.budget.push(this.form2.value);
-    // alert(this.budget);
+    this.budget;
+    // this.budget = this._ExtrackerService.budget.push(this.form2.value);
+    alert(this.budget);
     this.form2.reset();
     return this.budget;
-
   }
 
   addexpence() {
@@ -79,6 +94,7 @@ export class ProductComponent {
     this.form.patchValue({
       expencename: item.expencename,
       expenceamount: item.expenceamount,
+      expencedate: item.expencedate,
     });
     this.iseditid = item.id;
   }
@@ -111,8 +127,8 @@ export class ProductComponent {
     const element: any = document.getElementById('excel-table');
     // Remove action columns (Delete and Edit) from cloned table
     const headerRow = element.tHead.rows[0];
-    headerRow.deleteCell(3); // Remove "Delete" header (4th column)
-    headerRow.deleteCell(3); // Remove "Edit" header (now 4th column after previous deletion)
+    headerRow.deleteCell(4); // Remove "Delete" header (4th column)
+    headerRow.deleteCell(4); // Remove "Edit" header (now 4th column after previous deletion)
     const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
     const wb: XLSX.WorkBook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Expenses');
@@ -139,5 +155,15 @@ export class ProductComponent {
         x.expencename.toLowerCase().indexOf(text) >= 0 ||
         x.expenceamount.toString().toLowerCase().indexOf(text) >= 0
     );
+  }
+
+  // test
+  count: any = [];
+  check() {
+    console.log(this.count.push('A'));
+  }
+  obj = { name: 'afnan' };
+  checkobj() {
+    // alert(this.obj.name);
   }
 }

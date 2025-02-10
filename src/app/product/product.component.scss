@@ -30,7 +30,7 @@ table {
   border-radius: 10px;
   // border-style: dashed;
   background-color: #1d1d1d;
- color: rgb(0, 224, 112);
+  color: rgb(0, 224, 112);
 }
 
 input {
@@ -39,6 +39,15 @@ input {
   padding-left: 10px;
   color: white;
 }
+
+::placeholder {
+  color: rgb(99, 99, 99);
+}
+
+// .date::placeholder{
+//   color: rgb(99, 99, 99) !important;
+
+// }
 
 th {
   padding-bottom: 15px;
@@ -161,4 +170,14 @@ th {
   padding: 10vh 0px;
   font-size: 30px;
   // text-align: center;
+}
+
+
+.a {
+  background-color: rgb(0, 255, 0);
+}
+
+
+.b {
+  background-color: rgb(255, 0, 0);
 }

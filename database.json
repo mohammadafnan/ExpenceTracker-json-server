@@ -3,51 +3,61 @@
     {
       "expencename": "Internet Bill",
       "expenceamount": 1500,
+      "expencedate": "2025-02-01",
       "id": "2d7b"
     },
     {
       "expencename": "Maintainance Bill",
       "expenceamount": 2000,
+      "expencedate": "2025-02-07",
       "id": "529c"
     },
     {
       "expencename": "Gas Bill",
       "expenceamount": 1000,
+      "expencedate": "2025-02-07",
       "id": "95e0"
     },
     {
       "expencename": "others",
       "expenceamount": 3000,
+      "expencedate": "2025-02-07",
       "id": "36cd"
     },
     {
       "expencename": "others",
       "expenceamount": 3000,
+      "expencedate": "2025-02-07",
       "id": "36cd"
     },
     {
       "id": "d3c3",
       "expencename": "bike repair",
-      "expenceamount": 3000
+      "expenceamount": 3000,
+      "expencedate": "2025-02-07"
     },
     {
       "expencename": "Plumber Cost ",
       "expenceamount": 1000,
+      "expencedate": "2025-02-07",
       "id": "2695"
     },
     {
       "id": "5612",
       "expencename": "Clothes buying cost",
-      "expenceamount": 3000
+      "expenceamount": 3000,
+      "expencedate": "2025-02-07"
     },
     {
       "expencename": "stitching costt",
       "expenceamount": 1500,
+      "expencedate": "2025-02-07",
       "id": "c164"
     },
     {
       "expencename": "Home Rent",
-      "expenceamount": 35000,
+      "expenceamount": 30000,
+      "expencedate": "2025-02-07",
       "id": "d3ef"
     }
   ]

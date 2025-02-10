@@ -4,8 +4,13 @@
   </div>
 
   <div class="center">
+
+    <!-- <button [ngClass]="isbtn == true ? 'a' : 'b'" [disabled]="isbtn == false">
+      Test
+    </button> -->
+    
     <div class="setfrom">
-      <form [formGroup]="form2">
+      <!-- <form [formGroup]="form2">
         <input
           type="number"
           placeholder="Enter budget"
@@ -23,7 +28,7 @@
         >
           <i class="lni lni-plus icon"></i> Add
         </button>
-      </form>
+      </form> -->
 
       <form [formGroup]="form">
         <input
@@ -40,6 +45,12 @@
           type="number"
           placeholder="Enter Expence Cost"
           formControlName="expenceamount"
+        />
+        <input
+          class="date"
+          type="date"
+          placeholder="Enter Expence Cost"
+          formControlName="expencedate"
         />
         <button
           title="Add Expence"
@@ -71,6 +82,7 @@
           <th>S.no</th>
           <th>Expence Name</th>
           <th>Expence Cost</th>
+          <th>Expence Date</th>
           <th>Delete</th>
           <th>Edit</th>
         </tr>
@@ -83,6 +95,8 @@
           <td>
             {{ item.expenceamount | currency : "USD" : "symbol" : "2.0" }}
           </td>
+          <td>{{ item.expencedate }}</td>
+
           <td
             title="Delete row record"
             class="del"
@@ -115,6 +129,16 @@
         <tr></tr>
       </tbody>
     </table>
+    <!-- 
+    <div>
+      @for (item of _ExtrackerService.getdata; track item.id){
+      <ul>
+        <li>{{ item.expencename }}</li>
+      </ul>
+      }@empty{
+      <div>no data</div>
+      }
+    </div> -->
   </div>
   <!-- [ngClass]="totalexp() > this.budget ? 'card3' : 'card1'" -->
   <div class="center" id="excel-table">
