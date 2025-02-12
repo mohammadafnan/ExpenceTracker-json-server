@@ -30,11 +30,12 @@ import * as XLSX from 'xlsx'; // Import SheetJS
 export class ProductComponent {
   heading = 'Expense Tracker';
   form: FormGroup;
-  form2: FormGroup;
+  // form2: FormGroup;
   isedit = false;
   iseditid: number | null = null;
-  budget: any = 50000;
+  budget: any = 0;
   num: any;
+  number1: any;
   isbtn = true;
   // x = 0;
   ngAfterViewInit(): void {
@@ -99,17 +100,13 @@ export class ProductComponent {
       expenceamount: ['', Validators.required],
       expencedate: ['', Validators.required],
     });
-    this.form2 = this.formbulider.group({
-      addbudget: ['', Validators.required],
-    });
+    // this.form2 = this.formbulider.group({
+    //   addbudget: ['', Validators.required],
+    // });
   }
 
   addBudget() {
-    this.budget;
-    // this.budget = this._ExtrackerService.budget.push(this.form2.value);
-    alert(this.budget);
-    this.form2.reset();
-    return this.budget;
+    this.budget = this.number1;
   }
 
   addexpence() {

@@ -11,25 +11,11 @@
     <!-- End Q1 -->
 
     <div class="setfrom">
-      <!-- <form [formGroup]="form2">
-        <input
-          type="number"
-          placeholder="Enter budget"
-          formControlName="addbudget"
-        />
-        <button
-          title="Add budget"
-          [ngClass]="{
-            dis: form2.valid == false,
-            green: form2.valid == true
-          }"
-          (click)="addBudget()"
-          class="add"
-          [disabled]="!form2.valid"
-        >
-          <i class="lni lni-plus icon"></i> Add
-        </button>
-      </form> -->
+      <input type="number" placeholder="Enter budget" [(ngModel)]="number1" />
+
+      <button title="Add budget" (click)="addBudget()" class="add green">
+        <i class="lni lni-plus icon"></i> Add
+      </button>
 
       <form [formGroup]="form">
         <input
@@ -173,7 +159,7 @@
     <h2 class="card2 ml-5">
       <!-- Total budget : {{ this.budget }} -->
       <i class="lni lni-dollar-circle icon2"></i>
-      Total budget : {{ this.budget }}
+      Total budget : {{ this.budget | currency : "USD" : "symbol" : "2.0" }}
       <!-- <input type="number" name="" id="" [(ngModel)]="this.budget" /> -->
     </h2>
     <h2 class="card4 ml-5">
