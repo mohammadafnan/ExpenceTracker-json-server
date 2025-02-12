@@ -1,4 +1,4 @@
-import { Component, Optional } from '@angular/core';
+import { Component, Optional, Query } from '@angular/core';
 import { ExtrackerService } from '../extracker.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgFor, NgClass, NgIf, CurrencyPipe } from '@angular/common';
@@ -36,7 +36,7 @@ export class ProductComponent {
   budget: any = 50000;
   num: any;
   isbtn = true;
-
+  // x = 0;
   ngAfterViewInit(): void {
     //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
     //Add 'implements AfterViewInit' to the class.
@@ -50,8 +50,44 @@ export class ProductComponent {
   ngOnInit(): void {
     this._ExtrackerService.getExpenceData();
 
-    this.check();
-    this.checkobj();
+    //Start Q1
+    // var type
+    var x = 1;
+    if (true) {
+      var x = 22;
+      console.log(x);
+    }
+    console.log(x);
+
+    // let type
+    let a = 0;
+    if (true) {
+      let a = 1;
+      console.log(a);
+    }
+    console.log(a);
+
+    // const type
+    const z = 10;
+    // z = 100;
+    console.log(z);
+    //End Q1
+
+    //Start Q2
+    var array: any[] = [];
+    var arr = array.push('afnan', 100, true);
+    console.log('It will reture length is' + ' ' + arr);
+    //End Q2
+
+    //Start Q3
+    let obj = { carname: 'hyundai', model: 2025 };
+    console.log(obj);
+    console.log(obj.carname);
+    console.log(obj.model);
+    let objname = obj;
+    objname.carname = 'hyundai 503';
+    console.log(obj);
+    //End Q3
   }
 
   constructor(
@@ -135,35 +171,11 @@ export class ProductComponent {
     XLSX.writeFile(wb, 'expenses.xlsx');
   }
 
-  // exportToExcel(): void {
-  //   // Clone the original table to avoid modifying the DOM element directly
-  //   const originalTable: any = document.getElementById('excel-table');
-  //   // const clonedTable: any = originalTable.cloneNode(true) as HTMLTableElement;
-
-  //   // Create worksheet and workbook from modified table
-  //   const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(originalTable);
-  //   const wb: XLSX.WorkBook = XLSX.utils.book_new();
-  //   XLSX.utils.book_append_sheet(wb, ws, 'Expenses');
-
-  //   // Trigger download
-  //   XLSX.writeFile(wb, 'expenses.xlsx');
-  // }
-
   search(text: any) {
     this._ExtrackerService.getdata = this._ExtrackerService.copygetdata.filter(
       (x: any) =>
         x.expencename.toLowerCase().indexOf(text) >= 0 ||
         x.expenceamount.toString().toLowerCase().indexOf(text) >= 0
     );
-  }
-
-  // test
-  count: any = [];
-  check() {
-    console.log(this.count.push('A'));
-  }
-  obj = { name: 'afnan' };
-  checkobj() {
-    // alert(this.obj.name);
   }
 }

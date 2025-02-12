@@ -4,11 +4,12 @@
   </div>
 
   <div class="center">
-
+    <!-- Start Q1 -->
     <!-- <button [ngClass]="isbtn == true ? 'a' : 'b'" [disabled]="isbtn == false">
       Test
     </button> -->
-    
+    <!-- End Q1 -->
+
     <div class="setfrom">
       <!-- <form [formGroup]="form2">
         <input
@@ -52,6 +53,7 @@
           placeholder="Enter Expence Cost"
           formControlName="expencedate"
         />
+
         <button
           title="Add Expence"
           [ngClass]="{
@@ -59,7 +61,7 @@
             green: form.valid == true
           }"
           (click)="addexpence()"
-          class="add"
+          class="add hover:bg-sky-800"
           [disabled]="!form.valid"
         >
           <i class="lni lni-plus icon"></i> Add
@@ -141,7 +143,10 @@
     </div> -->
   </div>
   <!-- [ngClass]="totalexp() > this.budget ? 'card3' : 'card1'" -->
-  <div class="center" id="excel-table">
+  <!-- Start Q2 -->
+  <!-- <div class="flex justify-center flex-col md:flex-row" id="excel-table"> -->
+  <!-- End Q2 -->
+  <div class="flex justify-center flex-col md:flex-row" id="excel-table">
     <h2
       [ngClass]="{
         card3: totalexp() > this.budget,

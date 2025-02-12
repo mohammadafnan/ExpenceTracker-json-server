@@ -50,15 +50,9 @@
     },
     {
       "expencename": "stitching costt",
-      "expenceamount": 1500,
-      "expencedate": "2025-02-07",
+      "expenceamount": 35000,
+      "expencedate": "2025-02-11",
       "id": "c164"
-    },
-    {
-      "expencename": "Home Rent",
-      "expenceamount": 30000,
-      "expencedate": "2025-02-07",
-      "id": "d3ef"
     }
   ]
 }
