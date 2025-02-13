@@ -1,4 +1,17 @@
-import { Component, Optional, Query } from '@angular/core';
+import {
+  AfterContentChecked,
+  AfterContentInit,
+  AfterViewChecked,
+  AfterViewInit,
+  Component,
+  DoCheck,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  Optional,
+  Query,
+  SimpleChanges,
+} from '@angular/core';
 import { ExtrackerService } from '../extracker.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgFor, NgClass, NgIf, CurrencyPipe } from '@angular/common';
@@ -12,6 +25,7 @@ import {
 } from '@angular/forms';
 import * as XLSX from 'xlsx'; // Import SheetJS
 import { promiseHooks } from 'node:v8';
+import { timeout } from 'rxjs';
 
 @Component({
   selector: 'app-product',
@@ -28,7 +42,17 @@ import { promiseHooks } from 'node:v8';
   styleUrl: './product.component.scss',
   host: { ngSkipHydration: 'true' },
 })
-export class ProductComponent {
+export class ProductComponent
+  implements
+    OnInit,
+    DoCheck,
+    AfterContentInit,
+    AfterViewChecked,
+    AfterViewInit,
+    AfterContentChecked,
+    OnDestroy,
+    OnChanges
+{
   heading = 'Expense Tracker';
   form: FormGroup;
   // form2: FormGroup;
@@ -38,18 +62,10 @@ export class ProductComponent {
   num: any;
   number1: any;
   isbtn = true;
-  // x = 0;
-  ngAfterViewInit(): void {
-    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
-    //Add 'implements AfterViewInit' to the class.
-  }
-
-  ngOnDestroy(): void {
-    //Called once, before the instance is destroyed.
-    //Add 'implements OnDestroy' to the class.
-  }
 
   ngOnInit(): void {
+    console.log('ngOninit');
+
     this._ExtrackerService.getExpenceData();
 
     //Start Q1
@@ -116,6 +132,40 @@ export class ProductComponent {
     //End Q4
   }
 
+  ngDoCheck(): void {
+    console.log('ngDoCheck');
+  }
+  ngAfterContentInit(): void {
+    console.log('ngAfterContentInit');
+  }
+
+  ngAfterContentChecked(): void {
+    console.log('ngAfterContentChecked');
+  }
+
+  ngAfterViewInit(): void {
+    console.log('ngAfterViewInit');
+
+    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+    //Add 'implements AfterViewInit' to the class.
+  }
+  ngAfterViewChecked(): void {
+    console.log('ngAfterViewChecked');
+
+    //Called after every check of the component's view. Applies to components only.
+    //Add 'implements AfterViewChecked' to the class.
+  }
+
+  ngOnDestroy(): void {
+    console.log('ngOnDestroy');
+
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('ngOnChanges');
+  }
+
   constructor(
     public _ExtrackerService: ExtrackerService,
     private formbulider: FormBuilder
@@ -128,6 +178,7 @@ export class ProductComponent {
     // this.form2 = this.formbulider.group({
     //   addbudget: ['', Validators.required],
     // });
+    console.log('constructor');
   }
 
   addBudget() {
