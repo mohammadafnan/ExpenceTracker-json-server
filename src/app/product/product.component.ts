@@ -11,6 +11,7 @@ import {
   Validators,
 } from '@angular/forms';
 import * as XLSX from 'xlsx'; // Import SheetJS
+import { promiseHooks } from 'node:v8';
 
 @Component({
   selector: 'app-product',
@@ -33,7 +34,7 @@ export class ProductComponent {
   // form2: FormGroup;
   isedit = false;
   iseditid: number | null = null;
-  budget: any = 0;
+  budget: any = 50000;
   num: any;
   number1: any;
   isbtn = true;
@@ -89,6 +90,30 @@ export class ProductComponent {
     objname.carname = 'hyundai 503';
     console.log(obj);
     //End Q3
+
+    //Start Q4
+    // sync
+    console.log('Server A');
+    console.log('Server B');
+    console.log('Server C');
+
+    // Async
+    console.log('Server X');
+    setTimeout(() => {
+      console.log('Server Y');
+    }, 2000);
+    console.log('Server Z');
+
+    // async await
+    console.log('i');
+
+    async function great() {
+      await new Promise((res) => setTimeout(res, 2000));
+      console.log('j');
+    }
+    console.log('k');
+    great();
+    //End Q4
   }
 
   constructor(
