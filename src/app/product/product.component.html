@@ -13,7 +13,13 @@
     <div class="setfrom">
       <input type="number" placeholder="Enter budget" [(ngModel)]="number1" />
 
-      <button title="Add budget" (click)="addBudget()" class="add green">
+      <button
+        title="Add budget"
+        (click)="addBudget()"
+        class="add hover:bg-sky-800"
+        [ngClass]="!number1 ? 'dis' : 'green'"
+        [disabled]="!number1"
+      >
         <i class="lni lni-plus icon"></i> Add
       </button>
 

@@ -183,6 +183,7 @@ export class ProductComponent
 
   addBudget() {
     this.budget = this.number1;
+    this.number1 = '';
   }
 
   addexpence() {
