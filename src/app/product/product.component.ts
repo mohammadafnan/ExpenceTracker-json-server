@@ -36,6 +36,7 @@ import { timeout } from 'rxjs';
     NgIf,
     FormsModule,
     CurrencyPipe,
+  
   ],
   standalone: true,
   templateUrl: './product.component.html',
@@ -183,6 +184,7 @@ export class ProductComponent
 
   addBudget() {
     this.budget = this.number1;
+    alert('Budget added Successfully');
     this.number1 = '';
   }
 
