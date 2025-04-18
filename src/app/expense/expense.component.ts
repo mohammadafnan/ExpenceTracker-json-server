@@ -36,11 +36,10 @@ import { timeout } from 'rxjs';
     NgIf,
     FormsModule,
     CurrencyPipe,
-  
   ],
   standalone: true,
-  templateUrl: './product.component.html',
-  styleUrl: './product.component.scss',
+  templateUrl: './expense.component.html',
+  styleUrl: './expense.component.scss',
   host: { ngSkipHydration: 'true' },
 })
 export class ProductComponent
@@ -131,6 +130,10 @@ export class ProductComponent
     console.log('k');
     great();
     //End Q4
+
+    /////code practice....
+    var d = 0;
+    console.log(d + 'this is z');
   }
 
   ngDoCheck(): void {
@@ -188,7 +191,7 @@ export class ProductComponent
     this.number1 = '';
   }
 
-  addexpence() {
+  addexpense() {
     if (this.iseditid) {
       // Edit  expense
       this._ExtrackerService.updateExpenceData(this.iseditid, this.form.value);
@@ -253,5 +256,9 @@ export class ProductComponent
         x.expencename.toLowerCase().indexOf(text) >= 0 ||
         x.expenceamount.toString().toLowerCase().indexOf(text) >= 0
     );
+  }
+
+  check(val: any) {
+    return val;
   }
 }

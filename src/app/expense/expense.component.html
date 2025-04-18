@@ -1,9 +1,8 @@
 <div>
   <div class="center">
-    <h3>{{ heading }}</h3>
+    <h3><i class="lni lni-trend-down-1" style="color: rgb(255, 72, 72);"></i> {{ heading }}</h3>
   </div>
 
-  
   <div class="center">
     <!-- Start Q1 -->
     <!-- <button [ngClass]="isbtn == true ? 'a' : 'b'" [disabled]="isbtn == false">
@@ -20,43 +19,43 @@
         [ngClass]="!number1 ? 'dis' : 'green'"
         [disabled]="!number1"
       >
-        <i class="lni lni-plus icon"></i> Add
+        <i class="lni lni-plus icon"></i> Add Budget
       </button>
 
       <form [formGroup]="form">
         <input
           type="text"
-          placeholder="Search Expence"
+          placeholder="Search Expense"
           (keyup)="search($any($event.target).value.toLowerCase())"
         />
         <input
           type="text"
-          placeholder="Enter Expence"
+          placeholder="Enter Expense"
           formControlName="expencename"
         />
         <input
           type="number"
-          placeholder="Enter Expence Cost"
+          placeholder="Enter Expense Cost"
           formControlName="expenceamount"
         />
         <input
           class="date"
           type="date"
-          placeholder="Enter Expence Date"
+          placeholder="Enter Expense Date"
           formControlName="expencedate"
         />
 
         <button
-          title="Add Expence"
+          title="Add Expense"
           [ngClass]="{
             dis: form.valid == false,
             green: form.valid == true
           }"
-          (click)="addexpence()"
+          (click)="addexpense()"
           class="add hover:bg-sky-800"
           [disabled]="!form.valid"
         >
-          <i class="lni lni-plus icon"></i> Add
+          <i class="lni lni-plus icon"></i> Add Expense
         </button>
         <button
           title="Download excel sheet"
@@ -66,6 +65,11 @@
           <i class="lni lni-cloud-download icon2"></i>Export
         </button>
       </form>
+      <!-- <input #input type="text" placeholder="Enter Name" /> -->
+      <!-- {{ input.placeholder }} -->
+      <!-- {{ input.type }} -->
+      <!-- value : {{ input.value }}
+      <button class="bg-black p-2" (click)="check(input.value)">check</button> -->
     </div>
   </div>
 
@@ -74,9 +78,9 @@
       <thead>
         <tr>
           <th>S.no</th>
-          <th>Expence Name</th>
-          <th>Expence Cost</th>
-          <th>Expence Date</th>
+          <th>Expense Name</th>
+          <th>Expense Cost</th>
+          <th>Expense Date</th>
           <th>Delete</th>
           <th>Edit</th>
         </tr>
@@ -148,13 +152,13 @@
     >
       <i *ngIf="totalexp() < this.budget" class="lni lni-trend-down-1"></i>
       <i *ngIf="totalexp() > this.budget" class="lni lni-trend-up-1"></i>
-      Total Expence : {{ totalexp() | currency : "USD" : "symbol" : "2.0" }}
+      Total Expense : {{ totalexp() | currency : "USD" : "symbol" : "2.0" }}
       <label class="lbl" *ngIf="totalexp() < this.budget">Under Budget</label>
       <label class="lbl" *ngIf="totalexp() == this.budget"
         >Expense is equal to the budget.</label
       >
       <label class="lbl" *ngIf="totalexp() > this.budget"
-        >Expence is exceed to the Budget</label
+        >Expense is exceed to the Budget</label
       >
     </h2>
     <!-- <span class="ope">{{ totalexp() > this.budget ? ">" : "<" }}</span> -->
@@ -174,4 +178,3 @@
     </h2>
   </div>
 </div>
-

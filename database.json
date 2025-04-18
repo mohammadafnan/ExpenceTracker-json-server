@@ -31,28 +31,16 @@
       "id": "36cd"
     },
     {
-      "id": "d3c3",
-      "expencename": "bike repair",
-      "expenceamount": 3000,
-      "expencedate": "2025-02-07"
+      "expencename": "furniture",
+      "expenceamount": 40000,
+      "expencedate": "2025-04-18",
+      "id": "5442"
     },
     {
-      "expencename": "Plumber Cost ",
-      "expenceamount": 1000,
-      "expencedate": "2025-02-07",
-      "id": "2695"
-    },
-    {
-      "id": "5612",
-      "expencename": "Clothes buying cost",
-      "expenceamount": 3000,
-      "expencedate": "2025-02-07"
-    },
-    {
-      "expencename": "stitching costt",
-      "expenceamount": 35000,
-      "expencedate": "2025-02-11",
-      "id": "c164"
+      "expencename": "Electric bill",
+      "expenceamount": 5000,
+      "expencedate": "2025-04-18",
+      "id": "a99f"
     }
   ]
 }
