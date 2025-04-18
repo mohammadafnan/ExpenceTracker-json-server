@@ -32,7 +32,7 @@
     },
     {
       "expencename": "furniture",
-      "expenceamount": 40000,
+      "expenceamount": 20000,
       "expencedate": "2025-04-18",
       "id": "5442"
     },
@@ -41,6 +41,12 @@
       "expenceamount": 5000,
       "expencedate": "2025-04-18",
       "id": "a99f"
+    },
+    {
+      "id": "909c",
+      "expencename": "Bike Repair",
+      "expenceamount": 5000,
+      "expencedate": "2025-04-05"
     }
   ]
 }

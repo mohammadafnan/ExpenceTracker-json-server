@@ -26,6 +26,7 @@ import {
 import * as XLSX from 'xlsx'; // Import SheetJS
 import { promiseHooks } from 'node:v8';
 import { timeout } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -42,7 +43,7 @@ import { timeout } from 'rxjs';
   styleUrl: './expense.component.scss',
   host: { ngSkipHydration: 'true' },
 })
-export class ProductComponent
+export class ExpenseComponent
   implements
     OnInit,
     DoCheck,
@@ -171,6 +172,7 @@ export class ProductComponent
   }
 
   constructor(
+    private router: Router,
     public _ExtrackerService: ExtrackerService,
     private formbulider: FormBuilder
   ) {
@@ -260,5 +262,9 @@ export class ProductComponent
 
   check(val: any) {
     return val;
+  }
+
+  Logout() {
+    this.router.navigate(['./login']);
   }
 }
