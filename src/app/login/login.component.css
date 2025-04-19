@@ -1,6 +1,42 @@
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
 .logincard {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  height: 70vh;
+}
+input {
+  border: 1px solid rgb(255, 255, 255);
+  background-color: transparent;
+  padding-left: 10px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.loginbtn {
+  background-color: rgb(0, 190, 102);
+  border: 0;
+  color: white;
+  width: 185px;
+  height: 29px;
+  cursor: pointer;
+}
+
+.dis {
+  background-color: rgb(46, 46, 46);
+  border: 0;
+  color: white;
+  width: 185px;
+  height: 29px;
+  cursor: pointer;
+}
+.scrol {
+  overflow-y: none;
 }

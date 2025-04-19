@@ -1,9 +1,25 @@
-<!-- <p>login works!</p> -->
-
-<div>
-  <div class="logincard">
-    <input type="text" placeholder="Email" />
-    <input type="text" placeholder="Password" />
-    <button (click)="login()">Login</button>
+<div class="scrol">
+  <div class="center">
+    <h3>
+      <i class="lni lni-trend-down-1" style="color: rgb(255, 72, 72)"></i>
+      {{ heading }}
+    </h3>
+  </div>
+  <div>
+    <form [formGroup]="form" class="logincard">
+      <input formControlName="loginname" type="text" placeholder="Email" />
+      <input
+        formControlName="loginpassword"
+        type="text"
+        placeholder="Password"
+      />
+      <button
+        [ngClass]="form.valid == true ? 'loginbtn' : 'dis'"
+        (click)="login(form.value)"
+        [disabled]="!form.valid"
+      >
+        Login
+      </button>
+    </form>
   </div>
 </div>
