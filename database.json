@@ -1,52 +1,15 @@
 {
-  "expense": [
+  "expenses": [],
+  "users": [
     {
-      "expencename": "Internet Bill",
-      "expenceamount": 1500,
-      "expencedate": "2025-02-01",
-      "id": "2d7b"
+      "id": "fa0e",
+      "username": "afnan",
+      "password": "12345"
     },
     {
-      "expencename": "Maintainance Bill",
-      "expenceamount": 2000,
-      "expencedate": "2025-02-07",
-      "id": "529c"
-    },
-    {
-      "expencename": "Gas Bill",
-      "expenceamount": 1000,
-      "expencedate": "2025-02-07",
-      "id": "95e0"
-    },
-    {
-      "expencename": "others",
-      "expenceamount": 3000,
-      "expencedate": "2025-02-07",
-      "id": "36cd"
-    },
-    {
-      "expencename": "others",
-      "expenceamount": 3000,
-      "expencedate": "2025-02-07",
-      "id": "36cd"
-    },
-    {
-      "expencename": "furniture",
-      "expenceamount": 20000,
-      "expencedate": "2025-04-18",
-      "id": "5442"
-    },
-    {
-      "expencename": "Electric bill",
-      "expenceamount": 5000,
-      "expencedate": "2025-04-18",
-      "id": "a99f"
-    },
-    {
-      "id": "909c",
-      "expencename": "Bike Repair",
-      "expenceamount": 5000,
-      "expencedate": "2025-04-05"
+      "id": "3f3a",
+      "username": "anas",
+      "password": "0000"
     }
   ]
 }

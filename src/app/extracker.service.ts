@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root',
@@ -34,7 +35,7 @@ export class ExtrackerService {
   postdata: any;
 
   expencedataUrl = 'http://localhost:3000/expense';
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private auth: AuthService) {}
 
   getExpenceData() {
     this.http.get(this.expencedataUrl).subscribe((expdata) => {
