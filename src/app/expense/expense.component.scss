@@ -1,7 +1,27 @@
+
+.centerheader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.logout{
+    position: absolute;
+    right: 0;
+    top: 20px;
+    margin-right: 10px;
+    background-color: #dc3545;
+    border-radius: 5px;
+    border: 0 ;
+    width: 100px;
+    padding-top: 5px;
+    padding-bottom: 10px;
 }
 
 h3 {

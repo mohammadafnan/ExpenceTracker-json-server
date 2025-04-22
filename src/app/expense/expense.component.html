@@ -1,10 +1,11 @@
 <div>
-  <div class="center">
+  <div class="centerheader">
+  
     <h3>
       <i class="lni lni-trend-down-1" style="color: rgb(255, 72, 72)"></i>
       {{ heading }}
     </h3>
-    <button (click)="this.auth.logout()">Logout</button>
+    <div><button class="logout" (click)="this.auth.logout()">Logout</button></div>
   </div>
 
   <div class="center">

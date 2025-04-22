@@ -185,7 +185,7 @@ export class ExpenseComponent
     this.form = this.formbulider.group({
       expencename: ['', Validators.required],
       expenceamount: ['', Validators.required],
-      expencedate: ['', Validators.required],
+      expencedate: [new Date().toISOString().substring(0, 10)], 
     });
     // this.form2 = this.formbulider.group({
     //   addbudget: ['', Validators.required],
@@ -220,6 +220,7 @@ export class ExpenseComponent
       expencedate: item.expencedate,
     });
     this.iseditid = item.id;
+    
   }
 
   deleteExpense(item: any) {

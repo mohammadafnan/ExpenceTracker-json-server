@@ -10,10 +10,23 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  height: 40vh;
+  background: rgb(36, 36, 36);
+    width: 25vw;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.logincontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   height: 70vh;
 }
+
 input {
-  border: 1px solid rgb(255, 255, 255);
+  border: 1px solid rgb(118 118 118);
   background-color: transparent;
   padding-left: 10px;
   color: white;
@@ -41,43 +54,43 @@ input {
   overflow-y: none;
 }
 
-.signup{
+.signup {
   font-size: 12px;
   color: gray;
 }
 
 /* loader code */
 .loader {
-  border           : 3px solid #838383;
-  border-radius    : 50%;
-  border-top       : 3px solid #ffffff;
+  border: 3px solid #838383;
+  border-radius: 50%;
+  border-top: 3px solid #ffffff;
   /* margin-top    : 2%; */
-  width            : 50px;
-  height           : 50px;
+  width: 50px;
+  height: 50px;
   -webkit-animation: spin 2s linear infinite;
   /* Safari */
-  animation        : spin 2s linear infinite;
-  position         : absolute;
-  top              : 300px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  top: 300px;
 }
 
 /* Safari */
 @-webkit-keyframes spin {
   0% {
-      -webkit-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
   }
 
   100% {
-      -webkit-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
   }
 }
 
 @keyframes spin {
   0% {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 
   100% {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }

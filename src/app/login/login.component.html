@@ -6,7 +6,7 @@
     </h3>
     <br />
   </div>
-  <div>
+  <div class="logincontainer"> 
     <form [formGroup]="loginForm" class="logincard">
       <h5 class="mb-3">{{ isSignup ? "Create Account" : " Login" }}</h5>
 
@@ -34,6 +34,5 @@
   </div>
 </div>
 <div *ngIf="this.auth.loading" style="display: flex; justify-content: center">
-  <div class="loader"> 
-  </div>
+  <div class="loader"></div>
 </div>

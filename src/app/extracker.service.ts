@@ -44,6 +44,8 @@ export class ExtrackerService {
         if (ind !== -1) {
           this.getdata[ind] = editdata;
         }
+     
+
       });
   }
 
