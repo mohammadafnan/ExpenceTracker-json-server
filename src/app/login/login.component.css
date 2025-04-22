@@ -11,8 +11,8 @@
   align-items: center;
   flex-direction: column;
   height: 40vh;
-  background: rgb(36, 36, 36);
-    width: 25vw;
+  background: #0d1117;
+  width: 25vw;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -31,24 +31,31 @@ input {
   padding-left: 10px;
   color: white;
   margin-bottom: 20px;
+  width: 80%;
+  height: 35px;
+  border-radius: 5px;
 }
 
 .loginbtn {
   background-color: rgb(0, 190, 102);
   border: 0;
   color: white;
-  width: 185px;
-  height: 29px;
+  width: 80%;
+  height: 35px;
+
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .dis {
-  background-color: rgb(46, 46, 46);
-  border: 0;
+  background-color: #0d131a;
+    border: 0;
   color: white;
-  width: 185px;
-  height: 29px;
+  width: 80%;
+  height: 35px;
+
   cursor: pointer;
+  border-radius: 5px;
 }
 .scrol {
   overflow-y: none;

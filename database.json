@@ -48,6 +48,13 @@
       "expencedate": "2025-04-22",
       "userId": "507b",
       "id": "f7f7"
+    },
+    {
+      "id": "24d3",
+      "expencename": "asdasd",
+      "expenceamount": 120000,
+      "expencedate": "2025-04-22",
+      "userId": "507b"
     }
   ],
   "users": [
@@ -60,6 +67,16 @@
       "id": "7c2e",
       "username": "afnan",
       "password": "12345"
+    },
+    {
+      "id": "471d",
+      "username": "anas",
+      "password": "0000"
+    },
+    {
+      "id": "3e3e",
+      "username": "anas",
+      "password": "0000"
     }
   ]
 }
