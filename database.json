@@ -50,11 +50,11 @@
       "id": "f7f7"
     },
     {
-      "id": "24d3",
       "expencename": "asdasd",
-      "expenceamount": 120000,
+      "expenceamount": 120,
       "expencedate": "2025-04-22",
-      "userId": "507b"
+      "userId": "507b",
+      "id": "24d3"
     }
   ],
   "users": [
