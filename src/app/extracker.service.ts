@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AuthService } from './auth.service';
+import { BehaviorSubject, catchError, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -48,6 +49,8 @@ export class ExtrackerService {
       this.getExpenceData();
     });
   }
+
+
   updateExpenceData(editid: number, updatedata: any) {
     this.http
       .put(`${this.expencedataUrl}/${editid}`, updatedata)
@@ -71,3 +74,4 @@ export class ExtrackerService {
       });
   }
 }
+

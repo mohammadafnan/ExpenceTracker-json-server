@@ -65,6 +65,10 @@ export class ExpenseComponent
   isbtn = true;
 
   ngOnInit(): void {
+
+
+
+    
     console.log('ngOninit');
 
     this._ExtrackerService.getExpenceData();
@@ -230,10 +234,7 @@ export class ExpenseComponent
     }
     return this.num;
   }
-  // totalbud() {
-  //   this.budget = 50000;
-  //   return this.budget;
-  // }
+
 
   balacnce() {
     let bal = this.budget - this.num;

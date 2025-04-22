@@ -2,14 +2,14 @@
   "expenses": [],
   "users": [
     {
-      "id": "fa0e",
-      "username": "afnan",
-      "password": "12345"
-    },
-    {
-      "id": "3f3a",
+      "id": "507b",
       "username": "anas",
       "password": "0000"
+    },
+    {
+      "id": "7c2e",
+      "username": "afnan",
+      "password": "12345"
     }
   ]
 }

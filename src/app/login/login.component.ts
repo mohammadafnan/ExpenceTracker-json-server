@@ -26,7 +26,7 @@ export class LoginComponent {
   constructor(
     private router: Router,
     private formbulider: FormBuilder,
-    private auth: AuthService,
+    public auth: AuthService,
     private http: HttpClient
   ) {
     this.loginForm = this.formbulider.group({
@@ -35,52 +35,22 @@ export class LoginComponent {
     });
   }
 
-  // login(data: any) {
-  //   if (data.loginname == 'afnan' && data.loginpassword == '12345') {
-  //     alert('Login Successfully');
-  //     this.router.navigate(['/expense']);
-  //   } else {
-  //     alert('Login failed');
-  //   }
-  // }
+
 
   login() {
-    this.loading = true;
     const { username, password } = this.loginForm.value;
 
     if (this.isSignup) {
-      this.http
-        .post('http://localhost:3000/users', {
-          username,
-          password,
-        })
-        .subscribe(() => {
-          alert('Account created! Please login');
-          this.signup();
-          this.loading = false;
-        });
+      this.auth.Signup(username, password);
+      this.toggleSignup();
     } else {
-      this.http
-        .get<any[]>(`http://localhost:3000/users?username=${username}`)
-        .subscribe((users) => {
-          if (users[0]?.password === password) {
-            this.auth.login(users[0].id);
-            this.loading = true;
-
-            setTimeout(() => {
-              this.router.navigate(['/expense']);
-            }, 2000);
-            // this.router.navigate(['/expense']);
-          } else {
-            alert('Invalid credentials');
-          }
-          this.loading = true;
-          this.loginForm.reset();
-        });
+      this.auth.login(username, password);
     }
+
+    this.loginForm.reset();
   }
 
-  signup() {
+  toggleSignup() {
     this.isSignup = !this.isSignup;
   }
 }
