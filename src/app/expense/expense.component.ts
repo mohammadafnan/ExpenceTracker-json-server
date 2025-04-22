@@ -67,7 +67,7 @@ export class ExpenseComponent
 
   ngOnInit(): void {
 
-
+ 
 
     
     console.log('ngOninit');
@@ -204,6 +204,7 @@ export class ExpenseComponent
       // Edit  expense
       this._ExtrackerService.updateExpenceData(this.iseditid, this.form.value);
       alert('Updated Expense Successfully');
+      this.iseditid = null
     } else {
       // Add new expense
       this._ExtrackerService.addExpenceData(this.form.value);
