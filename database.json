@@ -1,5 +1,20 @@
 {
-  "expenses": [],
+  "expenses": [
+    {
+      "expencename": "afnan edit",
+      "expenceamount": 5000000,
+      "expencedate": "2025-04-21",
+      "userId": "7c2e",
+      "id": "e872"
+    },
+    {
+      "expencename": "anas exp edit",
+      "expenceamount": 5000000,
+      "expencedate": "2025-04-22",
+      "userId": "507b",
+      "id": "2ab4"
+    }
+  ],
   "users": [
     {
       "id": "507b",

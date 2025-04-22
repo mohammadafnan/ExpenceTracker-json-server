@@ -41,7 +41,7 @@ export class LoginComponent {
     const { username, password } = this.loginForm.value;
 
     if (this.isSignup) {
-      this.auth.Signup(username, password);
+      this.auth.signup(username, password);
       this.toggleSignup();
     } else {
       this.auth.login(username, password);

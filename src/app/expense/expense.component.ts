@@ -27,6 +27,7 @@ import * as XLSX from 'xlsx'; // Import SheetJS
 import { promiseHooks } from 'node:v8';
 import { timeout } from 'rxjs';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-product',
@@ -178,7 +179,8 @@ export class ExpenseComponent
   constructor(
     private router: Router,
     public _ExtrackerService: ExtrackerService,
-    private formbulider: FormBuilder
+    private formbulider: FormBuilder,
+    public auth:AuthService
   ) {
     this.form = this.formbulider.group({
       expencename: ['', Validators.required],
@@ -265,7 +267,7 @@ export class ExpenseComponent
     return val;
   }
 
-  Logout() {
-    this.router.navigate(['./login']);
-  }
+  // Logout() {
+  //   this.router.navigate(['./login']);
+  // }
 }

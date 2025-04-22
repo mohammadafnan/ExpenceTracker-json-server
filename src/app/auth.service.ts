@@ -12,7 +12,7 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  Signup(username: string, password: string) {
+  signup(username: string, password: string) {
     this.loading = true;
 
     this.http.post(this.userdataUrl, { username, password }).subscribe(() => {

@@ -7,53 +7,38 @@ import { BehaviorSubject, catchError, throwError } from 'rxjs';
   providedIn: 'root',
 })
 export class ExtrackerService {
-  // expense = [
-  //   {
-  //     expenceName: 'Electric Bill',
-  //     expenceCost: 10000,
-  //   },
-  //   {
-  //     expenceName: 'Internet Bill',
-  //     expenceCost: 1500,
-  //   },
-  //   {
-  //     expenceName: 'Maintainance Bill',
-  //     expenceCost: 20000,
-  //   },
-  //   {
-  //     expenceName: 'Gas Bill',
-  //     expenceCost: 1000,
-  //   },
-  //   {
-  //     expenceName: 'Petrol Cost',
-  //     expenceCost: 3000,
-  //   },
-  // ];
-
   bigbudget: any = [];
   getdata: any = [];
   copygetdata: any = [];
   postdata: any;
 
-  expencedataUrl = 'http://localhost:3000/expense';
+  expencedataUrl = 'http://localhost:3000/expenses';
   constructor(private http: HttpClient, private auth: AuthService) {}
 
   getExpenceData() {
-    this.http.get(this.expencedataUrl).subscribe((expdata) => {
-      this.getdata = expdata;
-      this.copygetdata = this.getdata;
-    });
+    const userId = localStorage.getItem('userId');
+    this.http
+      .get(`${this.expencedataUrl}?userId=${userId}`)
+      .subscribe((expdata) => {
+        this.getdata = expdata;
+        this.copygetdata = this.getdata;
+      });
   }
+
   addExpenceData(data: any) {
-    this.http.post(this.expencedataUrl, data).subscribe((expostdata) => {
+    const userId = localStorage.getItem('userId');
+    const newData = { ...data, userId };
+    console.log('Submitting new expense:', newData);
+    this.http.post(this.expencedataUrl, newData).subscribe(() => {
       this.getExpenceData();
     });
   }
 
-
   updateExpenceData(editid: number, updatedata: any) {
+    const userId = localStorage.getItem('userId');
+    const newData = { ...updatedata, userId };
     this.http
-      .put(`${this.expencedataUrl}/${editid}`, updatedata)
+      .put(`${this.expencedataUrl}/${editid}`, newData)
       .subscribe((editdata) => {
         const ind = this.getdata.findIndex((exp: any) => exp.id === editid);
         if (ind !== -1) {
@@ -63,8 +48,10 @@ export class ExtrackerService {
   }
 
   deleteExpenceData(delid: number, updatedata: any) {
+    const userId = localStorage.getItem('userId');
+    const newData = { ...updatedata, userId };
     this.http
-      .delete(`${this.expencedataUrl}/${delid}`, updatedata)
+      .delete(`${this.expencedataUrl}/${delid}`, newData)
       .subscribe((deletedata) => {
         const ind = this.getdata.findIndex((exp: any) => exp.id === delid);
         if (ind !== -1) {
@@ -74,4 +61,3 @@ export class ExtrackerService {
       });
   }
 }
-
