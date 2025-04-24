@@ -185,7 +185,7 @@ export class ExpenseComponent
     this.form = this.formbulider.group({
       expencename: ['', Validators.required],
       expenceamount: ['', Validators.required],
-      expencedate: [new Date().toISOString().substring(0, 10)], 
+      expencedate: [new Date().toISOString().substring(0, 10), Validators.required], 
     });
     // this.form2 = this.formbulider.group({
     //   addbudget: ['', Validators.required],
@@ -230,7 +230,7 @@ export class ExpenseComponent
   }
 
   totalexp() {
-    let total = this._ExtrackerService.getdata;
+    let total = this._ExtrackerService.expenseTrackerData;
     this.num = 0;
     for (let i = 0; i < total.length; i++) {
       const element = total[i];
@@ -269,7 +269,5 @@ export class ExpenseComponent
     return val;
   }
 
-  // Logout() {
-  //   this.router.navigate(['./login']);
-  // }
+
 }

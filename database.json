@@ -1,62 +1,4 @@
 {
-  "expenses": [
-    {
-      "expencename": "afnan edit",
-      "expenceamount": 5000000,
-      "expencedate": "2025-04-21",
-      "userId": "7c2e",
-      "id": "e872"
-    },
-    {
-      "id": "8fc5",
-      "expencename": "one",
-      "expenceamount": 111,
-      "expencedate": "2025-04-22",
-      "userId": "507b"
-    },
-    {
-      "id": "2031",
-      "expencename": "two",
-      "expenceamount": 222,
-      "expencedate": "2025-04-22",
-      "userId": "507b"
-    },
-    {
-      "expencename": "wer",
-      "expenceamount": 567,
-      "expencedate": "2025-04-22",
-      "userId": "507b",
-      "id": "e553"
-    },
-    {
-      "id": "c4c6",
-      "expencename": "sad",
-      "expenceamount": 444,
-      "expencedate": "2025-04-22",
-      "userId": "507b"
-    },
-    {
-      "expencename": "ere",
-      "expenceamount": 123,
-      "expencedate": "2025-04-22",
-      "userId": "507b",
-      "id": "d3c4"
-    },
-    {
-      "expencename": "hhh",
-      "expenceamount": 344,
-      "expencedate": "2025-04-22",
-      "userId": "507b",
-      "id": "f7f7"
-    },
-    {
-      "expencename": "asdd",
-      "expenceamount": 32230,
-      "expencedate": "2025-04-22",
-      "userId": "507b",
-      "id": "24d3"
-    }
-  ],
   "users": [
     {
       "id": "507b",
@@ -69,14 +11,43 @@
       "password": "12345"
     },
     {
-      "id": "471d",
-      "username": "anas",
-      "password": "0000"
-    },
-    {
-      "id": "3e3e",
-      "username": "anas",
-      "password": "0000"
+      "id": "01d9",
+      "username": "test",
+      "password": "9090"
     }
-  ]
+  ],
+  "expense": {
+    "expense": {
+      "01d9": [
+        {
+          "expencename": "Electric Bill",
+          "expenceamount": 7000,
+          "expencedate": "2025-04-24",
+          "userId": "01d9"
+        }
+      ],
+      "507b": [
+        {
+          "expencename": "Electric Bill",
+          "expenceamount": 10000,
+          "expencedate": "2025-04-24",
+          "userId": "507b"
+        }
+      ],
+      "7c2e": [
+        {
+          "expencename": "Electric Bill",
+          "expenceamount": 7000,
+          "expencedate": "2025-04-24",
+          "userId": "7c2e"
+        },
+        {
+          "expencename": "Gas",
+          "expenceamount": 700,
+          "expencedate": "2025-05-01",
+          "userId": "7c2e"
+        }
+      ]
+    }
+  }
 }

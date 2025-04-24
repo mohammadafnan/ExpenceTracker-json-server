@@ -11,29 +11,58 @@ export class ExtrackerService {
   getdata: any = [];
   copygetdata: any = [];
   postdata: any;
-
-  expencedataUrl = 'http://localhost:3000/expenses';
+  allData: any = [];
+  expencedataUrl = 'http://localhost:3000/expense';
   constructor(private http: HttpClient, private auth: AuthService) {}
 
   getExpenceData() {
     const userId = localStorage.getItem('userId');
-    this.http
-      .get(`${this.expencedataUrl}?userId=${userId}`)
-      .subscribe((expdata) => {
-        this.getdata = expdata;
-        this.copygetdata = this.getdata;
-      });
-  }
-
-  addExpenceData(data: any) {
-    const userId = localStorage.getItem('userId');
-    const newData = { ...data, userId };
-    console.log('Submitting new expense:', newData);
-    this.http.post(this.expencedataUrl, newData).subscribe(() => {
-      this.getExpenceData();
+    this.http.get<any>(this.expencedataUrl).subscribe((expdata) => {
+      this.getdata = expdata.expense;
+      this.copygetdata = this.getdata;
     });
   }
+  
 
+  // addExpenceData(data: any) {
+  //   const userId = localStorage.getItem('userId');
+  //   const newData = { ...data, userId };
+  //   this.http.post(this.expencedataUrl, newData).subscribe(() => {
+  //     this.getExpenceData();
+  //   });
+  // }
+
+  addExpenceData(data: any) {
+    if (typeof window !== 'undefined') {
+      const userId = localStorage.getItem('userId');
+      if (!userId) return;
+  
+      const newData = { ...data, userId };
+  
+      // Make sure the user's expense array exists
+      this.getdata[userId] = this.getdata[userId] || [];
+  
+      // Push new expense to that user's array
+      this.getdata[userId].push(newData);
+  
+      // Send wrapped data: { expense: { 01d9: [...], 7c2e: [...] } }
+      const wrappedExpenseData = { expense: this.getdata };
+  
+      // PUT the updated "expense" object to API
+      this.http.put(this.expencedataUrl, wrappedExpenseData).subscribe({
+        next: () => {
+          console.log('Expense added and saved to backend:', newData);
+          this.getExpenceData(); // Refresh from backend
+        },
+        error: (err) => {
+          console.error('Failed to add expense to backend:', err);
+        }
+      });
+  
+      console.log('New expense added locally:', newData);
+    }
+  }
+  
   updateExpenceData(editid: number, updatedata: any) {
     const userId = localStorage.getItem('userId');
     const newData = { ...updatedata, userId };
@@ -44,8 +73,6 @@ export class ExtrackerService {
         if (ind !== -1) {
           this.getdata[ind] = editdata;
         }
-     
-
       });
   }
 
@@ -61,5 +88,13 @@ export class ExtrackerService {
         }
         this.getExpenceData();
       });
+  }
+
+  get expenseTrackerData() {
+    if (typeof window !== 'undefined') {
+      const userId = localStorage.getItem('userId');
+      return this.getdata[userId as string] || [];
+    }
+    return [];
   }
 }

@@ -1,11 +1,13 @@
 <div>
   <div class="centerheader">
-  
     <h3>
       <i class="lni lni-trend-down-1" style="color: rgb(255, 72, 72)"></i>
       {{ heading }}
     </h3>
-    <div><button class="logout" (click)="this.auth.logout()">Logout</button></div>
+    <div>
+      <div class="welcome">Welcome to {{ this.auth.getUserName() }}</div>
+      <button class="logout" (click)="this.auth.logout()">Logout</button>
+    </div>
   </div>
 
   <div class="center">
@@ -92,7 +94,12 @@
       </thead>
 
       <tbody>
-        <tr *ngFor="let item of _ExtrackerService.getdata; let i = index">
+        <tr
+          *ngFor="
+            let item of _ExtrackerService.expenseTrackerData;
+            let i = index
+          "
+        >
           <td>{{ i + 1 }}</td>
           <td>{{ item.expencename }}</td>
           <td>
@@ -115,11 +122,16 @@
             <i class="lni lni-pencil-1"></i>
           </td>
         </tr>
-        <tr *ngIf="_ExtrackerService.getdata.length == 0">
-          <td colspan="2"></td>
-          <td class="nodata">Data not found</td>
-          <td colspan="2"></td>
-        </tr>
+        <!-- <tr *ngIf="_ExtrackerService.getdata.length == 0"> -->
+        <!-- <td colspan="2"></td> -->
+        <div
+          *ngIf="_ExtrackerService.expenseTrackerData.length == 0"
+          class="nodata"
+        >
+          Data not found
+        </div>
+        <!-- <td colspan="2"></td> -->
+        <!-- </tr> -->
         <tr>
           <td class="totalrow" colspan="2"><strong>Total</strong></td>
           <td class="totalrow">

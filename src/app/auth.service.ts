@@ -20,7 +20,6 @@ export class AuthService {
 
       alert('Account created! Please login');
       this.loading = false;
-
     });
   }
 
@@ -30,9 +29,8 @@ export class AuthService {
     this.http.get<any[]>(`${this.userdataUrl}?username=${username}`).subscribe(
       (users) => {
         if (users.length && users[0].password == password) {
-          this.saveUserId(users[0].id);
+          this.saveUserId(users[0].id, users[0].username);
           setTimeout(() => {
-
             this.router.navigate(['/expense']);
             this.loading = false;
           }, 2000);
@@ -41,27 +39,32 @@ export class AuthService {
 
           alert('Invalid credentials');
           this.loading = false;
-
         }
-
       },
       (error) => {
         console.error('Login error', error);
         alert('Something went wrong during login.');
       }
-      
     );
-    
   }
 
-  saveUserId(userId: string) {
+  saveUserId(userId: string, username: string) {
     localStorage.setItem('userId', userId);
+    localStorage.setItem('username', username);
   }
 
   getUserId() {
     return localStorage.getItem('userId');
   }
 
+  getUserName() {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('username');
+    }
+    return [];
+  }
+
+ 
   logout() {
     localStorage.removeItem('userId');
     this.router.navigate(['/login']);
