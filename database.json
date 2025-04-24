@@ -24,6 +24,25 @@
           "expenceamount": 7000,
           "expencedate": "2025-04-24",
           "userId": "01d9"
+        },
+        {
+          "expencename": "Gas",
+          "expenceamount": 100,
+          "expencedate": "2025-04-24",
+          "userId": "01d9"
+        },
+        {
+          "expencename": "picnic ",
+          "expenceamount": 50000,
+          "expencedate": "2025-04-24",
+          "userId": "01d9"
+        },
+        {
+          "expencename": "Petrol",
+          "expenceamount": 5000,
+          "expencedate": "2025-04-24",
+          "userId": "01d9",
+          "id": "47ch"
         }
       ],
       "507b": [

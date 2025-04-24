@@ -22,7 +22,6 @@ export class ExtrackerService {
       this.copygetdata = this.getdata;
     });
   }
-  
 
   // addExpenceData(data: any) {
   //   const userId = localStorage.getItem('userId');
@@ -36,18 +35,18 @@ export class ExtrackerService {
     if (typeof window !== 'undefined') {
       const userId = localStorage.getItem('userId');
       if (!userId) return;
-  
-      const newData = { ...data, userId };
-  
+
+      const newData = { ...data, userId, id: this.generateId() };
+
       // Make sure the user's expense array exists
       this.getdata[userId] = this.getdata[userId] || [];
-  
+
       // Push new expense to that user's array
       this.getdata[userId].push(newData);
-  
+
       // Send wrapped data: { expense: { 01d9: [...], 7c2e: [...] } }
       const wrappedExpenseData = { expense: this.getdata };
-  
+
       // PUT the updated "expense" object to API
       this.http.put(this.expencedataUrl, wrappedExpenseData).subscribe({
         next: () => {
@@ -56,24 +55,52 @@ export class ExtrackerService {
         },
         error: (err) => {
           console.error('Failed to add expense to backend:', err);
-        }
+        },
       });
-  
+
       console.log('New expense added locally:', newData);
     }
   }
-  
+
+  // updateExpenceData(editid: number, updatedata: any) {
+  //   const userId = localStorage.getItem('userId');
+  //   const newData = { ...updatedata, userId };
+
+  //   this.http
+  //     .put(`${this.expencedataUrl}/${editid}`, newData)
+  //     .subscribe((editdata) => {
+  //       const ind = this.getdata.findIndex((exp: any) => exp.id === editid);
+  //       if (ind !== -1) {
+  //         this.getdata[ind] = editdata;
+  //       }
+  //     });
+  // }
+
   updateExpenceData(editid: number, updatedata: any) {
     const userId = localStorage.getItem('userId');
-    const newData = { ...updatedata, userId };
-    this.http
-      .put(`${this.expencedataUrl}/${editid}`, newData)
-      .subscribe((editdata) => {
-        const ind = this.getdata.findIndex((exp: any) => exp.id === editid);
-        if (ind !== -1) {
-          this.getdata[ind] = editdata;
-        }
+    if (!userId) return;
+
+    const updatedExpense = { ...updatedata, userId };
+
+    // Find the index of the item to update in that user's expense array
+    const userExpenses = this.getdata[userId];
+    const index = userExpenses.findIndex((exp: any) => exp.id === editid);
+
+    if (index !== -1) {
+      // Update it locally
+      userExpenses[index] = updatedExpense;
+
+      // Wrap it in { expense: ... } and PUT to backend
+      this.http.put(this.expencedataUrl, { expense: this.getdata }).subscribe({
+        next: () => {
+          console.log('Expense updated in backend.');
+          this.getExpenceData(); // Refresh data
+        },
+        error: (err) => {
+          console.error('Failed to update expense:', err);
+        },
       });
+    }
   }
 
   deleteExpenceData(delid: number, updatedata: any) {
@@ -96,5 +123,9 @@ export class ExtrackerService {
       return this.getdata[userId as string] || [];
     }
     return [];
+  }
+
+  generateId(): string {
+    return Math.random().toString(36).substring(2, 6);
   }
 }
