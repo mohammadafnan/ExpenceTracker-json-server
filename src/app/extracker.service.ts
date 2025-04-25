@@ -54,7 +54,6 @@ export class ExtrackerService {
           this.getExpenceData(); // Refresh from backend
         },
 
-
         error: (err) => {
           console.error('Failed to add expense to backend:', err);
         },
@@ -82,7 +81,7 @@ export class ExtrackerService {
     const userId = localStorage.getItem('userId');
     if (!userId) return;
 
-    const updatedExpense = { ...updatedata, userId ,id: this.generateId() };
+    const updatedExpense = { ...updatedata, userId, id: this.generateId() };
 
     // Find the index of the item to update in that user's expense array
     const userExpenses = this.getdata[userId];
@@ -105,18 +104,41 @@ export class ExtrackerService {
     }
   }
 
+  // deleteExpenceData(delid: number, updatedata: any) {
+  //   const userId = localStorage.getItem('userId');
+  //   const newData = { ...updatedata, userId };
+  //   this.http
+  //     .delete(`${this.expencedataUrl}/${delid}`, newData)
+  //     .subscribe((deletedata) => {
+  //       const ind = this.getdata.findIndex((exp: any) => exp.id === delid);
+  //       if (ind !== -1) {
+  //         this.getdata[ind] = deletedata;
+  //       }
+  //       this.getExpenceData();
+  //     });
+  // }
   deleteExpenceData(delid: number, updatedata: any) {
     const userId = localStorage.getItem('userId');
-    const newData = { ...updatedata, userId };
-    this.http
-      .delete(`${this.expencedataUrl}/${delid}`, newData)
-      .subscribe((deletedata) => {
-        const ind = this.getdata.findIndex((exp: any) => exp.id === delid);
-        if (ind !== -1) {
-          this.getdata[ind] = deletedata;
-        }
-        this.getExpenceData();
+    if (!userId) return;
+    // const updatedExpense = { ...updatedata, delid, id: this.generateId };
+
+    const userExpense = this.getdata[userId];
+    if (!userExpense) return;
+
+    const index = userExpense.findIndex((exp: any) => exp.id === delid);
+
+    if (index !== -1) {
+      userExpense.splice(index, 1);
+      this.http.delete(`${this.expencedataUrl}/${delid}`).subscribe({
+        next: () => {
+          console.log('Expense deleted successfully.');
+          this.getExpenceData(); // Refresh local data from backend
+        },
+        error: (err) => {
+          console.error('Failed to delete expense:', err);
+        },
       });
+    }
   }
 
   get expenseTrackerData() {
