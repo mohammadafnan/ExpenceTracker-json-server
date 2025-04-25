@@ -22,54 +22,44 @@
         {
           "expencename": "Electric Bill",
           "expenceamount": 7000,
-          "expencedate": "2025-04-24",
-          "userId": "01d9"
+          "expencedate": "2025-04-25",
+          "userId": "01d9",
+          "id": "bu4h"
         },
         {
-          "expencename": "Gas",
-          "expenceamount": 100,
-          "expencedate": "2025-04-24",
-          "userId": "01d9"
-        },
-        {
-          "expencename": "picnic ",
-          "expenceamount": 50000,
-          "expencedate": "2025-04-24",
-          "userId": "01d9"
-        },
-        {
-          "expencename": "petrol",
-          "expenceamount": 30000,
-          "expencedate": "2025-04-24",
-          "userId": "01d9"
-        },
-        {
-          "expencename": "kulfi",
-          "expenceamount": 3000,
-          "expencedate": "2025-04-24",
-          "userId": "01d9"
-        }
-      ],
-      "507b": [
-        {
-          "expencename": "Electric Bill",
-          "expenceamount": 10000,
-          "expencedate": "2025-04-24",
-          "userId": "507b"
-        }
-      ],
-      "7c2e": [
-        {
-          "expencename": "Electric Bill",
-          "expenceamount": 7000,
-          "expencedate": "2025-04-24",
-          "userId": "7c2e"
-        },
-        {
-          "expencename": "Gas",
+          "expencename": "Gas Bill",
           "expenceamount": 700,
-          "expencedate": "2025-05-01",
-          "userId": "7c2e"
+          "expencedate": "2025-04-25",
+          "userId": "01d9",
+          "id": "0sww"
+        },
+        {
+          "expencename": "Rashan",
+          "expenceamount": 10000,
+          "expencedate": "2025-04-25",
+          "userId": "01d9",
+          "id": "0i1t"
+        },
+        {
+          "expencename": "Oil ",
+          "expenceamount": 3500,
+          "expencedate": "2025-04-25",
+          "userId": "01d9",
+          "id": "c6o3"
+        },
+        {
+          "expencename": "Milk",
+          "expenceamount": 7000,
+          "expencedate": "2025-04-25",
+          "userId": "01d9",
+          "id": "5jk3"
+        },
+        {
+          "expencename": "Petrol",
+          "expenceamount": 6000,
+          "expencedate": "2025-04-25",
+          "userId": "01d9",
+          "id": "42x8"
         }
       ]
     }

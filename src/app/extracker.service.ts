@@ -53,6 +53,8 @@ export class ExtrackerService {
           console.log('Expense added and saved to backend:', newData);
           this.getExpenceData(); // Refresh from backend
         },
+
+
         error: (err) => {
           console.error('Failed to add expense to backend:', err);
         },
@@ -80,7 +82,7 @@ export class ExtrackerService {
     const userId = localStorage.getItem('userId');
     if (!userId) return;
 
-    const updatedExpense = { ...updatedata, userId };
+    const updatedExpense = { ...updatedata, userId ,id: this.generateId() };
 
     // Find the index of the item to update in that user's expense array
     const userExpenses = this.getdata[userId];
