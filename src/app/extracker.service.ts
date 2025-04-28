@@ -63,19 +63,7 @@ export class ExtrackerService {
     }
   }
 
-  // updateExpenceData(editid: number, updatedata: any) {
-  //   const userId = localStorage.getItem('userId');
-  //   const newData = { ...updatedata, userId };
-
-  //   this.http
-  //     .put(`${this.expencedataUrl}/${editid}`, newData)
-  //     .subscribe((editdata) => {
-  //       const ind = this.getdata.findIndex((exp: any) => exp.id === editid);
-  //       if (ind !== -1) {
-  //         this.getdata[ind] = editdata;
-  //       }
-  //     });
-  // }
+ 
 
   updateExpenceData(editid: number, updatedata: any) {
     const userId = localStorage.getItem('userId');
@@ -104,35 +92,26 @@ export class ExtrackerService {
     }
   }
 
-  // deleteExpenceData(delid: number, updatedata: any) {
-  //   const userId = localStorage.getItem('userId');
-  //   const newData = { ...updatedata, userId };
-  //   this.http
-  //     .delete(`${this.expencedataUrl}/${delid}`, newData)
-  //     .subscribe((deletedata) => {
-  //       const ind = this.getdata.findIndex((exp: any) => exp.id === delid);
-  //       if (ind !== -1) {
-  //         this.getdata[ind] = deletedata;
-  //       }
-  //       this.getExpenceData();
-  //     });
-  // }
-  deleteExpenceData(delid: number, updatedata: any) {
+  deleteExpenceData(delid: number) {
     const userId = localStorage.getItem('userId');
     if (!userId) return;
-    // const updatedExpense = { ...updatedata, delid, id: this.generateId };
-
-    const userExpense = this.getdata[userId];
-    if (!userExpense) return;
-
-    const index = userExpense.findIndex((exp: any) => exp.id === delid);
-
+  
+    const userExpenses = this.getdata[userId];
+  
+    if (!userExpenses) return;
+  
+    // Find the index of the item to delete
+    const index = userExpenses.findIndex((exp: any) => exp.id === delid);
+  
     if (index !== -1) {
-      userExpense.splice(index, 1);
-      this.http.delete(`${this.expencedataUrl}/${delid}`).subscribe({
+      // Remove the expense locally
+      userExpenses.splice(index, 1);
+  
+      // Send updated data back to the backend
+      this.http.put(this.expencedataUrl, { expense: this.getdata }).subscribe({
         next: () => {
           console.log('Expense deleted successfully.');
-          this.getExpenceData(); // Refresh local data from backend
+          this.getExpenceData(); // Refresh the UI
         },
         error: (err) => {
           console.error('Failed to delete expense:', err);
@@ -140,6 +119,8 @@ export class ExtrackerService {
       });
     }
   }
+  
+ 
 
   get expenseTrackerData() {
     if (typeof window !== 'undefined') {

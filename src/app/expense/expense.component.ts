@@ -225,7 +225,7 @@ export class ExpenseComponent
   }
 
   deleteExpense(item: any) {
-    this._ExtrackerService.deleteExpenceData(item.id, this.form.value);
+    this._ExtrackerService.deleteExpenceData(item.id);
     alert('Deleted Expense Successfully');
   }
 

@@ -41,25 +41,11 @@
           "id": "0i1t"
         },
         {
-          "expencename": "Oil ",
-          "expenceamount": 3500,
-          "expencedate": "2025-04-25",
-          "userId": "01d9",
-          "id": "c6o3"
-        },
-        {
-          "expencename": "Milk",
+          "expencename": "Milk ",
           "expenceamount": 7000,
-          "expencedate": "2025-04-25",
+          "expencedate": "2025-04-28",
           "userId": "01d9",
-          "id": "5jk3"
-        },
-        {
-          "expencename": "Petrol",
-          "expenceamount": 6000,
-          "expencedate": "2025-04-25",
-          "userId": "01d9",
-          "id": "42x8"
+          "id": "om7e"
         }
       ]
     }
