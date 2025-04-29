@@ -1,6 +1,9 @@
 <div>
   <div class="centerheader">
-    <div ><img class="user" src="/assets/images/user1.jpg" alt=""> Welcome to {{ this.auth.getUserName() }}</div>
+    <div>
+      <img class="user" src="/assets/images/user1.jpg" alt="" /> Welcome to
+      {{ this.auth.getUserName() }}
+    </div>
 
     <h3>
       <i class="lni lni-trend-down-1" style="color: rgb(255, 72, 72)"></i>
@@ -18,7 +21,112 @@
     </button> -->
     <!-- End Q1 -->
     <div class="setfrom">
-      <input type="number" placeholder="Enter budget" [(ngModel)]="number1" />
+      <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+        <ul
+          class="flex flex-wrap -mb-px text-sm font-medium text-center"
+          id="default-tab"
+          data-tabs-toggle="#default-tab-content"
+          role="tablist"
+        >
+          <li class="me-2" role="presentation">
+            <button
+              class="inline-block p-4 border-b-2 rounded-t-lg"
+              id="profile-tab"
+              data-tabs-target="#profile"
+              type="button"
+              role="tab"
+              aria-controls="profile"
+              aria-selected="false"
+            >
+              Add Budget
+            </button>
+          </li>
+          <li class="me-2" role="presentation">
+            <button
+              class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+              id="dashboard-tab"
+              data-tabs-target="#dashboard"
+              type="button"
+              role="tab"
+              aria-controls="dashboard"
+              aria-selected="false"
+            >
+              Add Expense
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div id="default-tab-content">
+        <div
+          class="hidden p-4 rounded-lg bg[#0d1117]"
+          id="profile"
+          role="tabpanel"
+          aria-labelledby="profile-tab"
+        >
+          <input
+            type="number"
+            placeholder="Enter budget"
+            [(ngModel)]="number1"
+          />
+
+          <button
+            title="Add budget"
+            (click)="addBudget()"
+            class="add hover:bg-sky-800"
+            [ngClass]="!number1 ? 'dis' : 'green'"
+            [disabled]="!number1"
+          >
+            <i class="lni lni-plus icon"></i> Add Budget
+          </button>
+        </div>
+        <div
+          class="hidden p-4 rounded-lg bg[#0d1117]"
+          id="dashboard"
+          role="tabpanel"
+          aria-labelledby="dashboard-tab"
+        >
+          <form [formGroup]="form">
+            <input
+              type="text"
+              placeholder="Enter Expense"
+              formControlName="expencename"
+            />
+            <input
+              type="number"
+              placeholder="Enter Expense Cost"
+              formControlName="expenceamount"
+            />
+            <input
+              class="date"
+              type="date"
+              placeholder="Enter Expense Date"
+              formControlName="expencedate"
+            />
+
+            <button
+              title="Add Expense"
+              [ngClass]="{
+                dis: form.valid == false,
+                green: form.valid == true
+              }"
+              (click)="addexpense()"
+              class="add hover:bg-sky-800"
+              [disabled]="!form.valid"
+            >
+              <i class="lni lni-plus icon"></i> Add Expense
+            </button>
+            <button
+              title="Download excel sheet"
+              class="export"
+              (click)="exportToExcel()"
+            >
+              <i class="lni lni-cloud-download icon2"></i>Export
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- <input type="number" placeholder="Enter budget" [(ngModel)]="number1" />
 
       <button
         title="Add budget"
@@ -28,14 +136,9 @@
         [disabled]="!number1"
       >
         <i class="lni lni-plus icon"></i> Add Budget
-      </button>
-      <input
-      type="text"
-      placeholder="Search Expense"
-      [(ngModel)]="this._ExtrackerService.searchText"
-    />
-      <form [formGroup]="form">
-      
+      </button> -->
+
+      <!-- <form [formGroup]="form">
         <input
           type="text"
           placeholder="Enter Expense"
@@ -72,18 +175,22 @@
         >
           <i class="lni lni-cloud-download icon2"></i>Export
         </button>
-      </form>
-      <!-- <input #input type="text" placeholder="Enter Name" /> -->
-      <!-- {{ input.placeholder }} -->
-      <!-- {{ input.type }} -->
-      <!-- value : {{ input.value }}
-      <button class="bg-black p-2" (click)="check(input.value)">check</button> -->
+      </form> -->
     </div>
   </div>
 
   <div class="center">
     <table id="excel-table">
       <thead>
+        <tr>
+          <input
+            class="mb-3"
+            type="text"
+            placeholder="Search Expense"
+            [(ngModel)]="this._ExtrackerService.searchText"
+          />
+        </tr>
+
         <tr>
           <th>S.no</th>
           <th>Expense Name</th>
@@ -180,9 +287,9 @@
       >
     </h2>
     <!-- <span class="ope">{{ totalexp() > this.budget ? ">" : "<" }}</span> -->
-    <span class="ope" *ngIf="totalexp() == this.budget">=</span>
+    <!-- <span class="ope" *ngIf="totalexp() == this.budget">=</span>
     <span class="ope" *ngIf="totalexp() > this.budget">></span>
-    <span class="ope" *ngIf="totalexp() < this.budget"><</span>
+    <span class="ope" *ngIf="totalexp() < this.budget"><</span> -->
 
     <h2 class="card2 ml-5">
       <!-- Total budget : {{ this.budget }} -->
