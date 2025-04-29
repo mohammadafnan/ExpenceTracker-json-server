@@ -17,46 +17,37 @@
     }
   ],
   "expense": {
-    "expense": {
-      "01d9": [
-        {
-          "expencename": "Electric Bill",
-          "expenceamount": 7000,
-          "expencedate": "2025-04-25",
-          "userId": "01d9",
-          "id": "bu4h"
-        },
-        {
-          "expencename": "Gas Bill",
-          "expenceamount": 700,
-          "expencedate": "2025-04-25",
-          "userId": "01d9",
-          "id": "0sww"
-        },
-        {
-          "expencename": "Rashan",
-          "expenceamount": 10000,
-          "expencedate": "2025-04-25",
-          "userId": "01d9",
-          "id": "0i1t"
-        }
-      ],
-      "507b": [
-        {
-          "expencename": "petrol",
-          "expenceamount": 7000,
-          "expencedate": "2025-04-28",
-          "userId": "507b",
-          "id": "czqh"
-        },
-        {
-          "expencename": "electric bill",
-          "expenceamount": 9000,
-          "expencedate": "2025-04-28",
-          "userId": "507b",
-          "id": "7q5x"
-        }
-      ]
-    }
+    "01d9": [
+      {
+        "expencename": "Electric Bill",
+        "expenceamount": 7000,
+        "expencedate": "2025-04-25",
+        "userId": "01d9",
+        "id": "bu4h"
+      },
+      {
+        "expencename": "Gas Bill",
+        "expenceamount": 700,
+        "expencedate": "2025-04-25",
+        "userId": "01d9",
+        "id": "0sww"
+      }
+    ],
+    "507b": [
+      {
+        "expencename": "petrol",
+        "expenceamount": 7000,
+        "expencedate": "2025-04-28",
+        "userId": "507b",
+        "id": "czqh"
+      },
+      {
+        "expencename": "electric bill",
+        "expenceamount": 9000,
+        "expencedate": "2025-04-28",
+        "userId": "507b",
+        "id": "7q5x"
+      }
+    ]
   }
 }

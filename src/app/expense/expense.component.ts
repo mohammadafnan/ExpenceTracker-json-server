@@ -67,12 +67,16 @@ export class ExpenseComponent
 
   ngOnInit(): void {
 
- 
 
-    
+
+
     console.log('ngOninit');
 
+
+
+    
     this._ExtrackerService.getExpenceData();
+    // console.log(this._ExtrackerService.copygetdata +"check service");
 
     //Start Q1
     // var type
@@ -180,12 +184,15 @@ export class ExpenseComponent
     private router: Router,
     public _ExtrackerService: ExtrackerService,
     private formbulider: FormBuilder,
-    public auth:AuthService
+    public auth: AuthService
   ) {
     this.form = this.formbulider.group({
       expencename: ['', Validators.required],
       expenceamount: ['', Validators.required],
-      expencedate: [new Date().toISOString().substring(0, 10), Validators.required], 
+      expencedate: [
+        new Date().toISOString().substring(0, 10),
+        Validators.required,
+      ],
     });
     // this.form2 = this.formbulider.group({
     //   addbudget: ['', Validators.required],
@@ -204,7 +211,7 @@ export class ExpenseComponent
       // Edit  expense
       this._ExtrackerService.updateExpenceData(this.iseditid, this.form.value);
       alert('Updated Expense Successfully');
-      this.iseditid = null
+      this.iseditid = null;
     } else {
       // Add new expense
       this._ExtrackerService.addExpenceData(this.form.value);
@@ -221,7 +228,6 @@ export class ExpenseComponent
       expencedate: item.expencedate,
     });
     this.iseditid = item.id;
-    
   }
 
   deleteExpense(item: any) {
@@ -238,7 +244,6 @@ export class ExpenseComponent
     }
     return this.num;
   }
-
 
   balacnce() {
     let bal = this.budget - this.num;
@@ -258,6 +263,7 @@ export class ExpenseComponent
   }
 
   search(text: any) {
+
     this._ExtrackerService.getdata = this._ExtrackerService.copygetdata.filter(
       (x: any) =>
         x.expencename.toLowerCase().indexOf(text) >= 0 ||
@@ -265,9 +271,10 @@ export class ExpenseComponent
     );
   }
 
+
+  
+
   check(val: any) {
     return val;
   }
-
-
 }

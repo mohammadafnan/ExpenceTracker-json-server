@@ -9,7 +9,7 @@ import { BehaviorSubject, catchError, throwError } from 'rxjs';
 export class ExtrackerService {
   bigbudget: any = [];
   getdata: any = [];
-  copygetdata: any = [];
+  copygetdata: any[] = [];
   postdata: any;
   allData: any = [];
   expencedataUrl = 'http://localhost:3000/expense';
@@ -18,7 +18,7 @@ export class ExtrackerService {
   getExpenceData() {
     const userId = localStorage.getItem('userId');
     this.http.get<any>(this.expencedataUrl).subscribe((expdata) => {
-      this.getdata = expdata.expense;
+      this.getdata = expdata;
       this.copygetdata = this.getdata;
     });
   }
@@ -45,7 +45,7 @@ export class ExtrackerService {
       this.getdata[userId].push(newData);
 
       // Send wrapped data: { expense: { 01d9: [...], 7c2e: [...] } }
-      const wrappedExpenseData = { expense: this.getdata };
+      const wrappedExpenseData =  this.getdata ;
 
       // PUT the updated "expense" object to API
       this.http.put(this.expencedataUrl, wrappedExpenseData).subscribe({
@@ -80,7 +80,7 @@ export class ExtrackerService {
       userExpenses[index] = updatedExpense;
 
       // Wrap it in { expense: ... } and PUT to backend
-      this.http.put(this.expencedataUrl, { expense: this.getdata }).subscribe({
+      this.http.put(this.expencedataUrl, this.getdata).subscribe({
         next: () => {
           console.log('Expense updated in backend.');
           this.getExpenceData(); // Refresh data
@@ -108,7 +108,7 @@ export class ExtrackerService {
       userExpenses.splice(index, 1);
   
       // Send updated data back to the backend
-      this.http.put(this.expencedataUrl, { expense: this.getdata }).subscribe({
+      this.http.put(this.expencedataUrl, this.getdata).subscribe({
         next: () => {
           console.log('Expense deleted successfully.');
           this.getExpenceData(); // Refresh the UI
