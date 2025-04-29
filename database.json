@@ -39,13 +39,22 @@
           "expencedate": "2025-04-25",
           "userId": "01d9",
           "id": "0i1t"
+        }
+      ],
+      "507b": [
+        {
+          "expencename": "petrol",
+          "expenceamount": 7000,
+          "expencedate": "2025-04-28",
+          "userId": "507b",
+          "id": "czqh"
         },
         {
-          "expencename": "Milk ",
-          "expenceamount": 10000,
+          "expencename": "electric bill",
+          "expenceamount": 9000,
           "expencedate": "2025-04-28",
-          "userId": "01d9",
-          "id": "tm57"
+          "userId": "507b",
+          "id": "7q5x"
         }
       ]
     }

@@ -1,11 +1,12 @@
 <div>
   <div class="centerheader">
+    <div ><img class="user" src="/assets/images/user1.jpg" alt=""> Welcome to {{ this.auth.getUserName() }}</div>
+
     <h3>
       <i class="lni lni-trend-down-1" style="color: rgb(255, 72, 72)"></i>
       {{ heading }}
     </h3>
     <div>
-      <div class="welcome">Welcome to {{ this.auth.getUserName() }}</div>
       <button class="logout" (click)="this.auth.logout()">Logout</button>
     </div>
   </div>
