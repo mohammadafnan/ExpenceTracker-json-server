@@ -62,10 +62,14 @@ table {
 }
 
 input {
-  border: 1px solid rgb(255, 255, 255);
+  border: 1px solid #a0a0a0;
   background-color: transparent;
   padding-left: 10px;
   color: white;
+  margin-right: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  height: 30px;
 }
 
 ::placeholder {
@@ -94,14 +98,29 @@ th {
   cursor: pointer;
 }
 
+.dis {
+  background-color: #161c25;
+    border: 0;
+  color: white;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+
 .green {
   background-color: rgb(0, 190, 102);
   border: 0;
   color: white;
   width: 150px;
-  height: 29px;
+  height: 30px;
   cursor: pointer;
+  border-radius: 5px;
 }
+
+
+
 
 .update {
   color: rgb(156, 156, 156);
@@ -171,6 +190,9 @@ th {
   width: 150px;
   height: 29px;
   cursor: pointer;
+  margin-left: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
 .lbl {
