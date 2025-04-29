@@ -29,13 +29,13 @@
       >
         <i class="lni lni-plus icon"></i> Add Budget
       </button>
-
+      <input
+      type="text"
+      placeholder="Search Expense"
+      [(ngModel)]="this._ExtrackerService.searchText"
+    />
       <form [formGroup]="form">
-        <input
-          type="text"
-          placeholder="Search Expense"
-          (keyup)="search($any($event.target).value.toLowerCase())"
-        />
+      
         <input
           type="text"
           placeholder="Enter Expense"
