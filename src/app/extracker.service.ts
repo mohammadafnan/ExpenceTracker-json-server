@@ -19,7 +19,9 @@ export class ExtrackerService {
     const userId = localStorage.getItem('userId');
     this.http.get<any>(this.expencedataUrl).subscribe((expdata) => {
       this.getdata = expdata;
-      this.copygetdata = this.getdata;
+      // this.copygetdata = this.getdata;
+      this.copygetdata =  this.getdata.expense;
+
     });
   }
 
