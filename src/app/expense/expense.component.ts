@@ -236,7 +236,7 @@ export class ExpenseComponent
   }
 
   totalexp() {
-    let total = this._ExtrackerService.expenseTrackerData;
+    let total = this._ExtrackerService.expenseTrackerData || [];
     this.num = 0;
     for (let i = 0; i < total.length; i++) {
       const element = total[i];
