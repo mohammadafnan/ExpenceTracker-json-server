@@ -21,18 +21,20 @@
     </button> -->
     <!-- End Q1 -->
     <div class="setfrom">
-      <div class="mb-0 border-b border-gray-200 dark:border-gray-700">
+      <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
         <ul
           class="flex flex-wrap -mb-px text-sm font-medium text-center"
-          id="default-tab"
-          data-tabs-toggle="#default-tab-content"
+          id="default-styled-tab"
+          data-tabs-toggle="#default-styled-tab-content"
+          data-tabs-active-classes="text-purple-600 hover:text-purple-600 dark:text-red-400 dark:hover:text-red-400 border-purple-600 dark:border-red-400"
+          data-tabs-inactive-classes="dark:border-transparent text-gray-500 hover:text-gray-600 dark:text-gray-400 border-gray-100 hover:border-gray-300 dark:border-gray-700 dark:hover:text-gray-300"
           role="tablist"
         >
           <li class="me-2" role="presentation">
             <button
               class="inline-block p-4 border-b-2 rounded-t-lg"
-              id="profile-tab"
-              data-tabs-target="#profile"
+              id="profile-styled-tab"
+              data-tabs-target="#styled-profile"
               type="button"
               role="tab"
               aria-controls="profile"
@@ -44,8 +46,8 @@
           <li class="me-2" role="presentation">
             <button
               class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
-              id="dashboard-tab"
-              data-tabs-target="#dashboard"
+              id="dashboard-styled-tab"
+              data-tabs-target="#styled-dashboard"
               type="button"
               role="tab"
               aria-controls="dashboard"
@@ -56,10 +58,10 @@
           </li>
         </ul>
       </div>
-      <div id="default-tab-content">
+      <div id="default-styled-tab-content">
         <div
-          class="hidden p-4 rounded-lg bg[#0d1117]"
-          id="profile"
+          class="hidden p-4 rounded-lg bg-[#0d1117]"
+          id="styled-profile"
           role="tabpanel"
           aria-labelledby="profile-tab"
         >
@@ -80,8 +82,8 @@
           </button>
         </div>
         <div
-          class="hidden p-4 rounded-lg bg[#0d1117]"
-          id="dashboard"
+          class="hidden p-4 rounded-lg bg-[#0d1117]"
+          id="styled-dashboard"
           role="tabpanel"
           aria-labelledby="dashboard-tab"
         >
@@ -125,57 +127,6 @@
           </form>
         </div>
       </div>
-
-      <!-- <input type="number" placeholder="Enter budget" [(ngModel)]="number1" />
-
-      <button
-        title="Add budget"
-        (click)="addBudget()"
-        class="add hover:bg-sky-800"
-        [ngClass]="!number1 ? 'dis' : 'green'"
-        [disabled]="!number1"
-      >
-        <i class="lni lni-plus icon"></i> Add Budget
-      </button> -->
-
-      <!-- <form [formGroup]="form">
-        <input
-          type="text"
-          placeholder="Enter Expense"
-          formControlName="expencename"
-        />
-        <input
-          type="number"
-          placeholder="Enter Expense Cost"
-          formControlName="expenceamount"
-        />
-        <input
-          class="date"
-          type="date"
-          placeholder="Enter Expense Date"
-          formControlName="expencedate"
-        />
-
-        <button
-          title="Add Expense"
-          [ngClass]="{
-            dis: form.valid == false,
-            green: form.valid == true
-          }"
-          (click)="addexpense()"
-          class="add hover:bg-sky-800"
-          [disabled]="!form.valid"
-        >
-          <i class="lni lni-plus icon"></i> Add Expense
-        </button>
-        <button
-          title="Download excel sheet"
-          class="export"
-          (click)="exportToExcel()"
-        >
-          <i class="lni lni-cloud-download icon2"></i>Export
-        </button>
-      </form> -->
     </div>
   </div>
 
