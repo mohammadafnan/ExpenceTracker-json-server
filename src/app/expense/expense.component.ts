@@ -253,7 +253,7 @@ export class ExpenseComponent
   exportToExcel(): void {
     const element: any = document.getElementById('excel-table');
     // Remove action columns (Delete and Edit) from cloned table
-    const headerRow = element.tHead.rows[0];
+    const headerRow = element.tHead.rows[1];
     headerRow.deleteCell(4); // Remove "Delete" header (4th column)
     headerRow.deleteCell(4); // Remove "Edit" header (now 4th column after previous deletion)
     const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);

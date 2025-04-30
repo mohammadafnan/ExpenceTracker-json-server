@@ -20,7 +20,8 @@
       Test
     </button> -->
     <!-- End Q1 -->
-    <div class="setfrom">
+    <div class="setfrom"          
+    >
       <div class="border-b border-gray-200 dark:border-gray-700">
         <ul
           class="flex flex-wrap -mb-px text-sm font-medium text-center"
@@ -184,10 +185,7 @@
         <!-- <tr *ngIf="_ExtrackerService.getdata.length == 0"> -->
         <!-- <td colspan="2"></td> -->
         <div
-          *ngIf="
-           this._ExtrackerService.expenseTrackerData?.length === 0
-       
-          "
+          *ngIf="this._ExtrackerService.expenseTrackerData?.length === 0"
           class="nodata"
         >
           Data not found
@@ -197,7 +195,7 @@
         <tr>
           <td class="totalrow" colspan="2"><strong>Total</strong></td>
           <td class="totalrow">
-            <strong>{{
+            <strong >{{
               totalexp() | currency : "USD" : "symbol" : "2.0"
             }}</strong>
           </td>
