@@ -32,7 +32,7 @@
         >
           <li class="me-2" role="presentation">
             <button
-              class="inline-block p-2 border-b-2 rounded-t-lg"
+              class="inline-block p-2 border-b-2 rounded-t-lg cursor-pointer"
               id="profile-styled-tab"
               data-tabs-target="#styled-profile"
               type="button"
@@ -45,7 +45,7 @@
           </li>
           <li class="me-2" role="presentation">
             <button
-              class="inline-block p-2 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+              class="inline-block p-2 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 cursor-pointer"
               id="dashboard-styled-tab"
               data-tabs-target="#styled-dashboard"
               type="button"
@@ -184,7 +184,10 @@
         <!-- <tr *ngIf="_ExtrackerService.getdata.length == 0"> -->
         <!-- <td colspan="2"></td> -->
         <div
-          *ngIf="_ExtrackerService.expenseTrackerData.length == 0"
+          *ngIf="
+           this._ExtrackerService.expenseTrackerData?.length === 0
+       
+          "
           class="nodata"
         >
           Data not found
