@@ -43,10 +43,10 @@
     "507b": [
       {
         "expencename": "petrol",
-        "expenceamount": 70000,
+        "expenceamount": 7000,
         "expencedate": "2025-04-28",
         "userId": "507b",
-        "id": "xt4g"
+        "id": "xa9p"
       },
       {
         "expencename": "electric bill",
@@ -61,6 +61,20 @@
         "expencedate": "2025-04-30",
         "userId": "507b",
         "id": "p0cw"
+      },
+      {
+        "expencename": "indrive",
+        "expenceamount": 550,
+        "expencedate": "2025-05-13",
+        "userId": "507b",
+        "id": "f7h4"
+      },
+      {
+        "expencename": "sad",
+        "expenceamount": 21,
+        "expencedate": "2025-05-13",
+        "userId": "507b",
+        "id": "x41y"
       }
     ],
     "7c2e": [

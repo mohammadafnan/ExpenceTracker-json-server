@@ -20,18 +20,11 @@ export class ExtrackerService {
     const userId = localStorage.getItem('userId');
     this.http.get<any>(this.expencedataUrl).subscribe((expdata) => {
       this.getdata = expdata;
-      // this.copygetdata = this.getdata;
       this.copygetdata = this.getdata.expense;
     });
   }
 
-  // addExpenceData(data: any) {
-  //   const userId = localStorage.getItem('userId');
-  //   const newData = { ...data, userId };
-  //   this.http.post(this.expencedataUrl, newData).subscribe(() => {
-  //     this.getExpenceData();
-  //   });
-  // }
+ 
 
   addExpenceData(data: any) {
     if (typeof window !== 'undefined') {
@@ -120,14 +113,6 @@ export class ExtrackerService {
     }
   }
 
-  // get expenseTrackerData() {
-  //   if (typeof window !== 'undefined') {
-  //     const userId = localStorage.getItem('userId');
-  //     return this.getdata[userId as string] || [];
-  //   }
-  //   return [];
-  // }
-
 
   get expenseTrackerData() {
     if (typeof window === 'undefined') return [];
@@ -135,7 +120,7 @@ export class ExtrackerService {
     const userId = localStorage.getItem('userId');
     const expenses = this.getdata?.[userId ?? ''] ;
   
-    const search = this.searchText?.trim().toLowerCase();
+    const search = this.searchText;
     if (!search) return expenses;
   
     return expenses.filter((item: { expencename: string; expenceamount: { toString: () =>  any[]; }; }) =>
