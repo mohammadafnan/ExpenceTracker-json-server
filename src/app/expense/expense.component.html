@@ -20,8 +20,7 @@
       Test
     </button> -->
     <!-- End Q1 -->
-    <div class="setfrom w-[900px]"           
-    >
+    <div class="setfrom w-[900px]">
       <div class="border-b border-gray-200 dark:border-gray-700">
         <ul
           class="flex flex-wrap -mb-px text-sm font-medium text-center"
@@ -195,7 +194,7 @@
         <tr>
           <td class="totalrow" colspan="2"><strong>Total</strong></td>
           <td class="totalrow">
-            <strong >{{
+            <strong>{{
               totalexp() | currency : "USD" : "symbol" : "2.0"
             }}</strong>
           </td>
@@ -220,7 +219,7 @@
   <!-- <div class="flex justify-center flex-col md:flex-row" id="excel-table"> -->
   <!-- End Q2 -->
   <div class="flex justify-center flex-col md:flex-row" id="excel-table">
-    <h2
+    <h3
       [ngClass]="{
         card3: totalexp() > this.budget,
         card1: totalexp() < this.budget,
@@ -237,21 +236,21 @@
       <label class="lbl" *ngIf="totalexp() > this.budget"
         >Expense is exceed to the Budget</label
       >
-    </h2>
+    </h3>
     <!-- <span class="ope">{{ totalexp() > this.budget ? ">" : "<" }}</span> -->
     <!-- <span class="ope" *ngIf="totalexp() == this.budget">=</span>
     <span class="ope" *ngIf="totalexp() > this.budget">></span>
     <span class="ope" *ngIf="totalexp() < this.budget"><</span> -->
 
-    <h2 class="card2 ml-5">
+    <h3 class="card2 ml-5">
       <!-- Total budget : {{ this.budget }} -->
       <i class="lni lni-dollar-circle icon2"></i>
       Total budget : {{ this.budget | currency : "USD" : "symbol" : "2.0" }}
       <!-- <input type="number" name="" id="" [(ngModel)]="this.budget" /> -->
-    </h2>
-    <h2 class="card4 ml-5">
+    </h3>
+    <h3 class="card4 ml-5">
       <i class="lni lni-weight-machine-1 icon2"></i>Balance :
       {{ balacnce() | currency : "USD" : "symbol" : "2.0" }}
-    </h2>
+    </h3>
   </div>
 </div>
