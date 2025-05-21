@@ -49,11 +49,11 @@
         "id": "7q5x"
       },
       {
-        "expencename": "asd",
-        "expenceamount": 5566,
+        "expencename": "bakre",
+        "expenceamount": 53500,
         "expencedate": "2025-04-30",
         "userId": "507b",
-        "id": "p0cw"
+        "id": "u7xq"
       },
       {
         "expencename": "indrive",
@@ -67,7 +67,7 @@
         "expenceamount": 80000,
         "expencedate": "2025-05-13",
         "userId": "507b",
-        "id": "c5ty"
+        "id": "55cr"
       }
     ],
     "7c2e": [
@@ -77,6 +77,13 @@
         "expencedate": "2025-04-30",
         "userId": "7c2e",
         "id": "xgkt"
+      },
+      {
+        "expencename": "picnic ",
+        "expenceamount": 50000,
+        "expencedate": "2025-05-21",
+        "userId": "7c2e",
+        "id": "93k7"
       }
     ]
   }
