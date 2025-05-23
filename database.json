@@ -65,9 +65,16 @@
       {
         "expencename": "Aqqeqa",
         "expenceamount": 80000,
-        "expencedate": "2025-05-13",
+        "expencedate": "2025-05-18",
         "userId": "507b",
-        "id": "55cr"
+        "id": "w0c5"
+      },
+      {
+        "expencename": "Gifts",
+        "expenceamount": 50000,
+        "expencedate": "2025-05-23",
+        "userId": "507b",
+        "id": "604f"
       }
     ],
     "7c2e": [

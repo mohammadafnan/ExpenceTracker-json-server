@@ -1,0 +1,28 @@
+.centerheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 20px !important;
+  }
+
+  .user {
+    width: 30px;
+    height: 30px;
+    display: inline;
+    border-radius: 50px;
+    margin-right: 6px;
+    object-fit: cover;
+  }
+  .logout {
+    // position: absolute;
+    right: 0;
+    top: 20px;
+    margin-right: 10px;
+    background-color: #dc3545;
+    border-radius: 5px;
+    border: 0;
+    width: 100px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+  }
+  

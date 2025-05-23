@@ -28,6 +28,7 @@ import { promiseHooks } from 'node:v8';
 import { timeout } from 'rxjs';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-product',
@@ -38,6 +39,7 @@ import { AuthService } from '../auth.service';
     NgIf,
     FormsModule,
     CurrencyPipe,
+    HeaderComponent
   ],
   standalone: true,
   templateUrl: './expense.component.html',
