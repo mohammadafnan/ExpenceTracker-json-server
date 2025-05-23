@@ -1,22 +1,68 @@
 <div class="centerheader">
-  <div>
-    <img
-      class="user"
-      src="/assets/images/user1.jpg"
-      alt=""
-      data-drawer-target="drawer-navigation"
-      data-drawer-show="drawer-navigation"
-      aria-controls="drawer-navigation "
-    />
-    Welcome to
-    {{ this.auth.getUserName() }}
+  <div
+    data-drawer-target="drawer-navigation"
+    data-drawer-show="drawer-navigation"
+    aria-controls="drawer-navigation "
+  >
+    <i class="lni lni-menu-hamburger-1" style="font-size: 22px"></i>
   </div>
 
   <h3>
     <i class="lni lni-trend-down-1" style="color: rgb(255, 72, 72)"></i>
     {{ heading }}
   </h3>
-  <div>
+  <!-- <div>
     <button class="logout" (click)="this.auth.logout()">Logout</button>
+  </div> -->
+
+  <button
+    id="dropdownAvatarNameButton"
+    data-dropdown-toggle="dropdownAvatarName"
+    class=" flex items-center text-sm pe-1 font-medium text-gray-900 rounded-full hover:text-red-600 dark:hover:text-red-400 md:me-0  dark:text-white"
+    type="button"
+  >
+    <span class="sr-only">Open user menu</span>
+    <img
+      class="w-8 h-8 me-2 rounded-full user"
+      src="/assets/images/user1.jpg"
+      alt="user photo"
+    />
+    Welcome to
+    {{ this.auth.getUserName() }}
+    <svg
+      class="w-2.5 h-2.5 ms-3"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 10 6"
+    >
+      <path
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="m1 1 4 4 4-4"
+      />
+    </svg>
+  </button>
+
+  <!-- Dropdown menu -->
+  <div
+    id="dropdownAvatarName"
+    class="z-10 hidden bg-[#0d131a] divide-y divide-gray-100 rounded-lg shadow-xl w-44 dark:divide-gray-600"
+  >
+    <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+      <div class="font-medium">Hi,{{ this.auth.getUserName() }}</div>
+      <!-- <div class="truncate">{{ this.auth.getUserName() }}</div> -->
+    </div>
+
+    <div class="py-2">
+      <p
+        (click)="this.auth.logout()"
+        class="cursor-pointer block px-4 py-2 text-sm text-red-400 "
+      >
+        Sign out
+      </p>
+    </div>
   </div>
 </div>

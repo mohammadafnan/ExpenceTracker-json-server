@@ -13,13 +13,12 @@ background: linear-gradient(90deg, rgba(31,42,4,1) 27%, rgba(15,21,0,1) 65%); */
   overflow-x: hidden;
 }
 
-
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px transparent; 
+  box-shadow: inset 0 0 5px transparent;
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
@@ -31,3 +30,7 @@ background: linear-gradient(90deg, rgba(31,42,4,1) 27%, rgba(15,21,0,1) 65%); */
   background: transparent;
 }
 
+button:focus {
+  outline: 0px dotted;
+  outline: 0px auto ;
+}
