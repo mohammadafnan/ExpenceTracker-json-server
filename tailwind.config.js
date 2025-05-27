@@ -1,8 +1,8 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{html,ts}'],
-  safelist: ['bg-red-500', 'text-white', 'p-4'], // Add all dynamic classes here
+  content: ["./src/**/*.{html,ts}", "./node_modules/flowbite/**/*.js"],
   theme: {
     extend: {},
   },
-  plugins: [],
-}
+  // plugins: [require("flowbite/plugin")],
+};

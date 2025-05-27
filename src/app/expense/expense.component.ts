@@ -32,7 +32,7 @@ import { AuthService } from '../auth.service';
 import { HeaderComponent } from '../header/header.component';
 
 @Component({
-  selector: 'app-product',
+  selector: 'app-expense',
   imports: [
     NgFor,
     ReactiveFormsModule,
@@ -46,7 +46,7 @@ import { HeaderComponent } from '../header/header.component';
   templateUrl: './expense.component.html',
   styleUrl: './expense.component.scss',
   host: { ngSkipHydration: 'true' },
-  // encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.None,
 })
 export class ExpenseComponent
   implements

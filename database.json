@@ -43,10 +43,10 @@
     "507b": [
       {
         "expencename": "electric bill",
-        "expenceamount": 9000,
+        "expenceamount": 9095,
         "expencedate": "2025-04-28",
         "userId": "507b",
-        "id": "7q5x"
+        "id": "il1j"
       },
       {
         "expencename": "bakre",
@@ -75,6 +75,13 @@
         "expencedate": "2025-05-23",
         "userId": "507b",
         "id": "604f"
+      },
+      {
+        "expencename": "mobile realme",
+        "expenceamount": 22000,
+        "expencedate": "2025-05-27",
+        "userId": "507b",
+        "id": "ya1s"
       }
     ],
     "7c2e": [
