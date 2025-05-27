@@ -16,7 +16,6 @@
   </h6>
   <button
     type="button"
-    data-drawer-hide="drawer-navigation"
     aria-controls="drawer-navigation"
     class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 end-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
   >
@@ -57,7 +56,6 @@
           </svg>
           <span
             class="ms-3"
-            data-drawer-hide="drawer-navigation"
             (click)="gotodash()"
             >Dashboard</span
           >
@@ -80,7 +78,6 @@
           </svg>
           <span
             class="flex-1 ms-3 whitespace-nowrap"
-            data-drawer-hide="drawer-navigation"
             (click)="gotoexpense()"
             >Expense</span
           >
@@ -111,7 +108,7 @@
               d="M8.961 16a.93.93 0 0 0 .189-.019l3.4-.679a.961.961 0 0 0 .49-.263l6.118-6.117a2.884 2.884 0 0 0-4.079-4.078l-6.117 6.117a.96.96 0 0 0-.263.491l-.679 3.4A.961.961 0 0 0 8.961 16Zm7.477-9.8a.958.958 0 0 1 .68-.281.961.961 0 0 1 .682 1.644l-.315.315-1.36-1.36.313-.318Zm-5.911 5.911 4.236-4.236 1.359 1.359-4.236 4.237-1.7.339.341-1.699Z"
             />
           </svg>
-          <span class="flex-1 ms-3 whitespace-nowrap"     data-drawer-hide="drawer-navigation"
+          <span class="flex-1 ms-3 whitespace-nowrap"     
           (click)="this.auth.logout()">Logout</span>
         </a>
       </li>
