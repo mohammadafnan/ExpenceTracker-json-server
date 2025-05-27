@@ -11,6 +11,7 @@ import {
   Optional,
   Query,
   SimpleChanges,
+  ViewEncapsulation,
 } from '@angular/core';
 import { ExtrackerService } from '../extracker.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -39,12 +40,13 @@ import { HeaderComponent } from '../header/header.component';
     NgIf,
     FormsModule,
     CurrencyPipe,
-    HeaderComponent
+    HeaderComponent,
   ],
   standalone: true,
   templateUrl: './expense.component.html',
   styleUrl: './expense.component.scss',
   host: { ngSkipHydration: 'true' },
+  // encapsulation: ViewEncapsulation.None,
 })
 export class ExpenseComponent
   implements
@@ -68,15 +70,8 @@ export class ExpenseComponent
   isbtn = true;
 
   ngOnInit(): void {
-
-
-
-
     console.log('ngOninit');
 
-
-
-    
     this._ExtrackerService.getExpenceData();
     // console.log(this._ExtrackerService.copygetdata +"check service");
 
@@ -265,16 +260,12 @@ export class ExpenseComponent
   }
 
   search(text: any) {
-
     this._ExtrackerService.getdata = this._ExtrackerService.copygetdata.filter(
       (x: any) =>
         x.expencename.toLowerCase().indexOf(text) >= 0 ||
         x.expenceamount.toString().toLowerCase().indexOf(text) >= 0
     );
   }
-
-
-  
 
   check(val: any) {
     return val;

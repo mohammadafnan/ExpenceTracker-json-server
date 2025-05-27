@@ -1,0 +1,101 @@
+//Start Q1
+    // var type
+    var x = 1;
+    if (true) {
+      var x = 22;
+      console.log(x);
+    }
+    console.log(x);
+
+    // let type
+    let a = 0;
+    if (true) {
+      let a = 1;
+      console.log(a);
+    }
+    console.log(a);
+
+    // const type
+    const z = 10;
+    // z = 100;
+    console.log(z);
+    //End Q1
+
+    //Start Q2
+    var array: any[] = [];
+    var arr = array.push('afnan', 100, true);
+    console.log('It will reture length is' + ' ' + arr);
+    //End Q2
+
+    //Start Q3
+    let obj = { carname: 'hyundai', model: 2025 };
+    console.log(obj);
+    console.log(obj.carname);
+    console.log(obj.model);
+    let objname = obj;
+    objname.carname = 'hyundai 503';
+    console.log(obj);
+    //End Q3
+
+    //Start Q4
+    // sync
+    console.log('Server A');
+    console.log('Server B');
+    console.log('Server C');
+
+    // Async
+    console.log('Server X');
+    setTimeout(() => {
+      console.log('Server Y');
+    }, 2000);
+    console.log('Server Z');
+
+    // async await
+    console.log('i');
+
+    async function great() {
+      await new Promise((res) => setTimeout(res, 2000));
+      console.log('j');
+    }
+    console.log('k');
+    great();
+    //End Q4
+
+    /////code practice....
+    var d = 0;
+    console.log(d + 'this is z');
+  }
+
+  ngDoCheck(): void {
+    console.log('ngDoCheck');
+  }
+  ngAfterContentInit(): void {
+    console.log('ngAfterContentInit');
+  }
+
+  ngAfterContentChecked(): void {
+    console.log('ngAfterContentChecked');
+  }
+
+  ngAfterViewInit(): void {
+    console.log('ngAfterViewInit');
+
+    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+    //Add 'implements AfterViewInit' to the class.
+  }
+  ngAfterViewChecked(): void {
+    console.log('ngAfterViewChecked');
+
+    //Called after every check of the component's view. Applies to components only.
+    //Add 'implements AfterViewChecked' to the class.
+  }
+
+  ngOnDestroy(): void {
+    console.log('ngOnDestroy');
+
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('ngOnChanges');
+  }

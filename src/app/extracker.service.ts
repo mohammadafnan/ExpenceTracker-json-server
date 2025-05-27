@@ -17,14 +17,14 @@ export class ExtrackerService {
   constructor(private http: HttpClient, private auth: AuthService) {}
 
   getExpenceData() {
-    const userId = localStorage.getItem('userId');
+    // if (typeof window !== 'undefined') {
+    //   const userId = localStorage.getItem('userId');
+    // }
     this.http.get<any>(this.expencedataUrl).subscribe((expdata) => {
       this.getdata = expdata;
       this.copygetdata = this.getdata.expense;
     });
   }
-
- 
 
   addExpenceData(data: any) {
     if (typeof window !== 'undefined') {
@@ -113,22 +113,24 @@ export class ExtrackerService {
     }
   }
 
-
   get expenseTrackerData() {
     if (typeof window === 'undefined') return [];
-  
+
     const userId = localStorage.getItem('userId');
-    const expenses = this.getdata?.[userId ?? ''] ;
-  
+    const expenses = this.getdata?.[userId ?? ''];
+
     const search = this.searchText;
     if (!search) return expenses;
-  
-    return expenses.filter((item: { expencename: string; expenceamount: { toString: () =>  any[]; }; }) =>
-      item.expencename.toLowerCase().includes(search) ||
-      item.expenceamount.toString().includes(search)
+
+    return expenses.filter(
+      (item: {
+        expencename: string;
+        expenceamount: { toString: () => any[] };
+      }) =>
+        item.expencename.toLowerCase().includes(search) ||
+        item.expenceamount.toString().includes(search)
     );
   }
-  
 
   generateId(): string {
     return Math.random().toString(36).substring(2, 6);

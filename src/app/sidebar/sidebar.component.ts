@@ -13,10 +13,14 @@ export class SidebarComponent {
 
   gotodash() {
     this.router.navigate(['/dashboard']);
+    // location.replace('/dashboard');
+
   }
 
   gotoexpense() {
     this.router.navigate(['/expense']);
+    // location.replace('/expense');
+
   }
 
  

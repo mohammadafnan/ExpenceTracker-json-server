@@ -5,7 +5,7 @@ import { ExpenseComponent } from './expense/expense.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 export const routes: Routes = [
-    { path: "", redirectTo: "login", pathMatch: "full" },
+    { path: "", redirectTo: "", pathMatch: "full" },
     { path: "login", component: LoginComponent },
     { path: "expense", component: ExpenseComponent },
     { path: "dashboard", component: DashboardComponent },
