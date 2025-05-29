@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AuthService } from './auth.service';
 import { BehaviorSubject, catchError, throwError } from 'rxjs';
+import { NavigationEnd, Router } from '@angular/router';
 
 declare global {
   interface Window {
@@ -20,7 +21,19 @@ export class ExtrackerService {
   allData: any = [];
   expencedataUrl = 'http://localhost:3000/expense';
   searchText: any;
-  constructor(private http: HttpClient, private auth: AuthService) {}
+  currentRoute: string = '';
+
+  constructor(
+    private http: HttpClient,
+    private auth: AuthService,
+    public router: Router
+  ) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.currentRoute = event.urlAfterRedirects;
+      }
+    });
+  }
 
   getExpenceData() {
     this.http.get<any>(this.expencedataUrl).subscribe((expdata) => {

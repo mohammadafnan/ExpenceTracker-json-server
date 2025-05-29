@@ -40,7 +40,6 @@ import { HeaderComponent } from '../header/header.component';
     NgIf,
     FormsModule,
     CurrencyPipe,
-    HeaderComponent,
   ],
   standalone: true,
   templateUrl: './expense.component.html',
@@ -48,8 +47,7 @@ import { HeaderComponent } from '../header/header.component';
   host: { ngSkipHydration: 'true' },
   encapsulation: ViewEncapsulation.None,
 })
-export class ExpenseComponent
-  implements
+export class ExpenseComponent implements
     OnInit,
     DoCheck,
     AfterContentInit,

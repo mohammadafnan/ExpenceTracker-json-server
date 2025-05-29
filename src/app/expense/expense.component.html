@@ -1,7 +1,5 @@
 <div>
 
-  <app-header ></app-header>
-
   <div class="center">
     <!-- Start Q1 -->
     <!-- <button [ngClass]="isbtn == true ? 'a' : 'b'" [disabled]="isbtn == false">
@@ -20,7 +18,7 @@
         >
           <li class="me-2" role="presentation">
             <button
-              class="inline-block p-2 border-b-2 rounded-t-lg cursor-pointer "
+              class="inline-block p-2 border-b-2 rounded-t-lg cursor-pointer"
               id="profile-styled-tab"
               data-tabs-target="#styled-profile"
               type="button"
@@ -161,7 +159,7 @@
           >
             <i class="lni lni-trash-3"></i>
           </td>
-          <td 
+          <td
             title="Edit row record"
             class="update"
             (click)="editExpense(item)"
@@ -207,7 +205,8 @@
   <!-- <div class="flex justify-center flex-col md:flex-row" id="excel-table"> -->
   <!-- End Q2 -->
   <div class="flex justify-center flex-col md:flex-row" id="excel-table">
-    <h3 class="text-2xl"
+    <h3
+      class="text-2xl"
       [ngClass]="{
         card3: totalexp() > this.budget,
         card1: totalexp() < this.budget,
@@ -242,4 +241,3 @@
     </h3>
   </div>
 </div>
-

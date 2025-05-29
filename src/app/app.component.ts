@@ -6,17 +6,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { ExtrackerService } from './extracker.service';
 declare const initFlowbite: any;
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SidebarComponent],
+  imports: [RouterOutlet, SidebarComponent, HeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent implements AfterViewInit {
   title = 'pegasus_productWeb';
-  constructor(private router: Router) {}
+  constructor(private router: Router,public extracker:ExtrackerService) {}
 
   ngAfterViewInit() {
     this.router.events.subscribe((event) => {
@@ -27,5 +28,10 @@ export class AppComponent implements AfterViewInit {
         initFlowbite();
       }
     });
+  }
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+
   }
 }
