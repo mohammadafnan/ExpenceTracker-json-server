@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { ExtrackerService } from '../extracker.service';
+
 
 @Component({
   selector: 'app-header',
@@ -10,5 +12,6 @@ import { AuthService } from '../auth.service';
 export class HeaderComponent {
   heading = 'Expense Tracker';
 
-  constructor(public auth: AuthService) {}
+  constructor(public auth: AuthService, public extracker: ExtrackerService) {}
+
 }

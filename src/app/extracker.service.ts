@@ -3,6 +3,12 @@ import { Injectable } from '@angular/core';
 import { AuthService } from './auth.service';
 import { BehaviorSubject, catchError, throwError } from 'rxjs';
 
+declare global {
+  interface Window {
+    Drawer: any;
+  }
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -17,9 +23,6 @@ export class ExtrackerService {
   constructor(private http: HttpClient, private auth: AuthService) {}
 
   getExpenceData() {
-    // if (typeof window !== 'undefined') {
-    //   const userId = localStorage.getItem('userId');
-    // }
     this.http.get<any>(this.expencedataUrl).subscribe((expdata) => {
       this.getdata = expdata;
       this.copygetdata = this.getdata.expense;
@@ -134,5 +137,21 @@ export class ExtrackerService {
 
   generateId(): string {
     return Math.random().toString(36).substring(2, 6);
+  }
+
+  toggleDrawer() {
+    const drawernavi = document.getElementById('drawer-navigation');
+    if (drawernavi) {
+      const drawer = new window.Drawer(drawernavi);
+      drawer.toggle();
+    }
+  }
+
+  toggleHide() {
+    const drawhide = document.getElementById('drawer-navigation');
+    if (drawhide) {
+      const drawer = new window.Drawer(drawhide);
+      drawer.hide();
+    }
   }
 }
