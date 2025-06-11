@@ -27,28 +27,9 @@ export class DashboardComponent implements AfterViewInit {
 
   ngOnInit(): void {
     this._ExtrackerService.getExpenceData();
-
-    // Only run in the browser
-    // if (isPlatformBrowser(this.platformId)) {
-    //   const chartEl = document.getElementById('labels-chart');
-    //   if (chartEl) {
-    //     const chart = new ApexCharts(chartEl, this.options);
-    //     chart.render();
-    //   }
-    // }
   }
 
-  async ngAfterViewInit(): Promise<void> {
-    if (isPlatformBrowser(this.platformId)) {
-      const ApexCharts = (await import('apexcharts')).default;
 
-      const chartEl = document.getElementById('labels-chart');
-      if (chartEl) {
-        const chart = new ApexCharts(chartEl, this.options);
-        chart.render();
-      }
-    }
-  }
 
   totalexp() {
     let total = this._ExtrackerService.expenseTrackerData || [];
@@ -64,78 +45,92 @@ export class DashboardComponent implements AfterViewInit {
     return this.budget - this.num;
   }
 
-  options: ApexOptions = {
-    chart: {
-      height: '100%',
-      type: 'area',
-      fontFamily: 'Inter, sans-serif',
-      dropShadow: {
-        enabled: true,
-      },
-      toolbar: {
-        show: true,
-      },
-    },
-    tooltip: {
-      enabled: false,
-      x: {
-        show: false,
-      },
-    },
-    fill: {
-      type: 'gradient',
-      gradient: {
-        opacityFrom: 0.55,
-        opacityTo: 0,
-        shade: '#1C64F2',
-        gradientToColors: ['#1C64F2'],
-      },
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    stroke: {
-      width: 6,
-    },
-    grid: {
-      show: false,
-      strokeDashArray: 4,
-      padding: {
-        left: 2,
-        right: 2,
-        top: 0,
-      },
-    },
-    series: [
-      {
-        name: 'New users',
-        data: [6500, 6418, 6456, 6526, 6356, 6456],
-        // color: '#1A56DB',
-        color: '#1A56DB',
-      },
-    ],
-    xaxis: {
-      categories: [
-        '01 February',
-        '02 February',
-        '03 February',
-        '04 February',
-        '05 February',
-        '06 February',
-        '07 February',
-      ],
-      labels: {
-        show: true,
-      },
-      axisBorder: {
-        show: false,
-      },
-      axisTicks: {
-        show: false,
-      },
-    },
-    yaxis: {
-      show: true,
-    },
-  };
+  async ngAfterViewInit(): Promise<void> {
+    if (isPlatformBrowser(this.platformId)) {
+      const ApexCharts = (await import('apexcharts')).default;
+  
+      // Step 1: Get dynamic user expense data
+      const expenseData = this._ExtrackerService.expenseTrackerData || [];
+  
+      // Step 2: Group data by date and sum amounts
+      const expenseMap = new Map<string, number>();
+  
+      expenseData.forEach((entry: any) => {
+        const date = entry.expencedate;
+        const amount = entry.expenceamount;
+  
+        if (expenseMap.has(date)) {
+          expenseMap.set(date, expenseMap.get(date) + amount);
+        } else {
+          expenseMap.set(date, amount);
+        }
+      });
+  
+      // Step 3: Sort dates and prepare chart data
+      const sortedDates = Array.from(expenseMap.keys()).sort();
+      const seriesData = sortedDates.map(date => expenseMap.get(date));
+      const categories = sortedDates.map(date =>
+        new Date(date).toLocaleDateString('en-US', {
+          day: '2-digit',
+          month: 'short'
+        })
+      );
+  
+      // Step 4: Define chart options
+      const options = {
+        series: [
+          {
+            name: 'Expense data',
+            data: seriesData,
+            color: '#1A56DB',
+          },
+        ],
+        chart: {
+          type: 'area',
+          height: 350,
+        },
+        xaxis: {
+          categories: categories,
+          labels: { show: true },
+          axisBorder: { show: false },
+          axisTicks: { show: false },
+        },
+        yaxis: {
+          show: true,
+        },
+        tooltip: {
+          enabled: false,
+          x: { show: false },
+        },
+        fill: {
+          type: 'gradient',
+          gradient: {
+            opacityFrom: 0.55,
+            opacityTo: 0,
+            shade: '#1C64F2',
+            gradientToColors: ['#1C64F2'],
+          },
+        },
+        dataLabels: { enabled: false },
+        stroke: { width: 6 },
+        grid: {
+          show: false,
+          strokeDashArray: 4,
+          padding: {
+            left: 2,
+            right: 2,
+            top: 0,
+          },
+        },
+      };
+  
+      // Step 5: Render chart
+      const chartEl = document.getElementById('labels-chart');
+      if (chartEl) {
+        const chart = new ApexCharts(chartEl, options);
+        chart.render();
+      }
+    }
+  }
+  
 }

@@ -57,5 +57,10 @@ button:focus {
 
 
 .apexcharts-theme-light .apexcharts-menu-item:hover {
-  background: #000000;
+  background: #000000 !important;
 }
+
+
+/* .apexcharts-theme-light .apexcharts-menu-item:hover {
+  background: #ff0202;
+} */
