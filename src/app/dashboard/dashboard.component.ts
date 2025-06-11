@@ -111,7 +111,7 @@ export class DashboardComponent implements AfterViewInit {
             gradientToColors: ['#1C64F2'],
           },
         },
-        dataLabels: { enabled: false },
+        dataLabels: { enabled: true },
         stroke: { width: 6 },
         grid: {
           show: false,
