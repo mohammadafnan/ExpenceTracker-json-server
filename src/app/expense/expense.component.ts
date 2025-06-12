@@ -47,7 +47,8 @@ import { HeaderComponent } from '../header/header.component';
   host: { ngSkipHydration: 'true' },
   encapsulation: ViewEncapsulation.None,
 })
-export class ExpenseComponent implements
+export class ExpenseComponent
+  implements
     OnInit,
     DoCheck,
     AfterContentInit,

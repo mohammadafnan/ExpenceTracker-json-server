@@ -72,3 +72,12 @@ button:focus {
   border: 1px solid #0d131a !important;
   background: #0d131a !important;
 }
+
+
+tr th{
+  color: rgb(218, 218, 218);
+}
+
+tr td{
+  color: darkgray;
+}
