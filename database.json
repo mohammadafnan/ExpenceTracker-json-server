@@ -49,13 +49,6 @@
         "id": "il1j"
       },
       {
-        "expencename": "bakre",
-        "expenceamount": 53500,
-        "expencedate": "2025-04-30",
-        "userId": "507b",
-        "id": "u7xq"
-      },
-      {
         "expencename": "indrive",
         "expenceamount": 5500,
         "expencedate": "2025-05-13",
@@ -71,10 +64,10 @@
       },
       {
         "expencename": "Gifts",
-        "expenceamount": 50000,
+        "expenceamount": 30000,
         "expencedate": "2025-05-23",
         "userId": "507b",
-        "id": "074k"
+        "id": "c84g"
       },
       {
         "expencename": "Qubani",
