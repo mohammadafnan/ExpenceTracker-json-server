@@ -112,7 +112,7 @@ export class DashboardComponent implements AfterViewInit {
           },
         },
         dataLabels: { enabled: true },
-        stroke: { width: 6 },
+        stroke: { width: 5 },
         grid: {
           show: false,
           strokeDashArray: 4,
