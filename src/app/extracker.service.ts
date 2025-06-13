@@ -22,6 +22,8 @@ export class ExtrackerService {
   expencedataUrl = 'http://localhost:3000/expense';
   searchText: any;
   currentRoute: string = '';
+  budget: any;
+  number: any;
 
   constructor(
     private http: HttpClient,
@@ -34,6 +36,9 @@ export class ExtrackerService {
       }
     });
   }
+
+
+
 
   getExpenceData() {
     this.http.get<any>(this.expencedataUrl).subscribe((expdata) => {

@@ -75,6 +75,13 @@
         "expencedate": "2025-06-07",
         "userId": "507b",
         "id": "3twi"
+      },
+      {
+        "expencename": "Gas bill",
+        "expenceamount": 550,
+        "expencedate": "2025-06-13",
+        "userId": "507b",
+        "id": "ured"
       }
     ],
     "7c2e": [

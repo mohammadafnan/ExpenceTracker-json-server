@@ -18,7 +18,7 @@ import { ExtrackerService } from '../extracker.service';
 })
 export class DashboardComponent implements AfterViewInit {
   num: number = 0;
-  budget: number = 50000;
+  budget: any = 0;
 
   constructor(
     public _ExtrackerService: ExtrackerService,
@@ -27,9 +27,8 @@ export class DashboardComponent implements AfterViewInit {
 
   ngOnInit(): void {
     this._ExtrackerService.getExpenceData();
+    // this._ExtrackerService.budget
   }
-
-
 
   totalexp() {
     let total = this._ExtrackerService.expenseTrackerData || [];
@@ -42,40 +41,41 @@ export class DashboardComponent implements AfterViewInit {
   }
 
   balacnce(): number {
+    this.budget = localStorage.getItem('budget');
     return this.budget - this.num;
   }
 
   async ngAfterViewInit(): Promise<void> {
     if (isPlatformBrowser(this.platformId)) {
       const ApexCharts = (await import('apexcharts')).default;
-  
+
       // Step 1: Get dynamic user expense data
       const expenseData = this._ExtrackerService.expenseTrackerData || [];
-  
+
       // Step 2: Group data by date and sum amounts
       const expenseMap = new Map<string, number>();
-  
+
       expenseData.forEach((entry: any) => {
         const date = entry.expencedate;
         const amount = entry.expenceamount;
-  
+
         if (expenseMap.has(date)) {
           expenseMap.set(date, expenseMap.get(date) + amount);
         } else {
           expenseMap.set(date, amount);
         }
       });
-  
+
       // Step 3: Sort dates and prepare chart data
       const sortedDates = Array.from(expenseMap.keys()).sort();
-      const seriesData = sortedDates.map(date => expenseMap.get(date));
-      const categories = sortedDates.map(date =>
+      const seriesData = sortedDates.map((date) => expenseMap.get(date));
+      const categories = sortedDates.map((date) =>
         new Date(date).toLocaleDateString('en-US', {
           day: '2-digit',
-          month: 'short'
+          month: 'short',
         })
       );
-  
+
       // Step 4: Define chart options
       const options = {
         series: [
@@ -123,7 +123,7 @@ export class DashboardComponent implements AfterViewInit {
           },
         },
       };
-  
+
       // Step 5: Render chart
       const chartEl = document.getElementById('labels-chart');
       if (chartEl) {
@@ -132,5 +132,4 @@ export class DashboardComponent implements AfterViewInit {
       }
     }
   }
-  
 }

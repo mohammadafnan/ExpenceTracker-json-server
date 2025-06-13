@@ -63,9 +63,10 @@ export class ExpenseComponent
   // form2: FormGroup;
   isedit = false;
   iseditid: number | null = null;
-  budget: any = 50000;
+  budget: any;
+  number: any;
   num: any;
-  number1: any;
+
   isbtn = true;
 
   ngOnInit(): void {
@@ -196,12 +197,6 @@ export class ExpenseComponent
     console.log('constructor');
   }
 
-  addBudget() {
-    this.budget = this.number1;
-    alert('Budget added Successfully');
-    this.number1 = '';
-  }
-
   addexpense() {
     if (this.iseditid) {
       // Edit  expense
@@ -241,10 +236,17 @@ export class ExpenseComponent
     return this.num;
   }
 
-  balacnce() {
-    let bal = this.budget - this.num;
-    return bal;
+  addBudget() {
+    this.budget = this.number;
+    localStorage.setItem('budget', this.budget);
+    alert('Budget added Successfully' + this.budget);
+    this.number = '';
   }
+
+  // balacnce() {
+  //   let bal = this.budget - this.num;
+  //   return bal;
+  // }
 
   exportToExcel(): void {
     const element: any = document.getElementById('excel-table');

@@ -53,15 +53,15 @@
           <input
             type="number"
             placeholder="Enter budget"
-            [(ngModel)]="number1"
+            [(ngModel)]="this.number"
           />
 
           <button
             title="Add budget"
             (click)="addBudget()"
             class="add hover:bg-sky-800"
-            [ngClass]="!number1 ? 'dis' : 'green'"
-            [disabled]="!number1"
+            [ngClass]="!this.number ? 'dis' : 'green'"
+            [disabled]="!this.number"
           >
             <i class="lni lni-plus icon"></i> Add Budget
           </button>
