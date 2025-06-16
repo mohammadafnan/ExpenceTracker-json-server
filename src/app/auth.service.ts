@@ -9,11 +9,8 @@ import { error } from 'console';
 export class AuthService {
   userdataUrl = 'http://localhost:3000/users';
   loading: boolean = false;
-  
 
-  constructor(private http: HttpClient, private router: Router) {
-
-  }
+  constructor(private http: HttpClient, private router: Router) {}
   // if (typeof window !== 'undefined') {
   // }
   signup(username: string, password: string) {
@@ -36,8 +33,6 @@ export class AuthService {
           this.saveUserId(users[0].id, users[0].username);
           setTimeout(() => {
             this.router.navigate(['/expense']);
-
-            // location.replace('/expense');
 
             this.loading = false;
           }, 200);

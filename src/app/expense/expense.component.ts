@@ -236,10 +236,22 @@ export class ExpenseComponent
     return this.num;
   }
 
+  // addBudget() {
+  //   let currentuser = localStorage.getItem('userId');
+  //   const userBudgets = JSON.parse(localStorage.getItem('userBudgets') || '{}');
+
+  //   this.budget = this.number;
+  //   localStorage.setItem('budget', this.budget);
+  //   alert('Budget added Successfully' + this.budget);
+  //   this.number = '';
+  // }
+
   addBudget() {
-    this.budget = this.number;
-    localStorage.setItem('budget', this.budget);
-    alert('Budget added Successfully' + this.budget);
+    let userId: any = localStorage.getItem('userId');
+    let userBudgets = JSON.parse(localStorage.getItem('userBudgets') || '{}');
+    userBudgets[userId] = this.number;
+    localStorage.setItem('userBudgets', JSON.stringify(userBudgets));
+    alert('Budget added Succesfully' + this.number);
     this.number = '';
   }
 

@@ -42,7 +42,13 @@ export class DashboardComponent implements AfterViewInit {
 
   balacnce(): number {
     this.budget = localStorage.getItem('budget');
-    return this.budget - this.num;
+    return  this.getUserBudget() - this.num;
+  }
+
+  getUserBudget() {
+    const userId: any = localStorage.getItem('userId');
+    const userBudgets = JSON.parse(localStorage.getItem('userBudgets') || '{}');
+    return userBudgets[userId] || 0;
   }
 
   async ngAfterViewInit(): Promise<void> {

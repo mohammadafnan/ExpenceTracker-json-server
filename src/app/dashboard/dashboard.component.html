@@ -4,41 +4,41 @@
   <h3
     class="text-2xl"
     [ngClass]="{
-      card3: totalexp() > this.budget,
-      card1: totalexp() < this.budget,
-      card2: totalexp() == this.budget
+      card3: totalexp() > getUserBudget(),
+      card1: totalexp() < getUserBudget(),
+      card2: totalexp() == getUserBudget()
     }"
   >
-    <i *ngIf="totalexp() < this.budget" class="lni lni-trend-down-1"></i>
-    <i *ngIf="totalexp() > this.budget" class="lni lni-trend-up-1"></i>
+    <i *ngIf="totalexp() < getUserBudget()" class="lni lni-trend-down-1"></i>
+    <i *ngIf="totalexp() > getUserBudget()" class="lni lni-trend-up-1"></i>
     Total Expense : {{ totalexp() | currency : "USD" : "symbol" : "2.0" }}
     <br />
-    <label class="lbl text-sm" *ngIf="totalexp() < this.budget"
+    <label class="lbl text-sm" *ngIf="totalexp() < getUserBudget()"
       >Under Budget</label
     >
-    <label class="lbl text-sm" *ngIf="totalexp() == this.budget"
+    <label class="lbl text-sm" *ngIf="totalexp() == getUserBudget()"
       >Expense is equal to the budget.</label
     >
-    <label class="lbl text-sm" *ngIf="totalexp() > this.budget"
+    <label class="lbl text-sm" *ngIf="totalexp() > getUserBudget()"
       >Expense is exceed to the Budget</label
     >
   </h3>
-  <!-- <span class="ope">{{ totalexp() > this.budget ? ">" : "<" }}</span> -->
-  <!-- <span class="ope" *ngIf="totalexp() == this.budget">=</span>
-    <span class="ope" *ngIf="totalexp() > this.budget">></span>
-    <span class="ope" *ngIf="totalexp() < this.budget"><</span> -->
+  <!-- <span class="ope">{{ totalexp() > getUserBudget() ? ">" : "<" }}</span> -->
+  <!-- <span class="ope" *ngIf="totalexp() == getUserBudget()">=</span>
+    <span class="ope" *ngIf="totalexp() > getUserBudget()">></span>
+    <span class="ope" *ngIf="totalexp() < getUserBudget()"><</span> -->
 
   <h3 class="card2 ml-5 text-2xl">
-    <!-- Total budget : {{ this.budget }} -->
+    <!-- Total budget : {{ getUserBudget() }} -->
     <i class="lni lni-dollar-circle icon2"></i>
-    Total budget : {{ this.budget | currency : "USD" : "symbol" : "2.0" }}
-    <!-- <input type="number" name="" id="" [(ngModel)]="this.budget" /> -->
+    Total budget : {{ getUserBudget() | currency : "USD" : "symbol" : "2.0" }}
+    <!-- <input type="number" name="" id="" [(ngModel)]="getUserBudget()" /> -->
   </h3>
   <h3 class="card4 ml-5 text-2xl">
     <i class="lni lni-weight-machine-1 icon2"></i>Balance :
     {{ balacnce() | currency : "USD" : "symbol" : "2.0" }} <br />
-    <label class="lbl text-sm" *ngIf="totalexp() < this.budget">Profit</label>
-    <label class="lbl text-sm" *ngIf="totalexp() > this.budget">Lose</label>
+    <label class="lbl text-sm" *ngIf="totalexp() < getUserBudget()">Save</label>
+    <label class="lbl text-sm" *ngIf="totalexp() > getUserBudget()">Loss</label>
   </h3>
 </div>
 

@@ -37,9 +37,6 @@ export class ExtrackerService {
     });
   }
 
-
-
-
   getExpenceData() {
     this.http.get<any>(this.expencedataUrl).subscribe((expdata) => {
       this.getdata = expdata;
