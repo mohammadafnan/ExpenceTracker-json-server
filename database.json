@@ -16,7 +16,6 @@
       "password": "9090"
     }
   ],
-  
   "expense": {
     "01d9": [
       {
@@ -57,11 +56,11 @@
         "id": "yz20"
       },
       {
-        "expencename": "Qubani",
+        "expencename": "Qurbani",
         "expenceamount": 220000,
         "expencedate": "2025-06-07",
         "userId": "507b",
-        "id": "3twi"
+        "id": "0zsl"
       },
       {
         "expencename": "Gas bill",
