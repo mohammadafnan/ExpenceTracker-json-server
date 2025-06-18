@@ -12,7 +12,7 @@
     <span
       class="absolute top-0 left-0 mt-2 ml-2 bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-100"
     >
-      Total Expense :</span
+      Total Expense </span
     >
 
     <i *ngIf="totalexp() < getUserBudget()" class="lni lni-trend-down-1"></i>
@@ -39,7 +39,7 @@
     <span
       class="absolute top-0 left-0 mt-2 ml-2 bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-100"
     >
-      Total budget :</span
+      Total budget </span
     >
     <i class="lni lni-dollar-circle icon2 relative top-1"></i>
     {{ getUserBudget() | currency : "USD" : "symbol" : "2.0" }}
@@ -49,7 +49,7 @@
     <span
       class="absolute top-0 left-0 mt-2 ml-2 bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-100"
     >
-      Balance :</span
+      Balance </span
     >
     <i class="lni lni-weight-machine-1 icon2 relative top-1"></i>
     {{ balacnce() | currency : "USD" : "symbol" : "2.0" }} <br />
