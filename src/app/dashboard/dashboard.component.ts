@@ -42,7 +42,7 @@ export class DashboardComponent implements AfterViewInit {
 
   balacnce(): number {
     this.budget = localStorage.getItem('budget');
-    return  this.getUserBudget() - this.num;
+    return this.getUserBudget() - this.num;
   }
 
   getUserBudget() {
