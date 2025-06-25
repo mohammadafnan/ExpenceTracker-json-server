@@ -283,4 +283,17 @@ export class ExpenseComponent
   check(val: any) {
     return val;
   }
+
+  tab1: boolean = true;
+  tab2: boolean = false;
+
+  tabbud() {
+    this.tab2 = false;
+    this.tab1 = true;
+  }
+
+  tabex() {
+    this.tab1 = false;
+    this.tab2 = true;
+  }
 }

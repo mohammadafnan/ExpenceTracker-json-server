@@ -105,11 +105,18 @@
         "id": "y06x"
       },
       {
-        "expencename": "iop",
-        "expenceamount": 234,
-        "expencedate": "2025-06-24",
+        "expencename": "sadsa",
+        "expenceamount": 5454,
+        "expencedate": "2025-06-23",
         "userId": "507b",
-        "id": "1g7i"
+        "id": "vpey"
+      },
+      {
+        "expencename": "25 june",
+        "expenceamount": 5000,
+        "expencedate": "2025-06-25",
+        "userId": "507b",
+        "id": "y2lp"
       }
     ],
     "7c2e": [

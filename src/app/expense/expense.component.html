@@ -16,10 +16,12 @@
           role="tablist"
         >
           <li class="me-2" role="presentation">
-            <button
+            <button               [ngClass]="{'tab1-dis': this.tab2 == false , 'tab1-act': this.tab1 == true }"
+
+              (click)="tabbud()"
               class="inline-block p-2 border-b-2 rounded-t-lg cursor-pointer"
-              id="profile-styled-tab"
-              data-tabs-target="#styled-profile"
+              id="profilestyledtab"
+              data-tabs-target="#styledprofile"
               type="button"
               role="tab"
               aria-controls="profile"
@@ -29,10 +31,11 @@
             </button>
           </li>
           <li class="me-2" role="presentation">
-            <button
-              class="inline-block p-2 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 cursor-pointer"
-              id="dashboard-styled-tab"
-              data-tabs-target="#styled-dashboard"
+            <button    [ngClass]="{'tab1-dis': this.tab1 == false , 'tab1-act': this.tab2 == true }"
+              (click)="tabex()"
+              class="inline-block p-2 border-b-2 rounded-t-lg  cursor-pointer"
+              id="dashboardstyledtab"
+              data-tabs-target="#styleddashboard"
               type="button"
               role="tab"
               aria-controls="dashboard"
@@ -45,8 +48,9 @@
       </div>
       <div id="default-styled-tab-content">
         <div
-          class="hidden p-2 rounded-lg bg-[#0d1117]"
-          id="styled-profile"
+          *ngIf="tab1"
+          class="p-2 rounded-lg bg-[#0d1117]"
+          id="styledprofile"
           role="tabpanel"
           aria-labelledby="profile-tab"
         >
@@ -67,8 +71,9 @@
           </button>
         </div>
         <div
-          class="hidden p-2 rounded-lg bg-[#0d1117]"
-          id="styled-dashboard"
+          *ngIf="tab2"
+          class="p-2 rounded-lg bg-[#0d1117]"
+          id="styleddashboard"
           role="tabpanel"
           aria-labelledby="dashboard-tab"
         >

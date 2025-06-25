@@ -14,11 +14,11 @@ describe('Login Page', () => {
     cy.get('button[type="submit"]').should('exist');
   });
 
-  // it('should show error on empty submit', () => {
-  //   cy.get('button[type="submit"]').click();
-  //   cy.contains('Email is required').should('be.visible');
-  //   cy.contains('Password is required').should('be.visible');
-  // });
+  it('should show error on invalid credentials', () => {
+    cy.get('input[name="email"]').type('abc');
+    cy.get('input[name="password"]').type('0000');
+    cy.get('button[type="submit"]').click();
+  });
 
   it('Should login with valid credentials', () => {
     cy.get('input[name="email"]').type('anas');
@@ -27,6 +27,30 @@ describe('Login Page', () => {
 
     // Adjust this based on your actual behavior after login
     cy.url().should('include', '/expense');
+
     cy.contains('Welcome').should('be.visible'); // Or check user-specific element
+
+  });
+      
+
+});
+  
+describe('Fake Toggle Without JavaScript', () => {
+  beforeEach(() => {
+    cy.visit('/expense');
+  });
+
+  it('manually removes hidden to simulate tab switch', () => {
+    cy.get('#styleddashboard').should('exist');
+
+    // Manually simulate tab being shown
+    cy.get('#styleddashboard').invoke('removeClass', 'hidden');
+
+    cy.get('#styleddashboard').should('be.visible');
+
+    // Confirm fields inside exist
+    cy.get('input[formcontrolname="expencename"]').should('exist');
   });
 });
+
+

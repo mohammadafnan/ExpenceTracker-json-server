@@ -30,8 +30,6 @@
   padding-bottom: 10px;
 }
 
-
-
 table {
   margin-top: 50px;
   border-collapse: separate;
@@ -225,4 +223,12 @@ th {
   border-radius: 50px;
   margin-right: 6px;
   object-fit: cover;
+}
+
+.tab1-dis {
+  color: #313131;
+}
+.tab1-act {
+  color: #ff4848;
+  border-bottom: 2px solid #ff4848;
 }
