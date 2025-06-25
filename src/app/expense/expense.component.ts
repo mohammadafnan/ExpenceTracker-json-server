@@ -3,6 +3,7 @@ import {
   AfterContentInit,
   AfterViewChecked,
   AfterViewInit,
+  ChangeDetectorRef,
   Component,
   DoCheck,
   OnChanges,
@@ -181,7 +182,8 @@ export class ExpenseComponent
     private router: Router,
     public _ExtrackerService: ExtrackerService,
     private formbulider: FormBuilder,
-    public auth: AuthService
+    public auth: AuthService,
+    private cd: ChangeDetectorRef
   ) {
     this.form = this.formbulider.group({
       expencename: ['', Validators.required],
@@ -209,6 +211,8 @@ export class ExpenseComponent
       alert('Added Expense Successfully');
     }
     this.form.reset();
+    this.cd.detectChanges();
+
   }
 
   editExpense(item: any) {
