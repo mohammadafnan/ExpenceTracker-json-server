@@ -91,11 +91,18 @@
         "id": "ttzi"
       },
       {
-        "expencename": "lunch ",
-        "expenceamount": 600,
-        "expencedate": "2025-06-24",
+        "expencename": "Dinner",
+        "expenceamount": 200,
+        "expencedate": "2024-06-18",
         "userId": "507b",
-        "id": "97kf"
+        "id": "mvba"
+      },
+      {
+        "expencename": "Dinner",
+        "expenceamount": 200,
+        "expencedate": "2024-06-18",
+        "userId": "507b",
+        "id": "gtjp"
       }
     ],
     "7c2e": [

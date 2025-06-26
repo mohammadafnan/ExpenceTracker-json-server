@@ -77,17 +77,58 @@ describe('Expense Tab & Form Tests', () => {
     // Submit
     cy.get('button[title="Add Expense"]').should('not.be.disabled').click();
 
+
     // Confirm alert
     cy.on('window:alert', (text) => {
       expect(text).to.equal('Added Expense Successfully');
     });
 
-    // Wait for DOM update and assert table
-    // cy.get('#excel-table tbody', { timeout: 8000 }).should(($tbody) => {
-    //   const text = $tbody.text();
-    //   expect(text).to.include('Dinner');
-    //   expect(text).to.include('200');
-    //   expect(text).to.include('2024-06-18');
-    // });
+  
+  });
+});
+
+Cypress.on('uncaught:exception', (err) => {
+  if (err.message.includes("classList")) return false;
+});
+
+Cypress.Commands.add('login', () => {
+  cy.session('loginSession', () => {
+    cy.visit('/login');
+    cy.get('input[name="email"]').type('anas');
+    cy.get('input[name="password"]').type('0000');
+    cy.get('button[type="submit"]').click();
+    cy.url().should('include', '/expense');
+  });
+});
+
+describe('Header + Sidebar Navigation', () => {
+  beforeEach(() => {
+    cy.login();
+    cy.visit('/expense');
+  });
+
+  it('should open sidebar from header, go to dashboard, and log out', () => {
+    // Click hamburger icon to open sidebar
+    cy.get('.lni-menu-hamburger-1').should('exist').click();
+
+    // Wait briefly for sidebar animation/render
+    cy.wait(500);
+
+    // Click on Dashboard tab (adjust route as needed)
+    cy.contains('span', 'Dashboard').click({ force: true });
+    cy.url().should('include', '/dashboard');
+
+    // Return to expense page
+    cy.visit('/expense');
+
+    // Open dropdown menu via avatar button
+    cy.get('#dropdownAvatarNameButton').click();
+
+    // Click 'Sign out' text
+    cy.contains('Sign out').click({ force: true });
+
+    // Confirm redirect to login
+    cy.url().should('include', '/login');
+    cy.get('input[name="email"]').should('be.visible');
   });
 });
