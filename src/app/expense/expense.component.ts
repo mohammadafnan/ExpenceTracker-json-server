@@ -67,6 +67,7 @@ export class ExpenseComponent
   budget: any;
   number: any;
   num: any;
+  arr: number[] = [1, 2, 3, 4, 5];
 
   isbtn = true;
 
@@ -212,7 +213,6 @@ export class ExpenseComponent
     }
     this.form.reset();
     this.cd.detectChanges();
-
   }
 
   editExpense(item: any) {
