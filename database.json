@@ -14,6 +14,11 @@
       "id": "01d9",
       "username": "test",
       "password": "9090"
+    },
+    {
+      "id": "db34",
+      "username": "kanwal",
+      "password": "kanwal"
     }
   ],
   "expense": {
@@ -119,6 +124,36 @@
         "expencedate": "2025-05-21",
         "userId": "7c2e",
         "id": "93k7"
+      }
+    ],
+    "db34": [
+      {
+        "expencename": "hair styling",
+        "expenceamount": 3500,
+        "expencedate": "2025-06-27",
+        "userId": "db34",
+        "id": "upaq"
+      },
+      {
+        "expencename": "makeup",
+        "expenceamount": 2000,
+        "expencedate": "2025-06-19",
+        "userId": "db34",
+        "id": "zdae"
+      },
+      {
+        "expencename": "facial",
+        "expenceamount": 2000,
+        "expencedate": "2025-06-25",
+        "userId": "db34",
+        "id": "u3rb"
+      },
+      {
+        "expencename": "birthday treat",
+        "expenceamount": 3000,
+        "expencedate": "2025-06-27",
+        "userId": "db34",
+        "id": "c0hx"
       }
     ]
   }
