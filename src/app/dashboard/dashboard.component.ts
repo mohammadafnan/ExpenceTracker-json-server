@@ -23,11 +23,11 @@ export class DashboardComponent implements AfterViewInit {
   constructor(
     public _ExtrackerService: ExtrackerService,
     @Inject(PLATFORM_ID) private platformId: Object
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this._ExtrackerService.getExpenceData();
-    this.findhighexpense()
+    this.findHighExpenseAmount();
     // this._ExtrackerService.budget
   }
 
@@ -41,17 +41,21 @@ export class DashboardComponent implements AfterViewInit {
     return this.num;
   }
 
-  findhighexpense() {
-    let expense = this._ExtrackerService.expenseTrackerData || []
-    let maxValue = expense[0]
-    for (let x = 0; x < expense.length; x++) {
-      if (expense[x].expenceamount > maxValue.expenceamount) {
-        maxValue = expense[x].expenceamount;
+  findHighExpenseAmount() {
+    const expenses = this._ExtrackerService.expenseTrackerData || [];
+    if (expenses.length === 0) return 0;
+
+    let max = expenses[0].expenceamount;
+
+    for (let i = 0; i < expenses.length; i++) {
+      if (expenses[i].expenceamount > max) {
+        max = expenses[i].expenceamount;
       }
     }
 
-    return maxValue;
+    return max;
   }
+
   balacnce(): number {
     this.budget = localStorage.getItem('budget');
     return this.getUserBudget() - this.num;
