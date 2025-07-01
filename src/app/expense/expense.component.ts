@@ -70,7 +70,7 @@ export class ExpenseComponent
   arr: number[] = [1, 2, 3, 4, 5];
   add: boolean = false;
   rem: boolean = false;
-
+  budg: boolean = false;
   isbtn = true;
 
   ngOnInit(): void {
@@ -269,7 +269,11 @@ export class ExpenseComponent
     let userBudgets = JSON.parse(localStorage.getItem('userBudgets') || '{}');
     userBudgets[userId] = this.number;
     localStorage.setItem('userBudgets', JSON.stringify(userBudgets));
-    alert('Budget added Succesfully' + this.number);
+    this.budg = true;
+    setTimeout(() => {
+      this.budg = false;
+    }, 1500);
+    // alert('Budget added Succesfully' + this.number);
     this.number = '';
   }
 
