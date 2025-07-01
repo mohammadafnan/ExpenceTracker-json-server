@@ -68,6 +68,8 @@ export class ExpenseComponent
   number: any;
   num: any;
   arr: number[] = [1, 2, 3, 4, 5];
+  add: boolean = false;
+  rem: boolean = false;
 
   isbtn = true;
 
@@ -204,12 +206,20 @@ export class ExpenseComponent
     if (this.iseditid) {
       // Edit  expense
       this._ExtrackerService.updateExpenceData(this.iseditid, this.form.value);
-      alert('Updated Expense Successfully');
+      this.add = true;
+      setTimeout(() => {
+        this.add = false;
+      }, 1500);
+      // alert(Expense Updated Successfully');
       this.iseditid = null;
     } else {
       // Add new expense
       this._ExtrackerService.addExpenceData(this.form.value);
-      alert('Added Expense Successfully');
+      // alert('Expense added Successfully');
+      this.add = true;
+      setTimeout(() => {
+        this.add = false;
+      }, 1500);
     }
     this.form.reset();
     this.cd.detectChanges();
@@ -227,7 +237,11 @@ export class ExpenseComponent
 
   deleteExpense(item: any) {
     this._ExtrackerService.deleteExpenceData(item.id);
-    alert('Deleted Expense Successfully');
+    this.rem = true;
+    setTimeout(() => {
+      this.rem = false;
+    }, 1500);
+    // alert('Expense deleted Successfully');
   }
 
   totalexp() {

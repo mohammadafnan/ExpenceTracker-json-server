@@ -9,6 +9,8 @@ import { error } from 'console';
 export class AuthService {
   userdataUrl = 'http://localhost:3000/users';
   loading: boolean = false;
+  err: boolean = false;
+  succ: boolean = false;
 
   constructor(private http: HttpClient, private router: Router) {}
   // if (typeof window !== 'undefined') {
@@ -31,15 +33,22 @@ export class AuthService {
       (users) => {
         if (users.length && users[0].password == password) {
           this.saveUserId(users[0].id, users[0].username);
+          this.succ = true;
+
           setTimeout(() => {
             this.router.navigate(['/expense']);
 
             this.loading = false;
+            this.succ = false;
           }, 200);
         } else {
           this.loading = true;
 
-          alert('Invalid credentials');
+          this.err = true;
+          setTimeout(() => {
+            this.err = false;
+          }, 1500);
+          // alert('Invalid credentials');
           this.loading = false;
         }
       },

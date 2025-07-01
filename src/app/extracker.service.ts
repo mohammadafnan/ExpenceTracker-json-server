@@ -24,7 +24,6 @@ export class ExtrackerService {
   currentRoute: string = '';
   budget: any;
   number: any;
-
   constructor(
     private http: HttpClient,
     private auth: AuthService,

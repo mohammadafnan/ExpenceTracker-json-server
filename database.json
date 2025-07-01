@@ -17,8 +17,8 @@
     },
     {
       "id": "db34",
-      "username": "kanwal",
-      "password": "kanwal"
+      "username": "kan",
+      "password": "kan"
     }
   ],
   "expense": {
@@ -100,14 +100,14 @@
         "expenceamount": 200,
         "expencedate": "2024-06-18",
         "userId": "507b",
-        "id": "mvba"
+        "id": "mgcm"
       },
       {
-        "expencename": "Dinner",
-        "expenceamount": 200,
-        "expencedate": "2024-06-18",
+        "expencename": "sad",
+        "expenceamount": 432324,
+        "expencedate": "2025-07-01",
         "userId": "507b",
-        "id": "gtjp"
+        "id": "bnte"
       }
     ],
     "7c2e": [
