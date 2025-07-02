@@ -12,6 +12,8 @@
   flex-direction: column;
   height: 40vh;
   background: #0d1117;
+  /* background: linear-gradient(to bottom right, #1f2d39, #000103); */
+
   width: 25vw;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -37,7 +39,8 @@ input {
 }
 
 .loginbtn {
-  background-color: rgb(0, 190, 102);
+  /* background-color: rgb(0, 190, 102); */
+  background-color: #0a1929;
   border: 0;
   color: white;
   width: 80%;
@@ -63,7 +66,7 @@ input {
 
 .signup {
   font-size: 12px;
-  color: gray;
+  /* color: gray; */
 }
 
 /* loader code */
