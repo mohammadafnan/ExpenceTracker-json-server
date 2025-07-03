@@ -1,78 +1,82 @@
 <!-- <app-header ></app-header> -->
+<div class="bg">
+  <div class="flex justify-center flex-col md:flex-row" id="excel-table">
+    <h3 class="card2 mr-5 text-4xl relative font-semibold">
+      <span
+        class="absolute top-0 left-0 mt-2 ml-2 bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-100"
+      >
+        Total budget
+      </span>
+      <i class="lni lni-dollar-circle icon2 relative top-1"></i>
+      {{ getUserBudget() | currency : "USD" : "symbol" : "2.0" }}
+      <!-- <input type="number" name="" id="" [(ngModel)]="getUserBudget()" /> -->
+    </h3>
+    <h3
+      class="text-4xl relative font-semibold"
+      [ngClass]="{
+        card3: totalexp() > getUserBudget(),
+        card1: totalexp() < getUserBudget(),
+        card2: totalexp() == getUserBudget()
+      }"
+    >
+      <span
+        class="absolute top-0 left-0 mt-2 ml-2 bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-100"
+      >
+        Total Expense
+      </span>
 
-<div class="flex justify-center flex-col md:flex-row" id="excel-table">
-  <h3 class="card2 mr-5 text-4xl relative font-semibold">
-    <span
-      class="absolute top-0 left-0 mt-2 ml-2 bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-100"
-    >
-      Total budget
-    </span>
-    <i class="lni lni-dollar-circle icon2 relative top-1"></i>
-    {{ getUserBudget() | currency : "USD" : "symbol" : "2.0" }}
-    <!-- <input type="number" name="" id="" [(ngModel)]="getUserBudget()" /> -->
-  </h3>
-  <h3
-    class="text-4xl relative font-semibold"
-    [ngClass]="{
-      card3: totalexp() > getUserBudget(),
-      card1: totalexp() < getUserBudget(),
-      card2: totalexp() == getUserBudget()
-    }"
-  >
-    <span
-      class="absolute top-0 left-0 mt-2 ml-2 bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-100"
-    >
-      Total Expense
-    </span>
+      <i *ngIf="totalexp() < getUserBudget()" class="lni lni-trend-down-1"></i>
+      <i *ngIf="totalexp() > getUserBudget()" class="lni lni-trend-up-1"></i>
 
-    <i *ngIf="totalexp() < getUserBudget()" class="lni lni-trend-down-1"></i>
-    <i *ngIf="totalexp() > getUserBudget()" class="lni lni-trend-up-1"></i>
-
-    {{ totalexp() | currency : "USD" : "symbol" : "2.0" }}
-    <br />
-    <label class="lbl text-sm" *ngIf="totalexp() < getUserBudget()"
-      >Under Budget</label
-    >
-    <label class="lbl text-sm" *ngIf="totalexp() == getUserBudget()"
-      >Expense is equal to the budget.</label
-    >
-    <label class="lbl text-sm" *ngIf="totalexp() > getUserBudget()"
-      >Expense is exceed to the Budget</label
-    >
-  </h3>
-  <!-- <span class="ope">{{ totalexp() > getUserBudget() ? ">" : "<" }}</span> -->
-  <!-- <span class="ope" *ngIf="totalexp() == getUserBudget()">=</span>
+      {{ totalexp() | currency : "USD" : "symbol" : "2.0" }}
+      <br />
+      <label class="lbl text-sm" *ngIf="totalexp() < getUserBudget()"
+        >Under Budget</label
+      >
+      <label class="lbl text-sm" *ngIf="totalexp() == getUserBudget()"
+        >Expense is equal to the budget.</label
+      >
+      <label class="lbl text-sm" *ngIf="totalexp() > getUserBudget()"
+        >Expense is exceed to the Budget</label
+      >
+    </h3>
+    <!-- <span class="ope">{{ totalexp() > getUserBudget() ? ">" : "<" }}</span> -->
+    <!-- <span class="ope" *ngIf="totalexp() == getUserBudget()">=</span>
     <span class="ope" *ngIf="totalexp() > getUserBudget()">></span>
     <span class="ope" *ngIf="totalexp() < getUserBudget()"><</span> -->
 
-  <h3 class="card4 md:ml-10 text-4xl relative font-semibold">
-    <span
-      class="absolute top-0 left-0 mt-2 ml-2 bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-100"
-    >
-      Balance
-    </span>
-    <i class="lni lni-weight-machine-1 icon2 relative top-1"></i>
-    {{ balacnce() | currency : "USD" : "symbol" : "2.0" }} <br />
-    <label class="lbl text-sm" *ngIf="totalexp() < getUserBudget()">Save</label>
-    <label class="lbl text-sm" *ngIf="totalexp() > getUserBudget()">Loss</label>
-  </h3>
-</div>
+    <h3 class="card4 md:ml-10 text-4xl relative font-semibold">
+      <span
+        class="absolute top-0 left-0 mt-2 ml-2 bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-100"
+      >
+        Balance
+      </span>
+      <i class="lni lni-weight-machine-1 icon2 relative top-1"></i>
+      {{ balacnce() | currency : "USD" : "symbol" : "2.0" }} <br />
+      <label class="lbl text-sm" *ngIf="totalexp() < getUserBudget()"
+        >Save</label
+      >
+      <label class="lbl text-sm" *ngIf="totalexp() > getUserBudget()"
+        >Loss</label
+      >
+    </h3>
+  </div>
 
-<div class="flex justify-center align-middle mt-24 mb-24">
-  <div class="w-screen rounded-lg shadow-sm bg-[#0d131a] sm:ml-52 sm:mr-52">
-    <div class="flex justify-between p-4 md:p-6 pb-0 md:pb-0">
-      <div>
-        <h5
-          class="leading-none text-4xl font-semibold text-gray-900 dark:text-white pb-2"
-        >
-          <!-- $12,423 -->
-          {{ findHighExpenseAmount() | currency : "USD" : "symbol" : "2.0" }}
-        </h5>
-        <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-          Highest Expense
-        </p>
-      </div>
-      <!-- <div
+  <div class="flex justify-center align-middle mt-24 mb-24">
+    <div class="w-screen rounded-lg shadow-sm bg-[#0d131a] sm:ml-52 sm:mr-52">
+      <div class="flex justify-between p-4 md:p-6 pb-0 md:pb-0">
+        <div>
+          <h5
+            class="leading-none text-4xl font-semibold text-gray-900 dark:text-white pb-2"
+          >
+            <!-- $12,423 -->
+            {{ findHighExpenseAmount() | currency : "USD" : "symbol" : "2.0" }}
+          </h5>
+          <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+            Highest Expense
+          </p>
+        </div>
+        <!-- <div
         class="flex items-center px-2.5 py-0.5 text-base font-semibold text-green-500 dark:text-green-500 text-center"
       >
         23%
@@ -92,11 +96,11 @@
           />
         </svg>
       </div> -->
-    </div>
-    <div id="labels-chart" class="px-2.5"></div>
+      </div>
+      <div id="labels-chart" class="px-2.5"></div>
 
-    <!-- Button -->
-    <!-- <button
+      <!-- Button -->
+      <!-- <button
           id="dropdownDefaultButton"
           data-dropdown-toggle="lastDaysdropdown"
           data-dropdown-placement="bottom"
@@ -120,8 +124,8 @@
             />
           </svg>
         </button> -->
-    <!-- Dropdown menu -->
-    <!-- <div
+      <!-- Dropdown menu -->
+      <!-- <div
           id="lastDaysdropdown"
           class="z-10 hidden  divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700"
         >
@@ -166,7 +170,7 @@
             </li>
           </ul>
         </div> -->
-    <!-- <a
+      <!-- <a
           href="#"
           class="uppercase text-sm font-semibold inline-flex items-center rounded-lg text-blue-600 hover:text-blue-700 dark:hover:text-blue-500 hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2"
         >
@@ -187,10 +191,10 @@
             />
           </svg>
         </a> -->
+    </div>
   </div>
-</div>
 
-<!-- <div id="stats" class="bg-white py-24 sm:py-32">
+  <!-- <div id="stats" class="bg-white py-24 sm:py-32">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
       <div class="mx-auto flex max-w-xs flex-col gap-y-4">
@@ -216,3 +220,4 @@
     </dl>
   </div>
 </div> -->
+</div>

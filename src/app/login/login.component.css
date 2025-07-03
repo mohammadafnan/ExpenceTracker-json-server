@@ -104,6 +104,11 @@ input {
     transform: rotate(360deg);
   }
 }
+
+.bg{
+  background-color: whitesmoke;
+}
+
 .animated-bg {
   width: 100%;
   height: 100vh;
