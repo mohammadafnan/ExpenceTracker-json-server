@@ -180,10 +180,6 @@ tr td {
   }
 }
 
-
-
-
-
 /* Main content above the blur */
 .main-content {
   position: relative;
@@ -201,3 +197,18 @@ tr td {
   width: 300px;
   margin: auto;
 } */
+
+.alert-animation {
+  animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

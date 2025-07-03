@@ -129,81 +129,86 @@
       </div>
     </div>
   </div>
-
+  <!-- class="w[400px] overflow-x-scroll" -->
+  <!-- style="width: 400px; overflow-x: scroll" -->
   <div class="center">
     <table id="excel-table">
-      <thead>
-        <tr>
-          <input
-            class="mb-3"
-            type="text"
-            placeholder="Search Expense"
-            [(ngModel)]="this._ExtrackerService.searchText"
-          />
-        </tr>
+      <div class="w-[400px] sm:w-full  overflow-x-scroll">
+        <thead>
+          <tr>
+            <input
+              class="mb-3"
+              type="text"
+              placeholder="Search Expense"
+              [(ngModel)]="this._ExtrackerService.searchText"
+            />
+          </tr>
 
-        <tr>
-          <th>S.no</th>
-          <th>Expense Name</th>
-          <th>Expense Cost</th>
-          <th>Expense Date</th>
-          <th>Delete</th>
-          <th>Edit</th>
-        </tr>
-      </thead>
+          <tr>
+            <th>S.no</th>
+            <th>Expense Name</th>
+            <th>Expense Cost</th>
+            <th>Expense Date</th>
+            <th>Delete</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
 
-      <tbody>
-        <tr
-          *ngFor="
-            let item of _ExtrackerService.expenseTrackerData;
-            let i = index
-          "
-        >
-          <td>{{ i + 1 }}</td>
-          <td>{{ item.expencename }}</td>
-          <td>
-            {{ item.expenceamount | currency : "USD" : "symbol" : "2.0" }}
-          </td>
-          <td>{{ item.expencedate }}</td>
-
-          <td
-            title="Delete row record"
-            class="del"
-            (click)="deleteExpense(item)"
+        <tbody>
+          <tr
+            *ngFor="
+              let item of _ExtrackerService.expenseTrackerData;
+              let i = index
+            "
           >
-            <i class="lni lni-trash-3"></i>
-          </td>
-          <td
-            title="Edit row record"
-            class="update"
-            (click)="editExpense(item); tabex()"
+            <td>{{ i + 1 }}</td>
+            <td>{{ item.expencename }}</td>
+            <td>
+              {{ item.expenceamount | currency : "USD" : "symbol" : "2.0" }}
+            </td>
+            <td>{{ item.expencedate }}</td>
+
+            <td
+              title="Delete row record"
+              class="del"
+              (click)="deleteExpense(item)"
+            >
+              <i class="lni lni-trash-3"></i>
+            </td>
+            <td
+              title="Edit row record"
+              class="update"
+              (click)="editExpense(item); tabex()"
+            >
+              <i class="lni lni-pencil-1"></i>
+            </td>
+          </tr>
+          <!-- <tr *ngIf="_ExtrackerService.getdata.length == 0"> -->
+          <!-- <td colspan="2"></td> -->
+          <div
+            *ngIf="this._ExtrackerService.expenseTrackerData?.length === 0"
+            class="nodata"
           >
-            <i class="lni lni-pencil-1"></i>
-          </td>
-        </tr>
-        <!-- <tr *ngIf="_ExtrackerService.getdata.length == 0"> -->
-        <!-- <td colspan="2"></td> -->
-        <div
-          *ngIf="this._ExtrackerService.expenseTrackerData?.length === 0"
-          class="nodata"
-        >
-          Data not found
-        </div>
-        <!-- <td colspan="2"></td> -->
-        <!-- </tr> -->
-        <tr>
-          <td class="totalrow" colspan="2"><strong>Total</strong></td>
-          <td class="totalrow">
-            <strong>{{
-              totalexp() | currency : "USD" : "symbol" : "2.0"
-            }}</strong>
-          </td>
-          <td colspan="2"></td>
-        </tr>
-        <tr></tr>
-      </tbody>
+            Data not found
+          </div>
+          <!-- <td colspan="2"></td> -->
+          <!-- </tr> -->
+          <tr>
+            <td class="totalrow" colspan="2"><strong>Total</strong></td>
+            <td class="totalrow">
+              <strong>{{
+                totalexp() | currency : "USD" : "symbol" : "2.0"
+              }}</strong>
+            </td>
+            <td colspan="2"></td>
+          </tr>
+          <tr></tr>
+        </tbody>
+      </div>
     </table>
-    <!-- 
+  </div>
+
+  <!-- 
     <div>
       @for (item of _ExtrackerService.getdata; track item.id){
       <ul>
@@ -213,7 +218,7 @@
       <div>no data</div>
       }
     </div> -->
-  </div>
+
   <!-- [ngClass]="totalexp() > this.budget ? 'card3' : 'card1'" -->
   <!-- Start Q2 -->
   <!-- <div class="flex justify-center flex-col md:flex-row" id="excel-table"> -->
@@ -253,7 +258,7 @@
 
 <div
   *ngIf="this.add"
-  class="absolute top-10 right-10 flex w-96 items-center p-3 mb-4 text-sm rounded-lg dark:bg-[#00ff8078] text-white-900"
+  class=" alert-animation absolute top-10 right-10 flex w-96 items-center p-3 mb-4 text-sm rounded-lg dark:bg-[#00ff8078] text-white-900"
   role="alert"
 >
   <svg
@@ -276,7 +281,7 @@
 
 <div
   *ngIf="this.budg"
-  class="absolute top-10 right-10 flex w-96 items-center p-3 mb-4 text-sm rounded-lg dark:bg-[#00ff8078] text-white-900"
+  class="alert-animation absolute top-10 right-10 flex w-96 items-center p-3 mb-4 text-sm rounded-lg dark:bg-[#00ff8078] text-white-900"
   role="alert"
 >
   <svg
@@ -298,7 +303,7 @@
 </div>
 <div
   *ngIf="this.down"
-  class="absolute top-10 right-10 flex w-96 items-center p-3 mb-4 text-sm rounded-lg dark:bg-[#00ff8078] text-white-900"
+  class="alert-animation absolute top-10 right-10 flex w-96 items-center p-3 mb-4 text-sm rounded-lg dark:bg-[#00ff8078] text-white-900"
   role="alert"
 >
   <svg
@@ -320,7 +325,7 @@
 </div>
 <div
   *ngIf="this.rem"
-  class="absolute top-10 right-10 flex w-96 items-center p-3 mb-4 text-sm rounded-lg dark:bg-[#00ff8078] text-white-900"
+  class="alert-animation absolute top-10 right-10 flex w-96 items-center p-3 mb-4 text-sm rounded-lg dark:bg-[#00ff8078] text-white-900"
   role="alert"
 >
   <svg
