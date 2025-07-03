@@ -1,55 +1,54 @@
 <div class="neon-gradient-bg"></div>
 
 <div class="main-content">
+  <div class="scrol">
+    <div class="center">
+      <h3 class="text-3xl">
+        <i
+          class="lni lni-trend-down-1 relative top-1"
+          style="color: rgb(255, 72, 72)"
+        ></i>
+        {{ heading }}
+      </h3>
+      <br />
+    </div>
 
-<div class="scrol">
-  <div class="center">
-    <h3 class="text-3xl">
-      <i
-        class="lni lni-trend-down-1 relative top-1"
-        style="color: rgb(255, 72, 72)"
-      ></i>
-      {{ heading }}
-    </h3>
-    <br />
+    <div class="logincontainer">
+      <form [formGroup]="loginForm" class="logincard">
+        <h5 class="mb-5 text-2xl">
+          {{ isSignup ? "Create Account" : " Login" }}
+        </h5>
+
+        <input
+          name="email"
+          formControlName="username"
+          type="text"
+          placeholder="Email / Username"
+        />
+        <input
+          name="password"
+          formControlName="password"
+          type="text"
+          placeholder="Password"
+        />
+        <button
+          type="submit"
+          [ngClass]="loginForm.valid == true ? 'loginbtn' : 'dis'"
+          (click)="login()"
+          [disabled]="!loginForm.valid"
+        >
+          {{ isSignup ? "Sign Up" : "Login" }}
+        </button>
+        <button class="signup mt-4 text-blue-500" (click)="toggleSignup()">
+          {{
+            isSignup
+              ? "Already have an account? Login"
+              : "Need an account? Sign Up"
+          }}
+        </button>
+      </form>
+    </div>
   </div>
-
-  <div class="logincontainer">
-    <form [formGroup]="loginForm" class="logincard">
-      <h5 class="mb-5 text-2xl">
-        {{ isSignup ? "Create Account" : " Login" }}
-      </h5>
-
-      <input
-        name="email"
-        formControlName="username"
-        type="text"
-        placeholder="Email / Username"
-      />
-      <input
-        name="password"
-        formControlName="password"
-        type="text"
-        placeholder="Password"
-      />
-      <button
-        type="submit"
-        [ngClass]="loginForm.valid == true ? 'loginbtn' : 'dis'"
-        (click)="login()"
-        [disabled]="!loginForm.valid"
-      >
-        {{ isSignup ? "Sign Up" : "Login" }}
-      </button>
-      <button class="signup mt-4 text-blue-500" (click)="toggleSignup()">
-        {{
-          isSignup
-            ? "Already have an account? Login"
-            : "Need an account? Sign Up"
-        }}
-      </button>
-    </form>
-  </div>
-</div>
 </div>
 <div *ngIf="this.auth.loading" style="display: flex; justify-content: center">
   <div class="loader"></div>
