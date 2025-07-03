@@ -3,6 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
 body {
   /* background: #0d1117; */
   color: whitesmoke;
@@ -114,3 +117,52 @@ tr td{
     --num-users: 4600;
   }
 }
+
+
+.animated-bg {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(120deg, #1f2d39, #0D0F12, #1f2d39);
+  background-size: 400% 400%;
+  animation: gradientSwipe 10s ease infinite;
+  position: absolute;
+}
+
+@keyframes gradientSwipe {
+  0% {
+    background-position: 0% 100%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+
+.animated-radial {
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient(circle at center,#1f2d39, #0D0F12)  ;
+  background-size: 100% 100%;
+  animation: radialPulse 2s ease-in-out infinite;
+  position: absolute;
+
+}
+
+@keyframes radialPulse {
+  0% {
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+  }
+  50% {
+    background-position: 60% 60%;
+    background-size: 130% 130%;
+  }
+  100% {
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+  }
+}
+
