@@ -3,9 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
 body {
   /* background: #0d1117; */
   color: whitesmoke;
@@ -65,27 +62,23 @@ button:focus {
 } */
 
 .apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title {
-  background: #0d131a!important;
+  background: #0d131a !important;
   border-bottom: 1px solid #313131 !important;
   color: #747474 !important;
-
 }
-
 
 .apexcharts-tooltip.apexcharts-theme-light {
   border: 1px solid #0d131a !important;
   background: #0d131a !important;
 }
 
-
-tr th{
+tr th {
   color: rgb(218, 218, 218);
 }
 
-tr td{
+tr td {
   color: darkgray;
 }
-
 
 @property --num-transactions {
   syntax: "<integer>";
@@ -118,11 +111,10 @@ tr td{
   }
 }
 
-
 .animated-bg {
   width: 100%;
   height: 100vh;
-  background: linear-gradient(120deg, #1f2d39, #0D0F12, #1f2d39);
+  background: linear-gradient(120deg, #1f2d39, #0d0f12, #1f2d39);
   background-size: 400% 400%;
   animation: gradientSwipe 15s ease infinite;
   position: absolute;
@@ -140,15 +132,13 @@ tr td{
   }
 }
 
-
 .animated-radial {
   width: 100%;
   height: 100vh;
-  background: radial-gradient(circle at center,#1f2d39, #0D0F12)  ;
+  background: radial-gradient(circle at center, #1f2d39, #0d0f12);
   background-size: 100% 100%;
   animation: radialPulse 2s ease-in-out infinite;
   position: absolute;
-
 }
 
 @keyframes radialPulse {
@@ -166,5 +156,48 @@ tr td{
   }
 }
 
+/* Blurred background layer */
+.neon-gradient-bg {
+  position: fixed; /* or absolute, depending on layout */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(270deg, #3b82f6, #9333ea, #14b8a6, #f43f5e);
+  background-size: 800% 800%;
+  animation: moveNeon 20s ease infinite;
+  filter: blur(50px);
+}
+@keyframes moveNeon {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 
+
+
+
+/* Main content above the blur */
+.main-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+}
+
+/* Optional: login card style */
+/* .login-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 300px;
+  margin: auto;
+} */
