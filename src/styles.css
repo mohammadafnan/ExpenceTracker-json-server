@@ -187,7 +187,7 @@ tr td {
 /* Main content above the blur */
 .main-content {
   position: relative;
-  z-index: 1;
+  z-index: 9999;
   text-align: center;
   color: white;
 }
