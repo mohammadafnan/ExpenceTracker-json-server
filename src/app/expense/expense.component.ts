@@ -71,6 +71,7 @@ export class ExpenseComponent
   add: boolean = false;
   rem: boolean = false;
   budg: boolean = false;
+  down:boolean = false
   isbtn = true;
 
   ngOnInit(): void {
@@ -286,10 +287,14 @@ export class ExpenseComponent
     const element: any = document.getElementById('excel-table');
     // Remove action columns (Delete and Edit) from cloned table
     const headerRow = element.tHead.rows[1];
-    headerRow.deleteCell(4); // Remove "Delete" header (4th column)
-    headerRow.deleteCell(4); // Remove "Edit" header (now 4th column after previous deletion)
+    // headerRow.deleteCell(4); // Remove "Delete" header (4th column)
+    // headerRow.deleteCell(5); // Remove "Edit" header (now 4th column after previous deletion)
     const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
     const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    this.down = true;
+    setTimeout(() => {
+      this.down = false;
+    }, 1500);
     XLSX.utils.book_append_sheet(wb, ws, 'Expenses');
     XLSX.writeFile(wb, 'expenses.xlsx');
   }
