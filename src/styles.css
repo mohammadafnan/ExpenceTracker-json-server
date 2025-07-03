@@ -124,7 +124,7 @@ tr td{
   height: 100vh;
   background: linear-gradient(120deg, #1f2d39, #0D0F12, #1f2d39);
   background-size: 400% 400%;
-  animation: gradientSwipe 10s ease infinite;
+  animation: gradientSwipe 15s ease infinite;
   position: absolute;
 }
 
@@ -165,4 +165,6 @@ tr td{
     background-size: 100% 100%;
   }
 }
+
+
 
