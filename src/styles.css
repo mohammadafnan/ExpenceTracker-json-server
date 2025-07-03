@@ -111,92 +111,9 @@ tr td {
   }
 }
 
-.animated-bg {
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(120deg, #1f2d39, #0d0f12, #1f2d39);
-  background-size: 400% 400%;
-  animation: gradientSwipe 15s ease infinite;
-  position: absolute;
-}
 
-@keyframes gradientSwipe {
-  0% {
-    background-position: 0% 100%;
-  }
-  50% {
-    background-position: 100% 0%;
-  }
-  100% {
-    background-position: 0% 100%;
-  }
-}
 
-.animated-radial {
-  width: 100%;
-  height: 100vh;
-  background: radial-gradient(circle at center, #1f2d39, #0d0f12);
-  background-size: 100% 100%;
-  animation: radialPulse 2s ease-in-out infinite;
-  position: absolute;
-}
 
-@keyframes radialPulse {
-  0% {
-    background-position: 50% 50%;
-    background-size: 100% 100%;
-  }
-  50% {
-    background-position: 60% 60%;
-    background-size: 130% 130%;
-  }
-  100% {
-    background-position: 50% 50%;
-    background-size: 100% 100%;
-  }
-}
-
-/* Blurred background layer */
-.neon-gradient-bg {
-  position: fixed; /* or absolute, depending on layout */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(270deg, #3b82f6, #9333ea, #14b8a6, #f43f5e);
-  background-size: 800% 800%;
-  animation: moveNeon 10s ease infinite;
-  filter: blur(50px);
-}
-@keyframes moveNeon {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Main content above the blur */
-.main-content {
-  position: relative;
-  z-index: 9999;
-  text-align: center;
-  color: white;
-}
-
-/* Optional: login card style */
-/* .login-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  padding: 2rem;
-  border-radius: 1rem;
-  width: 300px;
-  margin: auto;
-} */
 
 .alert-animation {
   animation: fadeInUp 1s ease forwards;
