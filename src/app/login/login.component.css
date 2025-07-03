@@ -159,7 +159,7 @@ input {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background: radial-gradient(at 20% 20%, #22605e 0%, transparent 60%),
               radial-gradient(at 80% 20%, #a56365 0%, transparent 60%),
@@ -167,8 +167,8 @@ input {
               radial-gradient(at 50% 50%, #9333ea 0%, transparent 60%);
   filter: blur(60px);
   z-index: -1;
-  animation: softPulse 10s ease-in-out infinite;
-  background-size: 150% 150%;
+  animation: softPulse 5s ease-in-out infinite;
+  background-size: 150% 150% ;
 }
 
 @keyframes softPulse {
