@@ -19,16 +19,14 @@ background: linear-gradient(90deg, rgba(31,42,4,1) 27%, rgba(15,21,0,1) 65%); */
   overflow-x: hidden;
 }
 
-
 .bg {
   background: linear-gradient(to bottom right, #1f2d39, #000103);
   height: 100%;
 }
 .bg-header {
-  background: linear-gradient(to bottom right, #1f2d39, #000103);
-
+  /* background: linear-gradient(to bottom right, #1f2d39, #000103); */
+  background-color:  #0d131a !important;
 }
-
 
 ::-webkit-scrollbar {
   width: 10px;
