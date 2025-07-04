@@ -10,6 +10,8 @@ export class AuthService {
   userdataUrl = 'http://localhost:3000/users';
   loading: boolean = false;
   err: boolean = false;
+  err2: boolean = false;
+
   succ: boolean = false;
 
   constructor(private http: HttpClient, private router: Router) {}
@@ -48,13 +50,15 @@ export class AuthService {
           setTimeout(() => {
             this.err = false;
           }, 1500);
-          // alert('Invalid credentials');
           this.loading = false;
         }
       },
       (error) => {
         console.error('Login error', error);
-        alert('Something went wrong during login.');
+        this.err2 = true;
+        setTimeout(() => {
+          this.err2 = false;
+        }, 5000);
       }
     );
   }
