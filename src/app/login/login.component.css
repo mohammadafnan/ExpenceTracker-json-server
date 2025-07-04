@@ -12,7 +12,7 @@
   flex-direction: column;
   height: 40vh;
   /* background: #0d1117; */
-  background-color: #0d11171c;
+  background-color: #0d11170a;;
   /* background: linear-gradient(to bottom right, #1f2d39, #000103); */
 
   /* width: 25vw; */
@@ -36,7 +36,7 @@ input {
   border: 1px solid #384a64;
   background-color: transparent;
   padding-left: 10px;
-  color: white;
+  color: #0e131a;
   margin-bottom: 20px;
   width: 80%;
   height: 35px;

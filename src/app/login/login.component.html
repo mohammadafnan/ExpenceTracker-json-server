@@ -33,7 +33,7 @@
         />
         <button
           type="submit"
-          [ngClass]="loginForm.valid == true ? 'loginbtn' : 'dis'"
+          [ngClass]="loginForm.valid == true ? 'loginbtn mt-2' : 'dis mt-2'"
           (click)="login()"
           [disabled]="!loginForm.valid"
         >
