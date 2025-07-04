@@ -3,7 +3,7 @@
 <div class="main-content">
   <div class="scrol">
     <div class="center">
-      <h3 class="text-3xl">
+      <h3 class="text-3xl text-black">
         <i
           class="lni lni-trend-down-1 relative top-1 text-4xl"
           style="color: rgb(255, 72, 72)"
@@ -15,7 +15,7 @@
 
     <div class="logincontainer">
       <form [formGroup]="loginForm" class="logincard w-96">
-        <h5 class="mb-5 text-2xl">
+        <h5 class="mb-5 text-2xl text-black">
           {{ isSignup ? "Create Account" : " Login" }}
         </h5>
 
@@ -39,7 +39,7 @@
         >
           {{ isSignup ? "Sign Up" : "Login" }}
         </button>
-        <button class="signup mt-4 text-blue-500" (click)="toggleSignup()">
+        <button class="signup mt-4 text-slate-900" (click)="toggleSignup()">
           {{
             isSignup
               ? "Already have an account? Login"

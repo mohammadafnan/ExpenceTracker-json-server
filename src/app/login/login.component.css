@@ -11,12 +11,17 @@
   align-items: center;
   flex-direction: column;
   height: 40vh;
-  background: #0d1117;
+  /* background: #0d1117; */
+  background-color: #0d11171c;
   /* background: linear-gradient(to bottom right, #1f2d39, #000103); */
 
   /* width: 25vw; */
   border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+}
+
+::placeholder{
+  color: #0a1929;
 }
 
 .logincontainer {
