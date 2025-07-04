@@ -12,7 +12,7 @@
   flex-direction: column;
   height: 40vh;
   /* background: #0d1117; */
-  background-color: #0d11170a;;
+  background-color: #0d11170a;
   /* background: linear-gradient(to bottom right, #1f2d39, #000103); */
 
   /* width: 25vw; */
@@ -20,7 +20,7 @@
   /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
 }
 
-::placeholder{
+::placeholder {
   color: #0a1929;
 }
 
@@ -110,7 +110,7 @@ input {
   }
 }
 
-.bg{
+.bg {
   background-color: whitesmoke;
 }
 
@@ -159,20 +159,21 @@ input {
   }
 }
 
-
 .neon-gradient-bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: radial-gradient(at 20% 20%, #22605e 0%, transparent 60%),
-              radial-gradient(at 80% 20%, #a56365 0%, transparent 60%),
-              radial-gradient(at 50% 80%, #ddbc53 0%, transparent 60%),
-              radial-gradient(at 50% 50%, #9333ea 0%, transparent 60%);
+  background: radial-gradient(at 20% 20%, #22605e 0%, transparent 30%),
+    radial-gradient(at 80% 20%, #a56365 0%, transparent 30%),
+    radial-gradient(at 50% 80%, #ddbc53 0%, transparent 30%),
+    radial-gradient(at 80% 50%, #9333ea 0%, transparent 30%),
+    radial-gradient(at 20% 80%, #3392ea 0%, transparent 30%);
+
   filter: blur(60px);
   z-index: -1;
-  animation: softPulse 5s ease-in-out infinite;
+  animation: softPulse 20s ease-in-out infinite;
   background-size: 150% 150% ;
 }
 
